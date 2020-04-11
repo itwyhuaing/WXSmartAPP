@@ -1,0 +1,4 @@
+/* view/ShopBriefInfo.wxss */
+.inner {
+  color: red;
+}
