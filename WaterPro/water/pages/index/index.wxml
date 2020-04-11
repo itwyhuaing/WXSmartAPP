@@ -1,13 +1,23 @@
 <!--index.wxml-->
-<!-- <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="i">
-  <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="j">
-    <view wx:if="{{i <= j}}">
-      {{i}} * {{j}} = {{i * j}}
+<view id="id_container">
+  <image bindtap="tapHomeBanner" class="cl_banner" src="/images/home_banner.png" style="width:{{bannerSize.w}}px;height:{{bannerSize.h}}px"></image>
+
+  <view id="id_menu">
+    <view class="cl_menuitem" bindtap="tapHomeMenuItem" wx:for="{{menuList}}" wx:key="this">
+    <image class="cl_icon" src="{{item.icon}}"></image>
+    <view class="cl_text">{{item.text}}</view>
     </view>
   </view>
-</view> -->
 
-<block wx:for="{{['a','b','c','d','e','f']}}">
-  <view>{{index}}</view>
-  <view>{{item}}</view>
-</block>
+  <button class="tcl_test" bindtap="testFun">点击</button>
+  <button class="tcl_test" bindtap="testFun">点击</button>
+  <button class="tcl_test" bindtap="testFun">点击</button>
+  <button class="tcl_test" bindtap="testFun">点击</button>
+  <button class="tcl_test" bindtap="testFun">点击</button>
+  <button class="tcl_test" bindtap="testFun">点击</button>
+  <button class="tcl_test" bindtap="testFun">点击</button>
+  <button class="tcl_test" bindtap="testFun">点击</button>
+  <button class="tcl_test" bindtap="testFun">点击</button>
+  <button class="tcl_test" bindtap="testFun">点击</button>
+  <button class="tcl_test" bindtap="testFun">点击</button>
+</view>

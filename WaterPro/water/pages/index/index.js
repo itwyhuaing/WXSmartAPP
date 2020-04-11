@@ -1,10 +1,31 @@
 //index.js
-//获取应用实例
-const app = getApp()
+var util = require('../../utils/util')
 
 Page({
   data: {
-    ary:[{msg:"第一行"},{msg:"第二行"},{msg:"第三行"}]
+    bannerSize:util.scaleAccordingScreen({
+      w:750,
+      h:406
+    }),
+
+    menuList:[
+      {
+        icon:"/images/home_menu_bake.png",
+        text:"百科"
+      },
+      {
+        icon:"/images/home_menu_ym.png",
+        text:"移民"
+      },
+      {
+        icon:"/images/home_menu_prj.png",
+        text:"交流群"
+      },
+      {
+        icon:"/images/home_menu_fc.png",
+        text:"房产"
+      }
+    ],
   }
 
 })
