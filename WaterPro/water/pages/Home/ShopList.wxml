@@ -1,1 +1,28 @@
 <!--pages/Home/ShopList.wxml-->
+<scroll-view class="home_container">
+  <view class="cl_menulist">
+    <view wx:for="{{shops}}" wx:key="this">
+      <view class="cl_menuitem" data-sid="{{index}}" bindtap="tapItem" >
+        <image class="cl_menuitem_icon" src="{{item.shop_images[0]}}"></image> 
+      <view class="cl_menuitem_txtinfo">
+        <view class="cl_txtinfo_name">{{item.shop_name}}</view>
+        <view class="cl_txtinfo_ad">
+          <text>{{item.shop_adr}}</text><text class="cl_txtinfo_d">{{item.shop_distance}}</text>
+        </view>
+        <view class="cl_txtinfo_ab">
+          <text>{{item.shop_daily_amount}}</text><text class="cl_txtinfo_b">{{item.shop_bussinesstime}}</text>
+        </view>
+        <view class="cl_txtinfo_product">
+          <text>产品种类：</text>
+          <view wx:for="{{item.shop_product_varieties}}" wx:key="this" wx:for-item="v_i">
+            <text class="cl_txtinfo_product_item">{{v_i}}</text>
+          </view>
+        </view>
+        <view class="cl_txtinfo_price">
+          <text>最高价:{{item.shop_maxprice}}</text><text>最低价:{{item.shop_minprice}}</text>
+        </view>
+      </view>
+      </view>
+    </view>   
+  </view>
+</scroll-view>

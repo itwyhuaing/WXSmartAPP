@@ -2,27 +2,30 @@
   "pages": [
     "pages/Home/ShopList",
     "pages/User/User",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/ShopDetail/ShopDetail"
   ],
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/Home/ShopList",
-      "text": "首页",
-      "iconPath": "images/tab_home_normal.png",
-      "selectedIconPath": "images/tab_home_selected.png"
-    },
-    {
-      "pagePath": "pages/User/User",
-      "text": "我的",
-      "iconPath": "images/tab_user_normal.png",
-      "selectedIconPath": "images/tab_user_selected.png"
-    },
-    {
-      "pagePath": "pages/index/index",
-      "text": "测试",
-      "iconPath": "images/tab_user_normal.png",
-      "selectedIconPath": "images/tab_user_selected.png"
-    }],
+    "list": [
+      {
+        "pagePath": "pages/Home/ShopList",
+        "text": "首页",
+        "iconPath": "images/tab_home_normal.png",
+        "selectedIconPath": "images/tab_home_selected.png"
+      },
+      {
+        "pagePath": "pages/User/User",
+        "text": "我的",
+        "iconPath": "images/tab_user_normal.png",
+        "selectedIconPath": "images/tab_user_selected.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "测试",
+        "iconPath": "images/tab_user_normal.png",
+        "selectedIconPath": "images/tab_user_selected.png"
+      }
+    ],
     "color": "#B2B2B2",
     "selectedColor": "#25B6ED",
     "backgroundColor": "#ffffff"

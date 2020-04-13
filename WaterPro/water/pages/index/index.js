@@ -26,6 +26,23 @@ Page({
         text:"房产"
       }
     ],
+  },
+
+  tapHomeMenuItem:function(){
+    console.log("tapHomeMenuItem")
+  },
+
+  tapHomeBanner:function(){
+    console.log("tapHomeBanner")
+  },
+
+  testFun:function(){
+    wx.getSystemInfo({
+      complete: (res) => {
+        console.log(res.screenWidth)
+        console.log(res.screenHeight)
+      },
+    })
   }
 
 })
