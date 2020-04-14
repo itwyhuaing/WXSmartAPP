@@ -1,6 +1,6 @@
 <!--logs.wxml-->
 <view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+  <view class="cl_ad_map">
+    <image src="/images/58_58.png"></image><text>如何居中问题</text>
+  </view>
 </view>

@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view id="id_container">
-  <image bindtap="tapHomeBanner" class="cl_banner" src="/images/home_banner.png" style="width:{{bannerSize.w}}px;height:{{bannerSize.h}}px"></image>
+  <image bindtap="tapHomeBanner" class="cl_banner" src="/images/home_banner.png" style="width:{{bannerSize.width}}px;height:{{bannerSize.height}}px"></image>
 
   <view id="id_menu">
     <view class="cl_menuitem" bindtap="tapHomeMenuItem" wx:for="{{menuList}}" wx:key="this">
@@ -10,11 +10,5 @@
   </view>
 
   <button class="tcl_test" bindtap="testFun">点击</button>
-  <button class="tcl_test" bindtap="testFun">点击</button>
-  <button class="tcl_test" bindtap="testFun">点击</button>
-  <button class="tcl_test" bindtap="testFun">点击</button>
-  <button class="tcl_test" bindtap="testFun">点击</button>
-  <button class="tcl_test" bindtap="testFun">点击</button>
-  <button class="tcl_test" bindtap="testFun">点击</button>
-  <button class="tcl_test" bindtap="testFun">点击</button>
+  
 </view>

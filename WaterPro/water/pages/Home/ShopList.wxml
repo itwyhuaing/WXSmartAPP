@@ -2,7 +2,7 @@
 <scroll-view class="home_container">
   <view class="cl_menulist">
     <view wx:for="{{shops}}" wx:key="this">
-      <view class="cl_menuitem" data-sid="{{index}}" bindtap="tapItem" >
+      <view class="cl_menuitem" data-model="{{item}}" bindtap="tapItem" >
         <image class="cl_menuitem_icon" src="{{item.shop_images[0]}}"></image> 
       <view class="cl_menuitem_txtinfo">
         <view class="cl_txtinfo_name">{{item.shop_name}}</view>

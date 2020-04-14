@@ -1,1 +1,46 @@
-/* pages/ShopDetail/ShopDetail.wxss */
+.shop-detail-scroll-view {
+  background-color: #eee;
+  height: 100%; 
+  width: 100%;
+}
+
+.cl_date_tel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15rpx 30rpx;
+  border-bottom:  solid 2rpx #ddd;
+  background-color: #fff;
+}
+
+.cl_date_tel text {
+  /* background-color: sandybrown; */
+  font-size: 28rpx;
+}
+
+.cl_date_tel image {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.cl_ad_map {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20rpx 30rpx;
+  align-items: center;
+  background-color: #FFF;
+}
+
+.cl_ad_map image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.cl_ad_map text {
+  margin-left: 15rpx;
+  font-size: 28rpx;
+}
+
+.cl_products_list {
+  margin-top: 20rpx;
+}

@@ -18,7 +18,7 @@
 .cl_menuitem_icon {
   height: 160rpx;
   width: 160rpx;
-  mode:aspectFill;
+  /* mode:aspectFill; */
   margin: 10rpx 0 10rpx 10rpx;
 }
 

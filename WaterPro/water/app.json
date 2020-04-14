@@ -37,5 +37,10 @@
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "permission":{
+    "scope.userLocation":{
+      "desc":"确认当前位置与商家的距离"
+    }
+  }
 }

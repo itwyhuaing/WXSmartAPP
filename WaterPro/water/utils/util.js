@@ -16,8 +16,8 @@ const formatNumber = n => {
 
 function scaleAccordingScreen (size){
   var rlt = {
-    w:0.0,
-    h:0.0
+    width:0.0,
+    height:0.0
   };
 
   wx.getSystemInfo({
@@ -26,8 +26,8 @@ function scaleAccordingScreen (size){
       var sh = res.screenHeight;
 
       var scale = sw / size.width;
-      rlt.w = sw;
-      rlt.h = size.height * scale;
+      rlt.width = sw;
+      rlt.height = size.height * scale;
     },
   })
   return rlt;
