@@ -28,7 +28,15 @@ Page({
         { text: '', value: '' },
     ],
 
-    shop_info:{}
+    // 切换不同类型产品点击按钮
+    curSelectedType:"left",
+    // 两列不同产品列表
+    curLocation:0,
+
+    shop_info:{},
+
+    products:[]
+
   },
 
   /**
@@ -50,6 +58,7 @@ Page({
         shop_info:data.data
       })
     });
+
 
   },
 
@@ -130,5 +139,32 @@ Page({
       scale:20,
     })
   },
+
+  // 
+  switchToLeftEvent:function (e) {
+    this.setData({
+      curSelectedType: e.currentTarget.dataset.status,
+      curLocation:0
+    })
+  },
+
+  switchToRightEvent:function (e) {
+    this.setData({
+      curSelectedType: e.currentTarget.dataset.status,
+      curLocation:1
+    })
+  },
+
+  productsSwiperChange:function(e) {
+    let cur = e.detail.current
+    let sur = e.detail.source
+    if (sur == "touch") {
+      let type = cur == 0 ? "left" : "right"
+      this.setData({
+        curSelectedType: type
+      })
+    }
+
+  }
 
 })

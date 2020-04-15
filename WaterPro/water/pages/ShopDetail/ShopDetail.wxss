@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 15rpx 30rpx;
+  padding: 20rpx 30rpx;
   border-bottom:  solid 2rpx #ddd;
   background-color: #fff;
 }
@@ -19,8 +19,8 @@
 }
 
 .cl_date_tel image {
-  width: 38rpx;
-  height: 38rpx;
+  width: 36rpx;
+  height: 36rpx;
 }
 
 .cl_ad_map {
@@ -43,4 +43,52 @@
 
 .cl_products_list {
   margin-top: 20rpx;
+}
+
+.switch-type {
+  display: flex;
+  background-color: #FFF;
+  justify-content: center;
+  padding: 15rpx 0;
+  border-bottom: solid 1rpx #ddd;
+}
+.switch-type .btn:first-child {
+  border: solid 1rpx #25B6ED;
+  border-right: solid 0rpx #25B6ED;
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+}
+.switch-type .btn:last-child {
+  border: solid 1rpx #25B6ED;
+  border-left: solid 0.5rpx #25B6ED;
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.switch-type .btn {
+  font-size: 28rpx;
+  background: #fff;
+  padding: 10rpx 46rpx;
+}
+.switch-type .btn.active {
+  background: #25B6ED;
+}
+
+.cl_products_list swiper {
+  background-color: red;
+}
+
+.cl_products_list swiper-item:first-child {
+  background-color: royalblue;
+}
+
+.cl_products_list swiper-item:last-child {
+  background-color: sandybrown;
+}
+
+.cl_type1 {
+  background-color: orange;
+}
+
+.cl_type2 {
+  background-color: cyan;
 }

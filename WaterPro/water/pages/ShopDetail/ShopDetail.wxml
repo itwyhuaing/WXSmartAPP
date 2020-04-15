@@ -5,7 +5,7 @@
     <image src="{{imgUrls[0]}}"  style="width:{{imgSize.width}}px;height:{{imgSize.height}}px;"></image>
   </block>
   <block wx:else>
-    <swiper indicator-dots="{{indicatorDots}}" style="width:{{imgSize.width}}px;height:{{imgSize.height}}px;" 
+    <swiper previous-margin="30rpx" next-margin="30rpx" indicator-dots="{{indicatorDots}}" style="width:{{imgSize.width}}px;height:{{imgSize.height}}px;" 
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
       <block wx:for="{{imgUrls}}" wx:key="this">
         <swiper-item>
@@ -26,6 +26,17 @@
   </view>
 <!-- 产品列表 -->
   <view class="cl_products_list">
+    <view class="switch-type">
+      <view class="btn {{curSelectedType == 'left' ? 'active' : ''}}" bindtap="switchToLeftEvent" data-status="left">移  民</view>
+      <view class="btn {{curSelectedType == 'right' ? 'active' : ''}}" bindtap="switchToRightEvent" data-status="right">签  证</view>
+    </view>
+    
+    <view class="cl_type1"></view>
+    <view class="cl_type2"></view>
+    <swiper circular="false" bindchange="productsSwiperChange" current="{{curLocation}}">
+      <swiper-item >左</swiper-item>
+      <swiper-item >右</swiper-item>
+    </swiper>
   </view>
 
 </scroll-view>
