@@ -14,6 +14,7 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+// 适配系统宽高比
 function scaleAccordingScreen (size){
   var rlt = {
     width:0.0,
@@ -33,7 +34,16 @@ function scaleAccordingScreen (size){
   return rlt;
 }
 
+// 获取时间戳
+function timestamp(){
+  var ts = Date.parse(new Date());
+  ts = ts / 1000;
+  return ts;
+}
+
+
 module.exports = {
   formatTime: formatTime,
-  scaleAccordingScreen:scaleAccordingScreen
+  scaleAccordingScreen:scaleAccordingScreen,
+  timestamp:timestamp
 }

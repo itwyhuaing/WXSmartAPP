@@ -75,20 +75,26 @@
 
 .cl_products_list swiper {
   background-color: red;
+  height: 5000rpx
 }
 
 .cl_products_list swiper-item:first-child {
   background-color: royalblue;
+  height: auto;
 }
 
 .cl_products_list swiper-item:last-child {
   background-color: sandybrown;
 }
 
-.cl_type1 {
-  background-color: orange;
+.cl_product_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  border-bottom: solid 1rpx #ddd;
 }
 
-.cl_type2 {
-  background-color: cyan;
+.cl_product_item image {
+  width: 100rpx;
+  height: 100rpx;
 }

@@ -43,6 +43,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 页面传参
     var that = this
     const eventChannel = this.getOpenerEventChannel()
     eventChannel.on('aptDataFromOpenedPage', function(data) {
@@ -57,8 +58,30 @@ Page({
         groups:telInfo,
         shop_info:data.data
       })
+
     });
 
+    // 模拟数据接口返回数据
+    let product_buchet = {
+      p_type:"pa",
+      p_name:"美国EB5-澳大利亚技术移民",
+      p_amount:"19L/桶",
+      p_price:"22"
+    }
+
+    let product_bottle = {
+      p_type:"pb",
+      p_name:"美国EB5-澳大利亚技术移民",
+      p_amount:"380ml*24瓶/箱",
+      p_price:"22"
+    }
+
+    let ps = [product_buchet,product_buchet,product_buchet,
+              product_buchet,product_buchet,product_buchet,
+              product_bottle,product_bottle]
+    this.setData({
+      products:ps
+    })
 
   },
 

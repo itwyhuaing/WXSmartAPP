@@ -41,28 +41,25 @@ Page({
   },
 
   testFun:function(){
-    // 测试系统尺寸
-    wx.getSystemInfo({
-      complete: (res) => {
-        console.log(res.screenWidth)
-        console.log(res.screenHeight)
-      },
-    })
 
-    // 测试地图功能
-    wx.chooseLocation({
-      success:(res) => {},
-      fail:(res) => {},
-      complete: (res) => {
-        console.log(res)
+    let timex     = util.timestamp()
+    let nonceStrx = "lhklghlghslkghlsh"
+    let packagex  = "8978797"
+    let paySignx  = "sdgsghdghfghf" 
 
-        wx.openLocation({
-          latitude: res.latitude,
-          longitude: res.longitude,
-          scale:20
-        })
 
-      },
+    wx.requestPayment({
+      timeStamp: timex,
+      nonceStr: nonceStrx,
+      package: packagex,
+      signType: 'MD5',
+      paySign: paySignx,
+      success (res) {
+        console.log("success:\n"+res)
+       },
+      fail (res) { 
+        console.log("fail:\n"+res)
+      }
     })
 
   }
