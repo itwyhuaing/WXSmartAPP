@@ -73,18 +73,12 @@
   background: #25B6ED;
 }
 
-.cl_products_list swiper {
-  background-color: red;
-  height: 5000rpx
+.cl_product_box .cl_product_lr {
+  display: none;
 }
 
-.cl_products_list swiper-item:first-child {
-  background-color: royalblue;
-  height: auto;
-}
-
-.cl_products_list swiper-item:last-child {
-  background-color: sandybrown;
+.cl_product_box .pactive {
+  display: block;
 }
 
 .cl_product_item {
@@ -92,9 +86,26 @@
   flex-direction: row;
   justify-content: start;
   border-bottom: solid 1rpx #ddd;
+  padding: 20rpx;
+  background-color: #FFF;
 }
 
 .cl_product_item image {
-  width: 100rpx;
-  height: 100rpx;
+  width: 150rpx;
+  height: 150rpx;
 }
+
+.cl_product_item .cl_product_rp_txt {
+  font: 26rpx;
+  margin: 15rpx;
+}
+
+.cl_product_item .cl_price_unit {
+  font-size: 22rpx;
+  margin-left: 50rpx;
+}
+
+.cl_product_item .cl_price {
+  margin-left: 2rpx;
+}
+

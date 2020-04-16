@@ -3,7 +3,8 @@
     "pages/Home/ShopList",
     "pages/User/User",
     "pages/index/index",
-    "pages/ShopDetail/ShopDetail"
+    "pages/ShopDetail/ShopDetail",
+    "pages/ProductDetail/ProductDetail"
   ],
   "tabBar": {
     "list": [
@@ -38,9 +39,9 @@
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "permission":{
-    "scope.userLocation":{
-      "desc":"确认当前位置与商家的距离"
+  "permission": {
+    "scope.userLocation": {
+      "desc": "确认当前位置与商家的距离"
     }
   }
 }

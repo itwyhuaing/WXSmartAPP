@@ -119,7 +119,7 @@ Page({
       //   },
       // },
       success:function(res){
-        res.eventChannel.emit("aptDataFromOpenedPage",{data:e.currentTarget.dataset.model})
+        res.eventChannel.emit("aptDataFromShopListPage",{data:e.currentTarget.dataset.model})
       }
     })
   },

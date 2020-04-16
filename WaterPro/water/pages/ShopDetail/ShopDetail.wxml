@@ -30,29 +30,40 @@
       <view class="btn {{curSelectedType == 'left' ? 'active' : ''}}" bindtap="switchToLeftEvent" data-status="left">移  民</view>
       <view class="btn {{curSelectedType == 'right' ? 'active' : ''}}" bindtap="switchToRightEvent" data-status="right">签  证</view>
     </view>
-    <swiper circular="false" bindchange="productsSwiperChange" current="{{curLocation}}">
-      <swiper-item>
+
+    <view class="cl_product_box">
+      <!-- 左侧 -->
+      <view class="cl_product_lr {{curSelectedType == 'left' ? 'pactive' : ''}}">
         <block wx:for="{{products}}" wx:key="this">
           <block wx:if="{{item.p_type == 'pa'}}">
-            <view class="cl_product_item">
-              <image src="/images/58_58.png"></image>
+            <view class="cl_product_item" bindtap="tapLeftProductItem" data-model="{{item}}">
+              <image src="{{item.p_image}}"></image>
               <view class="cl_product_rp">
-                <view>name</view>
-                <view>aount + price</view>
-                <view>acties</view>
+                <view class="cl_product_rp_txt rp_txt1">{{item.p_name}}</view>
+                <view class="cl_product_rp_txt rp_txt2"><text class="a">{{item.p_amount}}</text><text class="cl_price_unit">¥</text><text class="cl_price">{{item.p_price}}</text></view>
               </view>
             </view>
           </block>
         </block>
-      </swiper-item>
-      <swiper-item>
+      </view>
+      
+      <!-- 右侧 -->
+      <view class="cl_product_lr {{curSelectedType == 'right' ? 'pactive' : ''}}">
         <block wx:for="{{products}}" wx:key="this">
           <block wx:if="{{item.p_type == 'pb'}}">
-          pb
+            <view class="cl_product_item" bindtap="tapRightProductItem" data-model="{{item}}">
+              <image src="{{item.p_image}}"></image>
+              <view class="cl_product_rp">
+                <view class="cl_product_rp_txt rp_txt1">{{item.p_name}}</view>
+                <view class="cl_product_rp_txt rp_txt2"><text class="a">{{item.p_amount}}</text><text class="cl_price_unit">¥</text><text class="cl_price">{{item.p_price}}</text></view>
+              </view>
+            </view>
           </block>
         </block>
-      </swiper-item>
-    </swiper>
+      </view>
+
+    </view>
+
   </view>
 
 </scroll-view>

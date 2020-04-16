@@ -1,5 +1,4 @@
 var util = require('../../utils/util')
-// wx.makePhoneCall
 
 Page({
 
@@ -30,8 +29,6 @@ Page({
 
     // 切换不同类型产品点击按钮
     curSelectedType:"left",
-    // 两列不同产品列表
-    curLocation:0,
 
     shop_info:{},
 
@@ -44,10 +41,11 @@ Page({
    */
   onLoad: function (options) {
     // 页面传参
-    var that = this
     const eventChannel = this.getOpenerEventChannel()
-    eventChannel.on('aptDataFromOpenedPage', function(data) {
+    var that = this
+    eventChannel.on('aptDataFromShopListPage', function(data) {
       console.log("eventChannel.on")
+      console.log(data)
 
       let telInfo = [
                       {text:data.data.shop_mobile,value:data.data.shop_mobile},
@@ -64,21 +62,25 @@ Page({
     // 模拟数据接口返回数据
     let product_buchet = {
       p_type:"pa",
-      p_name:"美国EB5-澳大利亚技术移民",
+      p_name:"美国EB5-澳大利亚技术移民a",
       p_amount:"19L/桶",
-      p_price:"22"
+      p_price:"22",
+      p_image:"/images/home_banner.png"
     }
 
     let product_bottle = {
       p_type:"pb",
-      p_name:"美国EB5-澳大利亚技术移民",
+      p_name:"美国EB5-澳大利亚技术移民b",
       p_amount:"380ml*24瓶/箱",
-      p_price:"22"
+      p_price:"32.02",
+      p_image:"/images/home_banner.png"
     }
 
     let ps = [product_buchet,product_buchet,product_buchet,
               product_buchet,product_buchet,product_buchet,
-              product_bottle,product_bottle]
+              product_buchet,product_buchet,product_buchet,
+              product_bottle,product_bottle,product_bottle,
+              product_bottle,product_bottle,product_bottle,]
     this.setData({
       products:ps
     })
@@ -163,31 +165,30 @@ Page({
     })
   },
 
-  // 
+  // 切换不同类型产品按钮
   switchToLeftEvent:function (e) {
+    console.log("switchToLeftEvent:"+e.currentTarget.dataset.status)
     this.setData({
       curSelectedType: e.currentTarget.dataset.status,
-      curLocation:0
     })
   },
 
   switchToRightEvent:function (e) {
+    console.log("switchToRightEvent:"+e.currentTarget.dataset.status)
     this.setData({
       curSelectedType: e.currentTarget.dataset.status,
-      curLocation:1
     })
   },
 
-  productsSwiperChange:function(e) {
-    let cur = e.detail.current
-    let sur = e.detail.source
-    if (sur == "touch") {
-      let type = cur == 0 ? "left" : "right"
-      this.setData({
-        curSelectedType: type
-      })
-    }
-
+  // 点击列表查看产品详情
+  tapLeftProductItem:function (e) {
+    console.log(e)
+    wx.navigateTo({
+      url: '/pages/ProductDetail/ProductDetail',
+      success:function(res){
+        res.eventChannel.emit("aptDataFromShopDetailPage",{data:e.currentTarget.dataset.model})
+      }
+    })
   }
 
 })
