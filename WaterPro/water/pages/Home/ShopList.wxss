@@ -21,7 +21,6 @@
 
 .cl_menuitem .txtinfo {
   width: 100%;
-  color: #333333;
   font-size: 28rpx;
   margin-left: 15rpx;
   border-bottom: solid 1rpx #ddd;

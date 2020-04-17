@@ -32,7 +32,12 @@ Page({
 
     shop_info:{},
 
-    products:[]
+    products:[],
+
+    // 悬浮按钮信息
+    ordered_count:0,
+    totalPrice:20.03,
+    expectedTime:"30分钟",
 
   },
 
@@ -63,22 +68,35 @@ Page({
     let product_buchet = {
       p_type:"pa",
       p_name:"美国EB5-澳大利亚技术移民a",
-      p_amount:"19L/桶",
+      p_volume:"19L/桶",
+      p_amount:"日销量22本",
+      p_price:"22.00",
+      p_image:"/images/home_banner.png",
+      p_discounts:"海外购房可赠送公民身份1，海外购房可赠送公民身份2，海外购房可赠送公民身份3",
+    }
+
+    let product_buchet1 = {
+      p_type:"pa",
+      p_name:"美国EB5-澳大利亚技术移民a",
+      p_volume:"19L/桶",
+      p_amount:"日销量22本",
       p_price:"22",
-      p_image:"/images/home_banner.png"
+      p_image:"/images/home_banner.png",
+      p_discounts:"海外购房可赠送公民身份1，海外购房可赠送公民身份2，海外购房可赠送公民身份3",
     }
 
     let product_bottle = {
       p_type:"pb",
       p_name:"美国EB5-澳大利亚技术移民b",
-      p_amount:"380ml*24瓶/箱",
-      p_price:"32.02",
-      p_image:"/images/home_banner.png"
+      p_volume:"19L/桶",
+      p_amount:"日销量22本",
+      p_price:"22",
+      p_image:"/images/home_banner.png",
+      p_discounts:"海外购房可赠送公民身份1，海外购房可赠送公民身份2，海外购房可赠送公民身份3",
     }
-
-    let ps = [product_buchet,product_buchet,product_buchet,
-              product_buchet,product_buchet,product_buchet,
-              product_buchet,product_buchet,product_buchet,
+    let ps = [product_buchet1,product_buchet,product_buchet,
+              product_buchet,product_buchet1,product_buchet,
+              product_buchet,product_buchet,product_buchet1,
               product_bottle,product_bottle,product_bottle,
               product_bottle,product_bottle,product_bottle,]
     this.setData({
@@ -180,7 +198,24 @@ Page({
     })
   },
 
-  // 点击列表查看产品详情
+  // 添加购物车
+  addLeftTypeProduct:function (e){
+    console.log("addLeftTypeProduct:\n",e)
+    let count = this.data.ordered_count
+    this.setData({
+      ordered_count:count + 1
+    })
+  },
+
+  addRightTypeProduct:function (e){
+    console.log("addRightTypeProduct:\n",e)
+    let count = this.data.ordered_count
+    this.setData({
+      ordered_count:count + 1
+    })
+  },
+
+  // 点击列表查看产品详情 - 延后
   tapLeftProductItem:function (e) {
     console.log(e)
     wx.navigateTo({
@@ -189,6 +224,6 @@ Page({
         res.eventChannel.emit("aptDataFromShopDetailPage",{data:e.currentTarget.dataset.model})
       }
     })
-  }
+  },
 
 })

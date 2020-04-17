@@ -9,9 +9,8 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 15rpx 20rpx;
-  border-bottom:  solid 2rpx #ddd;
+  border-bottom:  solid 0.8rpx #ddd;
   font-size: 24rpx;
-  color: #333;
   background-color: #fff;
 }
 
@@ -26,6 +25,52 @@
   height: 36rpx;
 }
 
+.fixed_bucket {
+  position: fixed;
+  z-index: 100;
+  right: 20rpx;
+  bottom: 100rpx;
+  width: 180rpx;
+  /* background-color: green; */
+}
+
+.fixed_bucket .ordered_count {
+  color: white;
+  font-size: 18rpx;
+  text-align: center;
+  line-height: 30rpx;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 15rpx;
+  position: relative;
+  left: 106rpx;
+  top: 28rpx;
+  background-color: red;
+}
+
+.fixed_bucket .bucket {
+  text-align: center;
+  /* background-color: yellow; */
+}
+
+.fixed_bucket .bucket image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.fixed_bucket .total_price_time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: white;
+  background-color: #25B6ED;
+}
+
+.total_price_time .unit{
+  font-size: 20rpx;
+}
+
+
 .cl_products_list {
   margin-top: 20rpx;
 }
@@ -37,6 +82,7 @@
   padding: 15rpx 0;
   border-bottom: solid 1rpx #ddd;
 }
+
 .switch-type .btn:first-child {
   border: solid 1rpx #25B6ED;
   border-right: solid 0rpx #25B6ED;
@@ -70,27 +116,67 @@
   display: flex;
   flex-direction: row;
   justify-content: start;
-  border-bottom: solid 1rpx #ddd;
-  padding: 20rpx;
+  padding: 15rpx 20rpx;
+  border-bottom: solid 0.8rpx #ddd;
   background-color: #FFF;
 }
 
-.cl_product_item image {
+.cl_product_item .product_example {
   width: 150rpx;
   height: 150rpx;
 }
 
-.cl_product_item .cl_product_rp_txt {
-  font: 26rpx;
-  margin: 15rpx;
+.cl_product_item .txtinfo {
+  font-size: 26rpx;
+  margin-left: 15rpx;
 }
 
-.cl_product_item .cl_price_unit {
-  font-size: 22rpx;
-  margin-left: 50rpx;
+.txtinfo .name_volume {
+  font-size: 26rpx;
+  font-weight: bold;
+  margin-top: 8rpx;
 }
 
-.cl_product_item .cl_price {
-  margin-left: 2rpx;
+.txtinfo .name_volume text:last-child {
+  margin-left: 10rpx;
 }
+
+.txtinfo .discounts {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 8rpx;
+}
+
+.txtinfo .amount {
+  font-size: 24rpx;
+  margin-top: 8rpx;
+}
+
+.txtinfo .price_addoperate {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 8rpx;
+}
+
+.txtinfo  .price_addoperate .unit {
+  font-size: 20rpx;
+  color: #25B6ED;
+}
+
+.txtinfo  .price_addoperate .price {
+  font-size: 24rpx;
+  color: #25B6ED;
+  width: 300rpx;
+}
+
+.cl_product_item .txtinfo .price_addoperate image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}
+
+/* .txtcnt {
+  border: solid 0.8rpx orange;
+} */
 
