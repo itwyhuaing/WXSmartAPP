@@ -19,17 +19,27 @@ Page({
       shop_id:"20200618",
       shop_name:"海那边威鲨",
       shop_images:[
-          "/images/home_banner.png",
-          "/images/home_banner.png",
-          "/images/home_banner.png",
-          "/images/home_banner.png",
-          "/images/home_banner.png"
+          "/images/58_58.png",
+          "/images/58_58.png",
+          "/images/58_58.png",
+          "/images/58_58.png",
+          "/images/58_58.png",
         ],
+      shop_marks:[
+          "移民签证",
+          "移民签证", 
+          "旅游签证", 
+          "投资移民", 
+          "房产投资",
+          "海外看房", 
+          "海外旅游", 
+          "投资移民",
+      ],
       shop_adr:"深圳市南山区粤海街道大冲国际中心006",
       shop_latitude: 22.53332,
       shop_longitude: 113.93041,
       shop_distance:"568m",
-      shop_daily_amount:"日销量:300件",
+      shop_daily_amount:"日销300本",
       shop_bussinesstime:"营业时间: 8:00-22:00",
       shop_average_deliver:"6min", //接单到开始配送的时间
       shop_product_varieties:[

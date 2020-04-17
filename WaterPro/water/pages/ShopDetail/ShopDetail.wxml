@@ -1,29 +1,37 @@
 <!--pages/ShopDetail/ShopDetail.wxml-->
 <scroll-view class="shop-detail-scroll-view">
-<!-- 图片集 -->
+  <!-- 店铺图片集 -->
   <block wx:if="{{imgUrls.length == 1}}">
     <image src="{{imgUrls[0]}}"  style="width:{{imgSize.width}}px;height:{{imgSize.height}}px;"></image>
   </block>
   <block wx:else>
-    <swiper previous-margin="30rpx" next-margin="30rpx" indicator-dots="{{indicatorDots}}" style="width:{{imgSize.width}}px;height:{{imgSize.height}}px;" 
-    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+    <swiper previous-margin="30rpx" 
+            next-margin="30rpx" 
+            indicator-dots="{{indicatorDots}}" 
+            style="width:{{imgSize.width}}px;height:{{imgSize.height}}px;" 
+            autoplay="{{autoplay}}" 
+            interval="{{interval}}" 
+            duration="{{duration}}" 
+            circular="{{circular}}">
       <block wx:for="{{imgUrls}}" wx:key="this">
         <swiper-item>
-        <image src="{{item}}" class="slide-image"  style="width:{{imgSize.width}}px;height:{{imgSize.height}}px;"></image>
+          <image src="{{item}}" class="slide-image"  style="width:{{imgSize.width}}px;height:{{imgSize.height}}px;"></image>
         </swiper-item>
       </block>
     </swiper>
   </block>
-<!-- 时间1、时间2、电话 -->
 
+  <!--地址与电话 -->
   <mp-actionSheet bindactiontap="actionsheetTap" show="{{isShow}}" actions="{{groups}}" title=""></mp-actionSheet>
-  <view class="cl_date_tel">
-    <text>移民时间:8:00-22:00</text><text>移民配时间间:6分钟</text><image src="/images/telcall.png" bindtap="telCall"></image>
+  <view class="cl_mapadr_tel">
+    <view bindtap="openMapLocation">
+      <image src="/images/map_location.png"></image>
+      <text>深圳市南山区粤海街道大冲国际中心3201</text>
+    </view>
+    <image src="/images/telcall.png" bindtap="telCall"></image>
   </view>
-<!-- 地址 -->
-  <view class="cl_ad_map" bindtap="openMapLocation">
-    <image src="/images/map_location.png"></image><text>深圳市南山区粤海街道大冲国际中心3201</text>
-  </view>
+
+
 <!-- 产品列表 -->
   <view class="cl_products_list">
     <view class="switch-type">
