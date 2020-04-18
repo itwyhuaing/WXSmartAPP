@@ -35,9 +35,10 @@ Page({
     products:[],
 
     // 悬浮按钮信息
-    ordered_count:0,
-    totalPrice:20.03,
+    total_ordercount:0,
+    totalprice:0,
     expectedTime:"30分钟",
+    orderedmodels:[],
 
   },
 
@@ -70,9 +71,10 @@ Page({
       p_name:"美国EB5-澳大利亚技术移民a",
       p_volume:"19L/桶",
       p_amount:"日销量22本",
-      p_price:"22.00",
+      p_price:1,
       p_image:"/images/home_banner.png",
       p_discounts:"海外购房可赠送公民身份1，海外购房可赠送公民身份2，海外购房可赠送公民身份3",
+      p_ordercount:0,
     }
 
     let product_buchet1 = {
@@ -80,9 +82,10 @@ Page({
       p_name:"美国EB5-澳大利亚技术移民a",
       p_volume:"19L/桶",
       p_amount:"日销量22本",
-      p_price:"22",
+      p_price:1,
       p_image:"/images/home_banner.png",
       p_discounts:"海外购房可赠送公民身份1，海外购房可赠送公民身份2，海外购房可赠送公民身份3",
+      p_ordercount:0,
     }
 
     let product_bottle = {
@@ -90,9 +93,10 @@ Page({
       p_name:"美国EB5-澳大利亚技术移民b",
       p_volume:"19L/桶",
       p_amount:"日销量22本",
-      p_price:"22",
+      p_price:2,
       p_image:"/images/home_banner.png",
       p_discounts:"海外购房可赠送公民身份1，海外购房可赠送公民身份2，海外购房可赠送公民身份3",
+      p_ordercount:0,
     }
     let ps = [product_buchet1,product_buchet,product_buchet,
               product_buchet,product_buchet1,product_buchet,
@@ -198,20 +202,56 @@ Page({
     })
   },
 
-  // 添加购物车
-  addLeftTypeProduct:function (e){
-    console.log("addLeftTypeProduct:\n",e)
-    let count = this.data.ordered_count
+  // 添加或删除购物车
+  addProduct:function (e){
+    let model                   = e.currentTarget.dataset.model
+    let index                   = e.currentTarget.dataset.index
+    let current_product_ordered = model.p_ordercount + 1
+    let current_total           =  this.data.total_ordercount + 1 
+    let current_total_price     =  this.data.totalprice + model.p_price
+    let current_models          = this.data.orderedmodels.concat(model)
+    model.p_ordercount          = current_product_ordered
+    this.data.products[index]   = model
+    let ps = this.data.products
+    console.log("addProduct:\n",this.data.totalprice,model.p_price,current_total_price)
     this.setData({
-      ordered_count:count + 1
+      total_ordercount:current_total,
+      totalprice:current_total_price,
+      products:ps,
+      orderedmodels:current_models,
     })
   },
 
-  addRightTypeProduct:function (e){
-    console.log("addRightTypeProduct:\n",e)
-    let count = this.data.ordered_count
-    this.setData({
-      ordered_count:count + 1
+  removeProduct:function (e){
+    // console.log("removeProduct:\n",e)
+    let model                   = e.currentTarget.dataset.model
+    let index                   = e.currentTarget.dataset.index
+    let current_product_ordered = model.p_ordercount - 1
+    if(current_product_ordered >= 0){
+      let current_total           =  this.data.total_ordercount - 1
+      if (current_total >= 0){
+        this.data.orderedmodels.splice(index,1)
+        let current_models          = this.data.orderedmodels
+        let current_total_price     =  this.data.totalprice - model.p_price
+        model.p_ordercount          = current_product_ordered
+        this.data.products[index]   = model
+        let ps = this.data.products
+        console.log("removeProduct:\n",this.data.orderedmodels,current_total)
+        this.setData({
+          total_ordercount:current_total,
+          totalprice:current_total_price,
+          products:ps,
+          orderedmodels:current_models,
+        })
+      }
+    }
+  },
+
+  // 核对订单
+  gotocheckorder:function(e) {
+    console.log(this.data.orderedmodels.length)
+    wx.navigateTo({
+      url: '/pages/CheckOrder/CheckOrder',
     })
   },
 

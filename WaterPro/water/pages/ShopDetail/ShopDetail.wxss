@@ -30,7 +30,7 @@
   z-index: 100;
   right: 20rpx;
   bottom: 100rpx;
-  width: 180rpx;
+  width: 188rpx;
   /* background-color: green; */
 }
 
@@ -152,28 +152,55 @@
   margin-top: 8rpx;
 }
 
-.txtinfo .price_addoperate {
+.txtinfo .price_operate {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   margin-top: 8rpx;
 }
 
-.txtinfo  .price_addoperate .unit {
+.txtinfo  .price_operate .unit {
   font-size: 20rpx;
   color: #25B6ED;
 }
 
-.txtinfo  .price_addoperate .price {
+.txtinfo  .price_operate .price {
   font-size: 24rpx;
   color: #25B6ED;
-  width: 300rpx;
+  width: 360rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  /* background-color: red; */
 }
 
-.cl_product_item .txtinfo .price_addoperate image {
-  width: 30rpx;
-  height: 30rpx;
-  margin-left: 10rpx;
+ .txtinfo .operatebuschet  {
+  display: flex;
+  flex-direction: row;
+  border: solid 0.8rpx #25B6ED;
+}
+
+
+.txtinfo .operatebuschet .buscheter{
+  /* background-color: purple; */
+  height: 36rpx;
+  line-height: 36rpx;
+  padding: 0 5rpx;
+}
+
+ .txtinfo .operatebuschet .buscheter image{
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.txtinfo  .operatebuschet .buschet_indictor {
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  width: 68rpx;
+  font-size: 24rpx;
+  /* background-color: orange; */
+  border-left: solid 0.8rpx #25B6ED;
+  border-right: solid 0.8rpx #25B6ED;
 }
 
 /* .txtcnt {

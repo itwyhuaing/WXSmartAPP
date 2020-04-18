@@ -4,7 +4,8 @@
     "pages/User/User",
     "pages/index/index",
     "pages/ShopDetail/ShopDetail",
-    "pages/ProductDetail/ProductDetail"
+    "pages/ProductDetail/ProductDetail",
+    "pages/CheckOrder/CheckOrder"
   ],
   "tabBar": {
     "list": [

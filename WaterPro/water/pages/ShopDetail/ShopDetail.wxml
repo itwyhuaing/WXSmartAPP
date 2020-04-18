@@ -33,10 +33,10 @@
 
   <!-- 悬浮模块 -->
   <view class="fixed_bucket">
-    <view class="ordered_count">{{ordered_count}}</view>
-    <view class="bucket"><image src="/images/shopping_bucket.png"></image></view>
+    <view class="ordered_count">{{total_ordercount}}</view>
+    <view class="bucket" bindtap="gotocheckorder"><image src="/images/shopping_bucket.png"></image></view>
     <view class="total_price_time">
-      <view><text class="unit">¥</text><text>{{totalPrice}}</text></view>
+      <view><text class="unit">¥</text><text>{{totalprice}}</text></view>
       <view><text>{{expectedTime}}</text></view>
     </view>
   </view>
@@ -59,10 +59,16 @@
                 <view class="txtcnt name_volume"><text>{{item.p_name}}</text><text>{{item.p_volume}}</text></view>
                 <view class="txtcnt discounts">{{item.p_discounts}}</view>
                 <view class="txtcnt amount">{{item.p_amount}}</view>
-                <view class="txtcnt price_addoperate">
+                <view class="txtcnt price_operate">
                   <view class="price"><text class="unit">¥</text><text>{{item.p_price}}</text></view>
-                  <view class="add_operate" bindtap="addLeftTypeProduct" data-model="{{item}}">
-                    <image src="/images/add_shopping_baschet.png"></image>
+                  <view class="operatebuschet">
+                    <view class="buscheter remove" bindtap="removeProduct" data-model="{{item}}" data-index="{{index}}">
+                      <image src="/images/remove_shopping_buschet.png"></image>
+                    </view>
+                    <view class="buschet_indictor">{{item.p_ordercount}}</view>
+                    <view class="buscheter add" bindtap="addProduct" data-model="{{item}}" data-index="{{index}}">
+                      <image src="/images/add_shopping_buschet.png"></image>
+                    </view>
                   </view>
                 </view>
               </view>
@@ -81,10 +87,16 @@
                 <view class="txtcnt name_volume"><text>{{item.p_name}}</text><text>{{item.p_volume}}</text></view>
                 <view class="txtcnt discounts">{{item.p_discounts}}</view>
                 <view class="txtcnt amount">{{item.p_amount}}</view>
-                <view class="txtcnt price_addoperate">
+                <view class="txtcnt price_operate">
                   <view class="price"><text class="unit">¥</text><text>{{item.p_price}}</text></view>
-                  <view class="add_operate" bindtap="addRightTypeProduct" data-model="{{item}}">
-                    <image src="/images/add_shopping_baschet.png"></image>
+                  <view class="operatebuschet">
+                    <view class="buscheter remove" bindtap="removeProduct" data-model="{{item}}" data-index="{{index}}">
+                      <image src="/images/remove_shopping_buschet.png"></image>
+                    </view>
+                    <view class="buschet_indictor">{{item.p_ordercount}}</view>
+                    <view class="buscheter add" bindtap="addProduct" data-model="{{item}}" data-index="{{index}}">
+                      <image src="/images/add_shopping_buschet.png"></image>
+                    </view>
                   </view>
                 </view>
               </view>
