@@ -82,7 +82,7 @@ Page({
       p_name:"美国EB5-澳大利亚技术移民a",
       p_volume:"19L/桶",
       p_amount:"日销量22本",
-      p_price:1,
+      p_price:10,
       p_image:"/images/home_banner.png",
       p_discounts:"海外购房可赠送公民身份1，海外购房可赠送公民身份2，海外购房可赠送公民身份3",
       p_ordercount:0,
@@ -93,7 +93,7 @@ Page({
       p_name:"美国EB5-澳大利亚技术移民b",
       p_volume:"19L/桶",
       p_amount:"日销量22本",
-      p_price:2,
+      p_price:200,
       p_image:"/images/home_banner.png",
       p_discounts:"海外购房可赠送公民身份1，海外购房可赠送公民身份2，海外购房可赠送公民身份3",
       p_ordercount:0,
@@ -250,8 +250,13 @@ Page({
   // 核对订单
   gotocheckorder:function(e) {
     console.log(this.data.orderedmodels.length)
+    var that = this
     wx.navigateTo({
       url: '/pages/CheckOrder/CheckOrder',
+      success:function(res) {
+        res.eventChannel.emit("checkOrderAptDataFromShopDetailPage",{products:that.data.orderedmodels,
+                                                                      shopinfo:that.data.shop_info})
+      }
     })
   },
 
@@ -260,9 +265,9 @@ Page({
     console.log(e)
     wx.navigateTo({
       url: '/pages/ProductDetail/ProductDetail',
-      success:function(res){
-        res.eventChannel.emit("aptDataFromShopDetailPage",{data:e.currentTarget.dataset.model})
-      }
+      // success:function(res){
+      //   res.eventChannel.emit("aptDataFromShopDetailPage",{data:e.currentTarget.dataset.model})
+      // }
     })
   },
 

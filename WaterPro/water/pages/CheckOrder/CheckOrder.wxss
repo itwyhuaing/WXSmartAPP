@@ -1,1 +1,93 @@
-/* pages/CheckOrder/CheckOrder.wxss */
+.checkorder_container {
+  background-color: #eee;
+
+}
+.card {
+  background-color: white;
+  margin: 20rpx 20rpx;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+
+.shop_product .shopname {
+  font-size: 28rpx;
+  font-weight: bold;
+  padding: 15rpx 10rpx;
+  border-bottom: solid 0.8rpx #ddd;
+}
+
+.shop_product .productitem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 26rpx;
+  padding: 20rpx 10rpx;
+  /* border: solid 0.8rpx #ddd; */
+}
+
+.productitem .pmsg  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-color: orange; */
+  width: 130rpx;
+}
+
+.productitem .unit {
+  font-size: 20rpx;
+}
+
+.adr_invoice_remark  .msgitem{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20rpx 10rpx;
+  border-bottom: solid 0.8rpx #ddd;
+}
+
+.adr_invoice_remark  .msgitem .them {
+  font-size: 26rpx;
+  /* border: solid 0.8rpx orange; */
+}
+
+.adr_invoice_remark  .msgitem .operation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #ddd;
+  /* border: solid 0.8rpx yellow; */
+}
+
+.msgitem .operation .tip {
+  /* border: solid 0.8rpx purple; */
+  margin-right: 15rpx;
+}
+
+/* .msgitem .operation .arrow {
+  border: solid 0.8rpx red;
+} */
+
+.msgitem .operation .arrow image  {
+  width: 20rpx;
+  height: 20rpx;
+  /* border: solid 0.8rpx black; */
+}
+
+.bottom_fixed {
+  position: fixed;
+  bottom: 30rpx;
+  left: 40rpx;
+  right: 40rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border: solid 2rpx #25B6ED;
+  color: #25B6ED;
+  font-size: 26rpx;
+}
+
+.bottom_fixed .unit {
+  margin-left: 20rpx;
+  font-size: 20rpx;
+}

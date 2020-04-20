@@ -98,10 +98,12 @@
 .switch-type .btn {
   font-size: 28rpx;
   background: #fff;
+  color: #333;
   padding: 10rpx 46rpx;
 }
-.switch-type .btn.active {
+.switch-type .btn .active {
   background: #25B6ED;
+  color: white;
 }
 
 .cl_product_box .cl_product_lr {

@@ -1,0 +1,28 @@
+<scroll-view class="orderlist_scroll">
+  <!-- 悬浮按钮 -->
+  
+  <view class="top_fixed">
+    <view class="switchtype">
+      <view class="{{currenttype == 'left' ? 'acttype' : ''}}" bindtap="switchtoleft" data-type="left">已完成</view>
+    <view class="{{currenttype == 'right' ? 'acttype' : ''}}" bindtap="switchtoright" data-type="right">未完成</view>
+    </view>
+  </view>
+
+  <!-- 已完成订单 -->
+  <view class="list completed {{currenttype == 'left' ? 'actlist' : ''}}">
+    <block>
+      <view class="orderitem">
+        已完成订单
+      </view>
+    </block>
+  </view>
+  <!-- 未完成订单 -->
+  <view class="list uncompleted {{currenttype == 'right' ? 'actlist' : ''}}">
+    <block>
+      <view class="orderitem">
+        未完成订单
+      </view>
+    </block>
+  </view>
+
+</scroll-view>

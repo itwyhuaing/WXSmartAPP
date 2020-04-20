@@ -1,2 +1,45 @@
 <!--pages/CheckOrder/CheckOrder.wxml-->
-<text>pages/CheckOrder/CheckOrder.wxml</text>
+<scroll-view class="checkorder_container">
+  <view class="card shop_product">
+    <view class="shopname">{{ordershopinfo.shop_name}}</view>
+    <block wx:for="{{orderproducts}}" wx:key="this">
+      <view class="productitem">
+        <view class="pname">{{item.p_name}}</view>
+        <view class="pmsg">
+          <view><text class="unit">¥</text><text>{{item.p_ordercount}}</text></view>
+          <view><text class="unit">¥</text><text>{{item.p_price}}</text></view> 
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="card adr_invoice_remark">
+    <view class="msgitem adr" bindtap="taptocompleteadr">
+      <view class="them">收货地址</view>
+      <view class="operation">
+        <view class="tip">请确认地址</view>
+        <view class="arrow"><image src="/images/58_58.png"></image></view>
+      </view>
+    </view>
+    <view class="msgitem invoice" bindtap="taptogiveinvoice">
+      <view class="them">发票信息</view>
+      <view class="operation">
+        <view class="tip">请完善发票信息</view>
+        <view class="arrow"><image src="/images/58_58.png"></image></view>
+      </view>
+    </view>
+    <view class="msgitem remark" bindtap="taptostickyremark">
+      <view class="them">备注</view>
+      <view class="operation">
+        <view class="tip">可备注自己其他需求</view>
+        <view class="arrow"><image src="/images/58_58.png"></image></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card bottom_fixed" bindtap="gotopay">
+    <text>已确认，去支付</text>
+    <text class="unit">¥</text>
+    <text>{{totalprice}}</text>
+  </view>
+</scroll-view>

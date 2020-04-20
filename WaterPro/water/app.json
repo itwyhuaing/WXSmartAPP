@@ -1,11 +1,15 @@
 {
   "pages": [
     "pages/Home/ShopList",
+    "pages/OrderList/OrderList",
     "pages/User/User",
     "pages/index/index",
     "pages/ShopDetail/ShopDetail",
     "pages/ProductDetail/ProductDetail",
-    "pages/CheckOrder/CheckOrder"
+    "pages/CheckOrder/CheckOrder",
+    "pages/Adrinfo/Adrinfo",
+    "pages/Invoiceinfo/Invoiceinfo",
+    "pages/Remarkinfo/Remarkinfo"
   ],
   "tabBar": {
     "list": [
@@ -14,6 +18,12 @@
         "text": "首页",
         "iconPath": "images/tab_home_normal.png",
         "selectedIconPath": "images/tab_home_selected.png"
+      },
+      {
+        "pagePath": "pages/OrderList/OrderList",
+        "text": "订单",
+        "iconPath": "images/tab_user_normal.png",
+        "selectedIconPath": "images/tab_user_selected.png"
       },
       {
         "pagePath": "pages/User/User",
