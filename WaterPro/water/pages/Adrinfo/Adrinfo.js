@@ -5,13 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    usr:{title:"联系人：",holderTxt:"请输入",arrow:""},
+    tel:{title:"手机号：",holderTxt:"请输入",arrow:""},
+    adr1:{title:"选择地址：",holderTxt:"点击选择",arrow:"active"},
+    adr2:{title:"门牌号：",holderTxt:"请输入",arrow:""},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    // wx.chooseLocation({
+    //   complete: (res) => {
+    //     console.log(res)
+    //   },
+    // })
 
   },
 

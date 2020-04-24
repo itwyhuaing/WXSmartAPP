@@ -37,7 +37,7 @@
   font-size: 20rpx;
 }
 
-.adr_invoice_remark  .msgitem{
+.card  .msgitem{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -45,12 +45,12 @@
   border-bottom: solid 0.8rpx #ddd;
 }
 
-.adr_invoice_remark  .msgitem .them {
+.card  .msgitem .them {
   font-size: 26rpx;
   /* border: solid 0.8rpx orange; */
 }
 
-.adr_invoice_remark  .msgitem .operation {
+.card  .msgitem .operation {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

@@ -1,1 +1,29 @@
 /* pages/User/User.wxss */
+.rowitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15rpx 20rpx;
+  border: orange solid 0.8rpx;
+}
+
+.rowitem .icon_them {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: purple solid 0.8rpx;
+}
+
+.rowitem .icon_them text {
+  display: block;
+  font-size: 26rpx;
+  margin-left: 15rpx;
+  border: cyan solid 0.8rpx;
+
+}
+
+.rowitem image {
+  width: 30rpx;
+  height: 30rpx;
+  border: red solid 0.8rpx;
+}

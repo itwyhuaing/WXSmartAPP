@@ -1,1 +1,44 @@
-/* pages/Adrinfo/Adrinfo.wxss */
+.adrinfo_scroll_view {
+  background-color: #eee;
+  
+
+}
+
+.infoinput {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15rpx 20rpx;
+  background-color: white;
+}
+
+.infoinput .leftpart {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.infoinput .leftpart view {
+  font-size: 26rpx;
+  width: 150rpx;
+  margin-right: 15rpx;
+  text-align: right;
+}
+
+.infoinput .leftpart input {
+  font-size: 24rpx;
+  /* border: solid 0.8rpx orange; */
+}
+
+.infoinput .rightpart {
+  display: none;
+}
+
+.infoinput .active {
+  display: block;
+}
+
+.infoinput .active image{
+  width: 30rpx;
+  height: 30rpx;
+}

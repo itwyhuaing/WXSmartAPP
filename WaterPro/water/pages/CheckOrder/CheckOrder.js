@@ -8,6 +8,11 @@ Page({
     orderproducts:[],
     ordershopinfo:{},
     totalprice:0,
+    entries:[
+             {title:"收货地址",tip:"请确认地址",icon:"/images/arrow_left.png"},
+             {title:"发票信息",tip:"请完善发票信息",icon:"/images/arrow_left.png"},
+             {title:"备注",tip:"备注信息",icon:"/images/arrow_left.png"},
+            ],
   },
 
   /**
@@ -84,24 +89,19 @@ Page({
 
   },
 
-  // 地址信息
-  taptocompleteadr:function(e) {
+  // 地址信息 - 发票信息 - 备注
+  tapoperation:function(e) {
+    var f = e.currentTarget.dataset.model
+    var url = ""
+    if(f.title == "收货地址"){
+      url = '/pages/Adrinfo/Adrinfo'
+    }else if (f.title == "发票信息"){
+      url: '/pages/Invoiceinfo/Invoiceinfo'
+    } else if (f.title == "备注"){
+      url: '/pages/Remarkinfo/Remarkinfo'
+    }
     wx.navigateTo({
-      url: '/pages/Adrinfo/Adrinfo',
-    })
-  },
-
-  // 发票信息
-  taptogiveinvoice:function(e) {
-    wx.navigateTo({
-      url: '/pages/Invoiceinfo/Invoiceinfo',
-    })
-  },
-
-  // 备注
-  taptostickyremark:function(e) {
-    wx.navigateTo({
-      url: '/pages/Remarkinfo/Remarkinfo',
+      url: url,
     })
   },
 

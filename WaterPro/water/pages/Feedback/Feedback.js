@@ -1,16 +1,11 @@
-// pages/User/User.js
+// pages/Feedback/Feedback.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // 推荐 - 反馈 - 联系 - 关于
-    ds:[
-        {icon:"/images/58_58.png",txt:"关于海那边1",arrow:"/images/arrow_left.png"},
-        {icon:"/images/58_58.png",txt:"关于海那边2",arrow:"/images/arrow_left.png"},
-        {icon:"/images/58_58.png",txt:"关于海那边3",arrow:"/images/arrow_left.png"},
-        ],
+
   },
 
   /**
@@ -67,23 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  taptonext:function(e){
-    console.log(e.currentTarget.dataset.model)
-    var f = e.currentTarget.dataset.model
-    var url = ""
-    if (f.txt == "关于海那边1") {
-      url = "/pages/Recommand/Recommand"
-    }else if (f.txt == "关于海那边2") {
-      url = "/pages/Feedback/Feedback"
-    }else if (f.txt == "关于海那边3") {
-      url = "/pages/About/About"
-    }
-
-    wx.navigateTo({
-      url: url,
-    })
-  },
-
+  }
 })

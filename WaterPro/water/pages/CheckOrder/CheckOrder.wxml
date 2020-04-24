@@ -1,3 +1,12 @@
+<template name="operation">
+  <view class="msgitem" bindtap="tapoperation" data-title="{{title}}">
+    <view class="them">{{title}}</view>
+    <view class="operation">
+      <view class="tip">{{tip}}</view>
+      <view class="arrow"><image src="{{icon}}"></image></view>
+    </view>
+  </view>
+</template>
 <!--pages/CheckOrder/CheckOrder.wxml-->
 <scroll-view class="checkorder_container">
   <view class="card shop_product">
@@ -13,28 +22,10 @@
     </block>
   </view>
 
-  <view class="card adr_invoice_remark">
-    <view class="msgitem adr" bindtap="taptocompleteadr">
-      <view class="them">收货地址</view>
-      <view class="operation">
-        <view class="tip">请确认地址</view>
-        <view class="arrow"><image src="/images/58_58.png"></image></view>
-      </view>
-    </view>
-    <view class="msgitem invoice" bindtap="taptogiveinvoice">
-      <view class="them">发票信息</view>
-      <view class="operation">
-        <view class="tip">请完善发票信息</view>
-        <view class="arrow"><image src="/images/58_58.png"></image></view>
-      </view>
-    </view>
-    <view class="msgitem remark" bindtap="taptostickyremark">
-      <view class="them">备注</view>
-      <view class="operation">
-        <view class="tip">可备注自己其他需求</view>
-        <view class="arrow"><image src="/images/58_58.png"></image></view>
-      </view>
-    </view>
+  <view class="card">
+    <block wx:for="{{entries}}" wx:key="this">
+      <template is="operation" data="{{...item}}"></template>
+    </block>
   </view>
 
   <view class="card bottom_fixed" bindtap="gotopay">

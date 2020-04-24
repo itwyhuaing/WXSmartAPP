@@ -1,2 +1,23 @@
 <!--pages/Adrinfo/Adrinfo.wxml-->
-<text>pages/Adrinfo/Adrinfo.wxml</text>
+<!-- template -->
+<template name="x">
+  <view class="infoinput">
+    <view class="leftpart">
+      <view>{{title}}</view>
+      <input placeholder="{{holderTxt}}" bindblur="valueforinput"></input>
+    </view>
+    <view class="rightpart {{arrow}}">
+      <image src="/images/arrow_left.png"></image>
+    </view>
+  </view>
+</template>
+
+
+
+<!-- page -->
+<scroll-view class="adrinfo_scroll_view">
+  <template is="x" data="{{...usr}}"></template>
+  <template is="x" data="{{...tel}}"></template>
+  <template is="x" data="{{...adr1}}"></template>
+  <template is="x" data="{{...adr2}}"></template>
+</scroll-view>

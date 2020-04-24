@@ -1,4 +1,19 @@
-<!--pages/User/User.wxml-->
-<scroll-view>
+<!-- 模板 -->
+<template name="x">
+  <view class="rowitem">
+    <view class="icon_them">
+      <image src="{{icon}}"></image>
+      <text>{{txt}}</text>
+    </view>
+    <image src="{{arrow}}"></image>
+  </view>
+</template>
 
+<!-- Page -->
+<scroll-view>
+  <block wx:for="{{ds}}" wx:key="this">
+    <view bindtap="taptonext" data-model="{{item}}">
+      <template is="x" data="{{...item}}" />
+    </view>
+  </block>
 </scroll-view>
