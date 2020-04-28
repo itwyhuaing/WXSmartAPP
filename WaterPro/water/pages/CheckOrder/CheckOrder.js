@@ -91,15 +91,17 @@ Page({
 
   // 地址信息 - 发票信息 - 备注
   tapoperation:function(e) {
-    var f = e.currentTarget.dataset.model
+    var f = e.currentTarget.dataset.title
     var url = ""
-    if(f.title == "收货地址"){
+    console.log(e)
+    if(f == "收货地址"){
       url = '/pages/Adrinfo/Adrinfo'
-    }else if (f.title == "发票信息"){
-      url: '/pages/Invoiceinfo/Invoiceinfo'
-    } else if (f.title == "备注"){
-      url: '/pages/Remarkinfo/Remarkinfo'
+    }else if (f == "发票信息"){
+      url = '/pages/Invoiceinfo/Invoiceinfo'
+    } else if (f == "备注"){
+      url = '/pages/Remarkinfo/Remarkinfo'
     }
+    console.log(url)
     wx.navigateTo({
       url: url,
     })

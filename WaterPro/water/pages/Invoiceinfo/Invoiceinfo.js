@@ -5,7 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    inputs:[
+            {"title":"抬头","holderTex":"请输入准确的发票抬头","type":"t"},
+            {"title":"税号","holderTex":"请输入准确的发票税号","type":"c"}, 
+          ],
 
+    invoice:{},
   },
 
   /**
@@ -62,5 +67,25 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  // 
+  valueforinput:function (e) {
+    let t = e.target.dataset.type
+    let v = e.detail.value
+    var rlt = this.data.invoice
+    if (t == 't'){
+      rlt['title'] = v
+    }else if (t == 'c'){
+      rlt['code'] = v
+    }
+    this.setData({
+      invoice:rlt
+    })
+  },
+
+  // 
+  saveinvoiceinfo:function (e){
+    console.log(this.data.invoice)
+  },
 })

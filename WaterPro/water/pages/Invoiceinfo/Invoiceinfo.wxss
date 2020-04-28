@@ -1,1 +1,51 @@
-/* pages/Invoiceinfo/Invoiceinfo.wxss */
+
+.cell {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15rpx 20rpx;
+  background-color: white;
+  /* border: solid 0.8rpx red; */
+}
+
+.cell .leftpart {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  /* border: solid 0.8rpx orange; */
+}
+
+.cell .leftpart view:first-child {
+  font-size: 26rpx;
+  width: 66rpx;
+  margin-right: 10rpx;
+  margin-left: 20rpx;
+  /* border: solid 0.8rpx cyan; */
+}
+
+.cell .leftpart view:last-child {
+  font-size: 24rpx;
+  width: 580rpx;
+  border-bottom: solid 0.8rpx #ddd;
+  /* border: solid 0.8rpx purple; */
+}
+
+.fixedBtn {
+  position: fixed;
+  margin-top: 130rpx;
+  left: 60rpx;
+  right: 60rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  border-radius: 33rpx;
+  background-color: #25B6ED;
+}
+
+.fixedBtn text {
+  font-size: 28rpx;
+  color: white;
+}

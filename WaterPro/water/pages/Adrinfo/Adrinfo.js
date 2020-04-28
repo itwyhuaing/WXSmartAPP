@@ -5,10 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    usr:{title:"联系人：",holderTxt:"请输入",arrow:""},
-    tel:{title:"手机号：",holderTxt:"请输入",arrow:""},
-    adr1:{title:"选择地址：",holderTxt:"点击选择",arrow:"active"},
-    adr2:{title:"门牌号：",holderTxt:"请输入",arrow:""},
+    usr:{title:"联系人：",holderTxt:"请输入",type:"usr"},
+    tel:{title:"手机号：",holderTxt:"请输入",type:"tel"},
+    adr1:{title:"选择地址：",holderTxt:"点击选择"},
+    adr2:{title:"门牌号：",holderTxt:"请输入",type:"adr2"},
+
+    orderinfo:{"usr":"","tel":"","adr1":"","adr2":""},
   },
 
   /**
@@ -71,5 +73,43 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  valueforinput:function (e){
+    let t = e.target.dataset.type
+    let v = e.detail.value
+    var rlt = this.data.orderinfo
+    if (t == "usr") {
+      rlt["usr"] = v
+    }else if (t == "tel") {
+      rlt["tel"] = v
+    }else if (t == "adr2") {
+      rlt["adr2"] = v
+    }
+    this.setData({
+      orderinfo:rlt
+    })
+  },
+
+  chooseAdr:function (e){
+    
+    wx.chooseLocation({
+      complete: (res) => {
+        var rlt = this.data.orderinfo
+        var tmp = this.data.adr1
+        tmp["holderTxt"] = res.address
+        rlt["adr1"] = res.address
+        this.setData({
+          adr1:tmp,
+          orderinfo:rlt
+        })
+
+      },
+    })
+  },
+
+  saveorderinfo:function (e) {
+    console.log(this.data.orderinfo)
+  },
+
 })

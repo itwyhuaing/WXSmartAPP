@@ -59,3 +59,41 @@
   margin: 30rpx;
   border: solid 0.8rpx purple;
 }
+
+
+.card {
+  background-color: white;
+  border: solid 0.8rpx red;
+}
+
+.card .row{
+  border: solid 0.8rpx red;
+  margin: 10rpx 0;
+}
+
+.card .shop image {
+  width: 30rpx;
+  height: 30rpx;
+  border: solid 0.8rpx orange;
+}
+
+
+.card .product {
+  border: solid 0.8rpx orange;
+}
+
+.card .time {
+  border: solid 0.8rpx orange;
+}
+
+.card .adr {
+  border: solid 0.8rpx orange;
+}
+
+.card .code {
+  border: solid 0.8rpx orange;
+}
+
+.card .status {
+  border: solid 0.8rpx orange;
+}

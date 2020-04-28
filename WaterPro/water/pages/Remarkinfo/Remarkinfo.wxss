@@ -1,1 +1,22 @@
-/* pages/Remarkinfo/Remarkinfo.wxss */
+.inputarea {
+  margin: 0 20rpx;
+  border: solid 0.8rpx #ddd;
+  font-size: 26rpx;
+}
+
+.fixedBtn {
+  position: fixed;
+  margin-top: 130rpx;
+  left: 60rpx;
+  right: 60rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  border-radius: 33rpx;
+  background-color: #25B6ED;
+}
+
+.fixedBtn text {
+  font-size: 28rpx;
+  color: white;
+}

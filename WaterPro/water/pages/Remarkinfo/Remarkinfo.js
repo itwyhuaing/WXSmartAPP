@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    txtcnt:"",
   },
 
   /**
@@ -62,5 +62,21 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  // 
+  inputover:function (e) {
+    console.log(e)
+    let rlt = e.detail.value
+    console.log(rlt)
+    this.setData({
+      txtcnt:rlt
+    })
+
+  },
+
+  // 
+  submitremark:function (e){
+    console.log(this.data.txtcnt)
+  },
 })
