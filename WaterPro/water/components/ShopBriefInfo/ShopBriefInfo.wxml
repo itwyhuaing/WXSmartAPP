@@ -1,5 +1,0 @@
-<!--view/ShopBriefInfo.wxml-->
-<view class="inner">
-{{innerText}}
-  <button bindtap="customMethod">点击</button>
-</view>
