@@ -1,0 +1,6 @@
+<!--logs.wxml-->
+<view class="container log-list">
+  <view class="cl_ad_map">
+    <image src="/images/58_58.png"></image><text>如何居中问题</text>
+  </view>
+</view>

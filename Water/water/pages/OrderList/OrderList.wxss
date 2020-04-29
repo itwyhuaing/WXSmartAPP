@@ -1,0 +1,115 @@
+.orderlist_scroll {
+  background-color: white;
+
+}
+
+.top_fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  /* border: solid 0.8rpx red; */
+}
+
+.top_fixed .switchtype {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20rpx 0;
+  /* border: solid 0.8rpx yellow; */
+}
+
+.top_fixed .switchtype view {
+  font-size: 28rpx;
+  padding: 13rpx 40rpx;
+  border: solid 0.8rpx #25B6ED;
+}
+
+.top_fixed .switchtype view:first-child {
+  border-top-left-radius: 8rpx;
+  border-bottom-left-radius: 8rpx;
+}
+
+.top_fixed .switchtype view:last-child {
+  border-top-right-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+}
+
+.top_fixed .acttype {
+  background-color: #25B6ED;
+  color: white;
+}
+
+.list {
+  display: none;
+}
+
+.actlist {
+  display: block;
+  margin-top: 116rpx;
+}
+
+
+.card {
+  background-color: white;
+  border-radius: 16rpx;
+  border: solid 2rpx #ddd;
+  margin: 0 50rpx 60rpx 50rpx;
+  padding: 15rpx 10rpx;
+}
+
+.card .row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size:  26rpx;
+  padding: 10rpx 15rpx;
+  /* border: solid 0.8rpx black; */
+}
+
+.card .shop {
+  justify-content: flex-start;
+}
+
+.card .shop image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 15rpx;
+  /* border: solid 0.8rpx orange; */
+}
+
+
+.card .product {
+  justify-content: space-between;
+}
+
+.card .product .p_right {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card .product .p_right view:first-child {
+  margin-right: 88rpx;
+}
+
+.card .product .p_right .unit {
+  font-size: 24rpx;
+}
+
+.card .time {
+  justify-content: space-between;
+}
+
+.card .adr {
+  justify-content: space-between;
+}
+
+.card .code {
+  justify-content: space-between;
+}
+
+.card .status {
+  justify-content: space-between;
+}

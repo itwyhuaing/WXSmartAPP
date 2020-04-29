@@ -1,0 +1,33 @@
+<!--pages/Adrinfo/Adrinfo.wxml-->
+<!-- template -->
+<template name="x">
+  <view class="cell">
+    <view class="leftpart">
+      <view>{{title}}</view>
+      <view class="input"><input placeholder="{{holderTxt}}" bindblur="valueforinput" data-type="{{type}}"></input></view>
+    </view>
+  </view>
+</template>
+
+<template name="y">
+  <view class="cell" bindtap="chooseAdr">
+    <view class="leftpart">
+      <view>{{title}}</view>
+      <view class="uninput"><text>{{holderTxt}}</text></view>
+    </view>
+    <view class="rightpart">
+      <image src="/images/arrow_left.png"></image>
+    </view>
+  </view>
+</template>
+
+
+
+<!-- page -->
+<scroll-view class="adrinfo_scroll_view">
+  <template is="x" data="{{...usr}}"></template>
+  <template is="x" data="{{...tel}}"></template>
+  <template is="y" data="{{...adr1}}"></template>
+  <template is="x" data="{{...adr2}}"></template>
+  <view class="fixedbtn" bindtap="saveorderinfo"><text>保存并使用</text></view>
+</scroll-view>

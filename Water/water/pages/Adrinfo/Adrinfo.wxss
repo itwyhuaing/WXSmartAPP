@@ -1,0 +1,70 @@
+.adrinfo_scroll_view {
+  background-color: white;
+  
+
+}
+
+.cell {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15rpx 20rpx;
+  background-color: white;
+  margin-top: 20rpx;
+}
+
+.cell .leftpart {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  /* border: solid 0.8rpx orange; */
+}
+
+.cell .leftpart view:first-child {
+  font-size: 26rpx;
+  width: 150rpx;
+  margin-right: 10rpx;
+  text-align: right;
+  /* border: solid 0.8rpx cyan; */
+}
+
+.cell .leftpart view:last-child {
+  font-size: 24rpx;
+  width: 469rpx;
+  border-bottom: solid 0.8rpx #ddd;
+  /* border: solid 0.8rpx purple; */
+}
+
+
+.cell .leftpart .uninput {
+  padding-bottom: 8rpx;
+}
+
+
+.cell .rightpart image{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+
+.fixedbtn {
+  position: fixed;
+  margin-top: 130rpx;
+  left: 60rpx;
+  right: 60rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  border-radius: 33rpx;
+  background-color: #25B6ED;
+  /* border: solid 0.8rpx cyan; */
+}
+
+.fixedbtn text{
+  font-size: 28rpx;
+  color: white;
+  /* border: solid 0.8rpx purple; */
+} 

@@ -1,0 +1,27 @@
+.about_container {
+  padding-top: 2orpx;
+}
+
+.card {
+  font-size: 26rpx;
+  margin-bottom: 60rpx;
+  /* border: solid 0.8rpx red; */
+}
+
+.card .them {
+  margin-left: 20rpx;
+  padding: 10rpx 0;
+  border-bottom: dashed 0.8rpx #ddd ;
+  /* border: solid 0.8rpx orange; */
+}
+
+.card .wx {
+  text-align: center;
+  margin-top: 10rpx;
+  /* border: solid 0.8rpx cyan; */
+}
+
+.card .wx image {
+  width: 300rpx;
+  height: 300rpx;
+}
