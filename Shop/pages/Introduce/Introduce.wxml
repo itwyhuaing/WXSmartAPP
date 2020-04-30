@@ -1,2 +1,30 @@
-<!--pages/Introduce/Introduce.wxml-->
-<text>pages/Introduce/Introduce.wxml</text>
+<scroll-view class="introduce_container">
+
+  <view class="card wyhcreate">
+    <view class="themrow">why为什么要投资</view>
+    <view class="cnt">
+      <block wx:for="{{whydata}}" wx:key="this">
+        <view class="txtrow">
+          <text>{{index+1}}.</text><text>{{item}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="card howcreate">
+    <view class="themrow">how投资</view>
+    <view class="cnt">
+    </view>
+  </view>
+
+  <view class="card howbetter">
+    <view class="themrow">how做更好的投资</view>
+    <view class="cnt">
+    </view>
+  </view>
+
+  <view class="fixed">
+    <text>继续</text>
+  </view>
+
+</scroll-view>

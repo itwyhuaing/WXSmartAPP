@@ -1,1 +1,48 @@
-/* pages/Introduce/Introduce.wxss */
+.card {
+  margin: 20rpx 20rpx;
+  /* border: solid 0.8rpx red; */
+  
+}
+
+.card .themrow {
+  font-size: 28rpx;
+  height: 72rpx;
+  line-height: 88rpx;
+  border-bottom: solid 1rpx #ddd;
+  /* border: solid 0.8rpx green; */
+}
+
+.card .cnt {
+  font-size: 26rpx;
+  margin: 0rpx 15rpx;
+  /* border: solid 0.8rpx cyan; */
+}
+
+.card .cnt  .txtrow {
+  height: 60rpx;
+  line-height: 60rpx;
+  border-bottom: dashed 0.8rpx #ddd;
+  /* border: solid 0.8rpx purple; */
+}
+
+.card .cnt  .txtrow text:last-child {
+ margin-left: 15rpx;
+}
+
+/* .bottom_fixed .unit {
+  margin-left: 20rpx;
+  font-size: 20rpx;
+} */
+
+.fixed {
+  position: fixed;
+  bottom: 30rpx;
+  left: 80rpx;
+  right: 80rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border: solid 2rpx #25B6ED;
+  color: #25B6ED;
+  font-size: 26rpx;
+}
