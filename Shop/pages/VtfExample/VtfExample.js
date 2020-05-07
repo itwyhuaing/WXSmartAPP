@@ -1,11 +1,11 @@
-// pages/Introduce/Introduce.js
+// pages/VtfExample/VtfExample.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    whydata:["海那边移民我要移民","海那边移民我要移民","海那边移民我要移民"],
+
   },
 
   /**
@@ -62,12 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  tapnextoperate:function (e){
-    console.log(" == tapnextoperate == ")
-    wx.navigateTo({
-      url: '/pages/Vertify/Vertify',
-    })
-  },
+  }
 })

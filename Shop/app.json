@@ -1,10 +1,13 @@
 {
   "pages": [
+    "pages/Home/Home",
     "pages/Introduce/Introduce",
+    "pages/Vertify/Vertify",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/Home/Home",
-    "pages/Vertify/Vertify"
+    
+    "pages/VtfExample/VtfExample",
+    "pages/Check/Check"
   ],
   "window": {
     "backgroundTextStyle": "light",

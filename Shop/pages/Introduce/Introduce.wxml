@@ -14,6 +14,12 @@
   <view class="card howcreate">
     <view class="themrow">how投资</view>
     <view class="cnt">
+      <view>1、门脸照片</view>
+      <view>2、店内环境照片</view>
+      <view>3、开店人身份证证件正反面照片</view>
+      <view>4、开店人手持身份证正面照片</view>
+      <view>5、营业执照照片</view>
+      <view>6、许可证照片</view>
     </view>
   </view>
 
@@ -23,7 +29,7 @@
     </view>
   </view>
 
-  <view class="fixed">
+  <view class="fixed" bindtap="tapnextoperate">
     <text>继续</text>
   </view>
 

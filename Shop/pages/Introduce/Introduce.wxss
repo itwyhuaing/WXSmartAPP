@@ -36,7 +36,7 @@
 
 .fixed {
   position: fixed;
-  bottom: 30rpx;
+  bottom: 50rpx;
   left: 80rpx;
   right: 80rpx;
   height: 60rpx;
@@ -45,4 +45,5 @@
   border: solid 2rpx #25B6ED;
   color: #25B6ED;
   font-size: 26rpx;
+  background-color: white;
 }
