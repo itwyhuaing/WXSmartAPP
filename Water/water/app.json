@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/Home/ShopList",
+    "pages/ProductLib/ProductLib",
     "pages/OrderList/OrderList",
     "pages/User/User",
     "pages/index/index",
@@ -12,12 +12,14 @@
     "pages/Remarkinfo/Remarkinfo",
     "pages/Recommand/Recommand",
     "pages/About/About",
-    "pages/Feedback/Feedback"
+    "pages/Feedback/Feedback",
+    "pages/Vertify/Vertify",
+    "pages/Home/ShopList"
   ],
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/Home/ShopList",
+        "pagePath": "pages/ProductLib/ProductLib",
         "text": "首页",
         "iconPath": "images/tab_home_normal.png",
         "selectedIconPath": "images/tab_home_selected.png"
