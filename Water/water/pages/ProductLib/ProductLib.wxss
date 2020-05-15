@@ -1,1 +1,17 @@
-/* pages/ProductLib/ProductLib.wxss */
+.pname {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: solid 0.8rpx orange;
+}
+
+.pdes {
+  display: flex;
+  flex-direction: row;
+  border: solid 0.8rpx red;
+}
+
+.pdes image {
+  width: 200rpx;
+  height: 200rpx;
+}

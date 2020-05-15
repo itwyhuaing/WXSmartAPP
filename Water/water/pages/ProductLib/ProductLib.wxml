@@ -1,2 +1,16 @@
-<!--pages/ProductLib/ProductLib.wxml-->
-<text>pages/ProductLib/ProductLib.wxml</text>
+<scroll-view class="plib_container">
+  <view class="checkBoxPart">
+    <checkbox-group>
+      <label wx:for="{{libs}}">
+        <view class="pname">
+          <view>name{{index}}</view><view><checkbox checked="false"></checkbox></view>
+        </view>
+
+        <view class="pdes">
+          <view><image src="/images/58_58.png"></image></view>
+          <view>数据量</view>
+        </view>
+      </label>
+    </checkbox-group>
+  </view>
+</scroll-view>
