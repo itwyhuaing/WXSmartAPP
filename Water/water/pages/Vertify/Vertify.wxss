@@ -144,6 +144,7 @@
   line-height: 60rpx;
   text-align: center;
   border: solid 2rpx #25B6ED;
+  background-color: white;
   color: #25B6ED;
   font-size: 26rpx;
   background-color: white;

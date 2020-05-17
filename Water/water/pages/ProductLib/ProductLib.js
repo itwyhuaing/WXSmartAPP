@@ -6,13 +6,15 @@ Page({
    */
   data: {
     libs:[
-          {},
-          {},
-          {},
-          {},
-          {},
-          {}
+          {value:"p_y",status:1,name:"怡宝桶装水",pimage:"/images/58_58.png",price:"",acts:["月底前一次性购满100送一同"]},
+          {value:"p_b",status:1,name:"怡宝桶装水",pimage:"/images/58_58.png",price:"",acts:[]},
+          {value:"p_n",status:0,name:"怡宝桶装水",pimage:"/images/58_58.png",price:"",acts:[]},
+          {value:"p_w",status:0,name:"怡宝桶装水",pimage:"/images/58_58.png",price:"",acts:[]},
+          {value:"p_h",status:0,name:"怡宝桶装水",pimage:"/images/58_58.png",price:"",acts:[]},
+          {value:"p_k",status:0,name:"怡宝桶装水",pimage:"/images/58_58.png",price:"",acts:[]},
           ],
+    
+    chosedrlt:[],
   },
 
   /**
@@ -69,5 +71,52 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  choseproduct:function (e) {
+    let v = e.currentTarget.dataset.value
+    var info = this.data.libs
+    for(var cou = 0;cou < info.length;cou ++) {
+      var dic = info[cou];
+      if (dic["value"] == v) {
+        var tmp = dic["status"] == 0 ? 1 : 0
+        dic["status"] = tmp
+      }
+    }
+    this.setData ({
+      libs:info
+    })
+  },
+
+  tapForAddActEvent:function (e){
+    console.log(" tapForAddActEvent ");
+    wx.navigateTo({
+      url: '/pages/ActLib/ActLib',
+    })
+  },
+
+  tapnextoperate:function (e) {
+    // 1. 整理出选中的产品信息
+    var rlt = []
+    for (var cou = 0; cou < this.data.libs.length; cou ++){
+      var dic = this.data.libs[cou]
+      if (dic["status"] == 1) {
+        rlt.push(dic)
+      }
+    }
+    console.log("tapnextoperate:",rlt);
+    // 2. 跳转到店铺主页
+    wx.redirectTo({
+      url: '/pages/Home/ShopList',
+      complete(){
+        wx.navigateTo({
+          url: '/pages/ShopDetail/ShopDetail',
+        })
+      },
+    })
+    // wx.navigateTo({
+    //   url: '/pages/ShopDetail/ShopDetail',
+    // })
+  },
+
 })

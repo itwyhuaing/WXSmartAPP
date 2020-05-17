@@ -200,7 +200,7 @@ Page({
 
   tapnextoperate:function (e){
     wx.navigateTo({
-      url: '/pages/Check/Check',
+      url: '/pages/ProductLib/ProductLib',
     })
   },
 
