@@ -14,15 +14,18 @@
   padding: 15rpx 20rpx;
 }
 
-.cl_menuitem .icon {
-  height: 150rpx;
-  width: 150rpx;
+.cl_menuitem .icon image {
+  height: 200rpx;
+  width: 200rpx;
 }
 
 .cl_menuitem .txtinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 100%;
   font-size: 28rpx;
-  margin-left: 15rpx;
+  margin-left: 20rpx;
   border-bottom: solid 1rpx #ddd;
 }
 
@@ -42,11 +45,7 @@
 .txtinfo .distance {
   margin-top: 8rpx;
   font-size: 24rpx;
-}
-
-.txtinfo .distance text:last-child {
-  margin-left: 50rpx;
-  color: #25B6ED;
+  /* border: solid 0.8rpx red; */
 }
 
 .txtinfo .mark {

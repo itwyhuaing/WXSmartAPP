@@ -17,7 +17,7 @@ Page({
   onLoad: function (options) {
     let shop_briefinfo = {
       shop_id:"20200618",
-      shop_name:"维维水业商贸",
+      shop_name:"海那边科技",
       shop_images:[
           "/images/58_58.png",
           "/images/58_58.png",
@@ -28,7 +28,7 @@ Page({
       shop_marks:[
           "可开发票",
           "已审核", 
-          "满200减10", 
+          "满20000减1000", 
       ],
       shop_adr:"深圳市南山区粤海街道大冲国际中心006",
       shop_latitude: 22.53332,

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // 推荐 - 反馈 - 联系 - 关于
+    // 我的店铺 -  推荐 - 反馈 - 联系 - 关于
     ds:[
         {icon:"/images/my_shop.png",txt:"我的店铺",arrow:"/images/arrow_left.png"},
         {icon:"/images/my_gift.png",txt:"推荐有礼",arrow:"/images/arrow_left.png"},
@@ -76,6 +76,7 @@ Page({
     var url = ""
     if (f.txt == "我的店铺") {
       url = "/pages/Vertify/Vertify"
+      url = "/pages/ShopInfo/ShopInfo"
     }
     else if (f.txt == "推荐有礼") {
       url = "/pages/Recommand/Recommand"

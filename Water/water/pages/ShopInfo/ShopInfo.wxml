@@ -1,0 +1,86 @@
+<!-- template -->
+<template name="textcell">
+  <view class="cell">
+    <view class="them">{{them}}</view>
+    <view class="des">{{des}}</view>
+  </view>
+</template>
+
+
+
+<scroll-view class="cnt">
+  <!-- 顶部按钮区域 -->
+  <view class="btnpart">
+    <view class="btn shopbtn {{currentType == 's' ? 'active' : ''}}" bindtap="tapshop" data-value="s">商铺</view>
+    <view class="btn productbtn {{currentType == 'p' ? 'active' : ''}}" bindtap="tapproduct" data-value="p">产品</view>
+    <view class="btn orderbtn {{currentType == 'o' ? 'active' : ''}}" bindtap="taporder" data-value="o">订单</view>
+  </view>
+
+  <!-- 商铺 -->
+  <view class="info shoppart {{currentType == 's' ? 'listactive' : ''}}">
+    <template is="textcell" data="{{...shopname}}"></template>
+    <template is="textcell" data="{{...shopadr}}"></template>
+    <template is="textcell" data="{{...shoptel}}"></template>
+    <template is="textcell" data="{{...shoptime}}"></template>
+    <template is="textcell" data="{{...shopapttime}}"></template>
+    <view class="iconcell">
+      <view class="them ctf">商家资质</view>
+      <view class="iconpart">
+        <view class="icon ileft"><image src="/images/58_58.png"></image></view> 
+        <view class="icon rleft"><image src="/images/58_58.png"></image></view> 
+      </view>
+    </view>
+  </view>  
+
+  <!-- 产品 -->
+  <view class="info productpart {{currentType == 'p' ? 'listactive' : ''}}">
+    <block wx:for="{{products}}" wx:key="this">
+      <view class="cl_product_item">
+        <view class="product_example">
+          <image src="{{item.p_image}}"></image>
+        </view>
+        <view class="txtinfo">
+          <view class="txtcnt name_volume">
+            <text>{{item.p_name}}</text><text>{{item.p_volume}}</text>
+          </view>
+          <view class="txtcnt discounts">
+            {{item.p_discounts}}
+          </view>
+          <view class="txtcnt price_operate">
+            <view class="price">
+              <text class="unit">¥</text><text>{{item.p_price}}</text>
+            </view>
+            <view class="operatebuschet">
+              <view class="buscheter remove" bindtap="removeProduct" data-model="{{item}}" data-index="{{index}}">
+                <image src="/images/remove_shopping_buschet.png"></image>
+              </view>
+              <view class="buschet_indictor">
+                {{item.p_ordercount}}
+              </view>
+              <view class="buscheter add" bindtap="addProduct" data-model="{{item}}" data-index="{{index}}">
+                <image src="/images/add_shopping_buschet.png"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <!-- 悬浮模块-购物篮 -->
+    <view class="fixed_bucket">
+      <view class="ordered_count">{{total_ordercount}}</view>
+      <view class="bucket" bindtap="gotocheckorder"><image src="/images/shopping_bucket.png"></image></view>
+      <view class="total_price_time">
+        <view><text class="unit">¥</text><text>{{totalprice}}</text></view>
+        <view><text>{{expectedTime}}</text></view>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 订单 -->
+  <view class="info orderpart {{currentType == 'o' ? 'listactive' : ''}}">
+    订单
+  </view>
+
+</scroll-view>

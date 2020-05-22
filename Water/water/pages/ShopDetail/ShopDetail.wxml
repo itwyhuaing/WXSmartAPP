@@ -31,15 +31,7 @@
     <image src="/images/telcall.png" bindtap="telCall"></image>
   </view>
 
-  <!-- 悬浮模块 -->
-  <view class="fixed_bucket">
-    <view class="ordered_count">{{total_ordercount}}</view>
-    <view class="bucket" bindtap="gotocheckorder"><image src="/images/shopping_bucket.png"></image></view>
-    <view class="total_price_time">
-      <view><text class="unit">¥</text><text>{{totalprice}}</text></view>
-      <view><text>{{expectedTime}}</text></view>
-    </view>
-  </view>
+  
 
 <!-- 产品列表 -->
   <view class="cl_products_list">

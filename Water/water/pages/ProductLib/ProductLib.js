@@ -105,18 +105,11 @@ Page({
       }
     }
     console.log("tapnextoperate:",rlt);
-    // 2. 跳转到店铺主页
-    wx.redirectTo({
-      url: '/pages/Home/ShopList',
-      complete(){
-        wx.navigateTo({
-          url: '/pages/ShopDetail/ShopDetail',
-        })
-      },
+    // 2. 跳转到我的
+    wx.switchTab({
+      url: '/pages/User/User',
     })
-    // wx.navigateTo({
-    //   url: '/pages/ShopDetail/ShopDetail',
-    // })
+    
   },
 
 })

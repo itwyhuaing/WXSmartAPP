@@ -1,0 +1,245 @@
+.cnt {
+  background-color: white;
+}
+
+.btnpart {
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-size: 26rpx;
+  /* background-color: orange; */
+}
+
+.btnpart .btn {
+  width: 100rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 28rpx;
+  background: #fff;
+  color: #333;
+  margin: 20rpx 0;
+  padding: 10rpx 46rpx;
+  border: solid 1rpx #25B6ED;
+  
+}
+
+.btnpart .btn:first-child {
+  margin-left: 10rpx;
+  border-right: solid 0rpx #25B6ED;
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+}
+
+.btnpart .btn:last-child {
+  border-left: solid 0rpx #25B6ED;
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+
+
+.btnpart .active {
+  background: #25B6ED;
+  color: white;
+}
+
+.info {
+  display: none;
+  margin-top: 100rpx;
+  height: 1900rpx;
+  /* background-color: red; */
+}
+
+.listactive {
+  display: block;
+}
+
+.cell {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20rpx 0 10rpx 20rpx;
+  padding: 10rpx 15rpx 10rpx 10rpx;
+  align-items: center;
+  border-bottom: solid 0.8rpx #ddd;
+}
+
+.them {
+  width: 200rpx;
+  margin-right: 10rpx;
+  font-size: 26rpx;
+  /* border: solid 0.8rpx red; */
+
+}
+
+.des {
+  font-size: 24rpx;
+}
+
+.iconcell {
+  margin: 20rpx 0 10rpx 20rpx;
+  padding: 10rpx 15rpx 10rpx 10rpx;
+  border-bottom: solid 0.8rpx #ddd;
+}
+
+/* .them {
+  border: solid 0.8rpx orange;
+} */
+
+.ctf {
+  width: 100%;
+  padding-bottom: 10rpx;
+  margin-bottom: 10rpx;
+  border-bottom: dashed 0.8rpx #ddd;
+}
+
+.iconpart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.iconpart .icon image{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 10rpx;
+}
+
+.cl_product_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 20rpx;
+  padding: 15rpx;
+
+  border-bottom: solid 0.8rpx #ddd;
+}
+
+.product_example image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.txtinfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 20rpx;
+}
+
+
+.txtinfo .name_volume {
+  font-size: 26rpx;
+  font-weight: bold;
+}
+
+.txtinfo .name_volume text:last-child {
+  margin-left: 10rpx;
+}
+
+.txtinfo .discounts {
+  font-size: 24rpx;
+  color: #666;
+}
+
+
+.txtinfo .price_operate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* background-color: red; */
+  
+}
+
+.txtinfo  .price_operate .unit {
+  font-size: 18rpx;
+  color: #25B6ED;
+}
+
+.txtinfo  .price_operate .price {
+  font-size: 24rpx;
+  color: #25B6ED;
+  height: 36rpx;
+  line-height: 36rpx;
+  
+}
+
+.txtinfo .operatebuschet  {
+  display: flex;
+  flex-direction: row;
+  border: solid 0.8rpx #25B6ED;
+}
+
+.operatebuschet image {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.txtinfo .operatebuschet .buscheter{
+  /* background-color: purple; */
+  height: 36rpx;
+  line-height: 36rpx;
+  padding: 0 5rpx;
+}
+
+.txtinfo  .operatebuschet .buschet_indictor {
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  width: 68rpx;
+  font-size: 24rpx;
+  border-left: solid 0.8rpx #25B6ED;
+  border-right: solid 0.8rpx #25B6ED;
+}
+
+
+.fixed_bucket {
+  position: fixed;
+  z-index: 100;
+  right: 20rpx;
+  bottom: 100rpx;
+  width: 188rpx;
+  /* background-color: green; */
+}
+
+.fixed_bucket .ordered_count {
+  color: white;
+  font-size: 18rpx;
+  text-align: center;
+  line-height: 30rpx;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 15rpx;
+  position: relative;
+  left: 106rpx;
+  top: 28rpx;
+  background-color: red;
+}
+
+.fixed_bucket .bucket {
+  text-align: center;
+  /* background-color: yellow; */
+}
+
+.fixed_bucket .bucket image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.fixed_bucket .total_price_time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: white;
+  background-color: #25B6ED;
+}
+
+.fixed_bucket .total_price_time .unit{
+  font-size: 20rpx;
+}

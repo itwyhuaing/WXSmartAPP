@@ -3,15 +3,15 @@
   <view class="cl_menulist">
     <block wx:for="{{shops}}" wx:key="this">
       <view class="cl_menuitem" data-model="{{item}}" bindtap="tapItem" >
-        <image class="icon" src="{{item.shop_images[0]}}"></image> 
+        <view class="icon"><image src="{{item.shop_images[0]}}"></image></view>
         <view class="txtinfo">
-          <!--  -->
+          <!-- 名称 -->
           <view class="txtcnt name">{{item.shop_name}}</view>
-          <!--  -->
-          <view class="txtcnt amount">{{item.shop_daily_amount}}</view>
-          <!--  -->
+          <!-- 日销量 -->
+          <!-- <view class="txtcnt amount">{{item.shop_daily_amount}}</view> -->
+          <!-- 距离 + 时间 -->
           <view class="txtcnt distance">
-            <text>{{item.shop_distance}}</text><text>30分钟</text>
+            <text>{{item.shop_distance}}</text>
           </view>
           <!--  -->
           <view class="mark">
