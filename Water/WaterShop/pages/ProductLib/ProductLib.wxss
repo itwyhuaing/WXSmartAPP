@@ -1,0 +1,99 @@
+/* .checkBoxPart {
+  border: solid 0.8rpx red;
+} */
+
+.checkBoxCell {
+  margin: 50rpx 20rpx;
+  padding: 20rpx;
+  border: solid 0.8rpx #ddd;
+  border-radius: 16rpx;
+}
+
+.pname {
+  padding: 10rpx 15rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font: 26rpx;
+  border-bottom: dashed 0.8rpx #ddd;
+  /* border: solid 0.8rpx orange; */
+}
+
+.pname image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.pdes {
+  padding: 10rpx 15rpx;
+  padding-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-size: 24rpx;
+  /* border: solid 0.8rpx red; */
+}
+
+.pdes .left image {
+  width: 260rpx;
+  height: 260rpx;
+}
+
+.pdes .right  {
+  margin-left: 30rpx;
+}
+
+.pdes .right .price {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.pdes .right .price .unit {
+  margin: 0 10rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  /* border: solid 0.8rpx red; */
+}
+
+.pdes .right .price input {
+  width: 160rpx;
+  height: 10rpx;
+  border-bottom: solid 0.5rpx #888;
+}
+
+.pdes .right .actcnt {
+  font-size: 24rpx;
+  margin-top: 20rpx;
+  font-size: 22rpx;
+  color: #888;
+}
+
+.pdes .right .addact {
+  margin-top: 80rpx;
+  width: 160rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border: solid 0.8rpx #25B6ED;
+  background-color: #25B6ED;
+  color: white;
+  border-radius: 25rpx;
+}
+
+
+.fixed {
+  position: fixed;
+  bottom: 10rpx;
+  left: 80rpx;
+  right: 80rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border: solid 2rpx #25B6ED;
+  color: #25B6ED;
+  background-color: white;
+  font-size: 26rpx;
+  background-color: white;
+}

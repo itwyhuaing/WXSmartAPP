@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/Home/OrderList",
+    "pages/User/User",
+    "pages/ShopInfo/ShopInfo",
+    "pages/Recommand/Recommand",
+    "pages/Feedback/Feedback",
+    "pages/About/About",
+    "pages/Entry/Entry",
+    "pages/Vertify/Vertify",
+    "pages/ProductLib/ProductLib",
+    "pages/ActLib/ActLib",
+    "pages/VtfExample/VtfExample",
+    "pages/OrderDetail/OrderDetail"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/Home/OrderList",
+        "text": "移民",
+        "iconPath": "images/tab_order_normal.png",
+        "selectedIconPath": "images/tab_order_selected.png"
+      },
+      {
+        "pagePath": "pages/User/User",
+        "text": "买房",
+        "iconPath": "images/tab_user_normal.png",
+        "selectedIconPath": "images/tab_user_selected.png"
+      }
+    ],
+    "color": "#b2b2b2",
+    "selectedColor": "#25b6ed",
+    "backgroundColor": "#ffffff"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

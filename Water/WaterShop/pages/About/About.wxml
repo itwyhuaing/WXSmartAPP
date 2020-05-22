@@ -1,0 +1,12 @@
+<template name="x">
+  <view class="card">
+    <view class="them">{{them}}</view>
+    <view class="wx"><image src="{{wx}}"></image></view>
+  </view>
+</template>
+
+<view class="about_container">
+  <block wx:for="{{wxinfo}}" wx:key="this">
+    <template is="x" data="{{...item}}"></template>
+  </block>
+</view>

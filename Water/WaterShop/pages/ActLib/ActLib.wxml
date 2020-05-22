@@ -1,0 +1,22 @@
+<scroll-view>
+  <view class="actpart">
+    <block wx:for="{{acts}}" wx:key="this">
+      <view class="actcell">
+        <!-- 活动/优惠名称 -->
+        <view class="aname">
+          <view>{{item.name}}</view>
+          <view bindtap="choseact" data-value="{{item.value}}">
+            <image src="{{item.status == 1 ? '/images/chose_selected.png' : '/images/chose_nomal.png'}}"></image>
+          </view>
+        </view>
+        <!-- 活动/优惠详情 -->
+        <view class="actdetail">{{item.detail}}</view>
+      </view>
+    </block>
+  </view>
+
+  <view class="fixed" bindtap="tapnextoperate">
+    <text>确认添加</text>
+  </view>
+
+</scroll-view>

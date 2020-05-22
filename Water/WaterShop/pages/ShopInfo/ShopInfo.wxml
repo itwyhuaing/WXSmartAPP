@@ -1,0 +1,66 @@
+<!-- template -->
+<template name="textcell">
+  <view class="cell">
+    <view class="them">{{them}}</view>
+    <view class="des">{{des}}</view>
+  </view>
+</template>
+
+
+
+<scroll-view class="cnt">
+  <!-- 顶部按钮区域 -->
+  <view class="btnpart">
+    <view class="btn shopbtn {{currentType == 's' ? 'active' : ''}}" bindtap="tapshop" data-value="s">商铺</view>
+    <view class="btn productbtn {{currentType == 'p' ? 'active' : ''}}" bindtap="tapproduct" data-value="p">产品</view>
+  </view>
+
+  <!-- 商铺 -->
+  <view class="info shoppart {{currentType == 's' ? 'listactive' : ''}}">
+    <template is="textcell" data="{{...shopname}}"></template>
+    <template is="textcell" data="{{...shopadr}}"></template>
+    <template is="textcell" data="{{...shoptel}}"></template>
+    <template is="textcell" data="{{...shoptime}}"></template>
+    <template is="textcell" data="{{...shopapttime}}"></template>
+    <view class="iconcell">
+      <view class="them ctf">商家资质</view>
+      <view class="iconpart">
+        <view class="icon ileft"><image src="/images/58_58.png"></image></view> 
+        <view class="icon rleft"><image src="/images/58_58.png"></image></view> 
+      </view>
+    </view>
+  </view>  
+
+  <!-- 产品 -->
+  <view class="info productpart {{currentType == 'p' ? 'listactive' : ''}}">
+    <block wx:for="{{products}}" wx:key="this">
+      <view class="cl_product_item">
+        <view class="product_example">
+          <image src="{{item.pimage}}"></image>
+        </view>
+        <view class="txtinfo">
+          <view class="txtcnt name_volume">
+            <text>{{item.pname}}</text><text>{{item.pvolume}}</text>
+          </view>
+          <view class="txtcnt discounts">
+            {{item.pact}}
+          </view>
+          <view class="txtcnt price_operate">
+            <view class="price">
+              <text class="unit">¥</text><text>{{item.pprice}}</text>
+            </view>
+            <view class="operate" bindtap="deleteproduct" data-value="{{item.pid}}">
+              <text>删除</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <view class="fixedadd" bindtap="addProduct">
+      <text>添加新品</text>
+    </view>
+
+  </view>
+
+</scroll-view>

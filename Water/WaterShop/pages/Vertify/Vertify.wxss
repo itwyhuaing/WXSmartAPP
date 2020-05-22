@@ -1,0 +1,151 @@
+.vtf_cnt {
+  margin: 20rpx;
+  padding-bottom: 160rpx;
+  font-size: 26rpx;
+  background-color: white;
+}
+
+.cell {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30rpx 0;
+  height: 56rpx;
+  /* border: solid 1rpx red; */
+}
+
+.cell .leftpart {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  /* border: solid 0.8rpx orange; */
+}
+
+.cell .leftpart .mark {
+  height: 56rpx;
+  line-height: 56rpx;
+  margin-bottom: 10rpx;
+  /* border: solid 1rpx orange; */
+}
+
+.cell .leftpart .mark image {
+  width: 15rpx;
+  height: 15rpx;
+  /* border: solid 1rpx purple; */
+}
+
+.cell .leftpart .them {
+  width: 150rpx;
+  margin-right: 10rpx;
+  text-align: right;
+  /* border: solid 0.8rpx cyan; */
+}
+
+.cell .leftpart view:last-child {
+  font-size: 24rpx;
+  width: 469rpx;
+  border-bottom: solid 0.8rpx #ddd;
+  /* border: solid 0.8rpx purple; */
+}
+
+
+.cell .leftpart .uninput {
+  padding-bottom: 8rpx;
+}
+
+.cell .rightpart image{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+
+.ex_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-top: 15rpx;
+  border-bottom: solid 0.8rpx #ddd;
+  /* border: solid 1rpx red; */
+}
+
+.ex_info .ex_l {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* border: solid 1rpx orange; */
+}
+
+.ex_info .ex_l view:first-child {
+  margin-right: 15rpx;
+}
+
+.ex_info .ex_l view:last-child {
+  width: 180rpx;
+  /* border: solid 1rpx black; */
+}
+
+.ex_info .ex_l image {
+  width: 15rpx;
+  height: 15rpx;
+  /* border: solid 1rpx black; */
+}
+
+/* .ex_info .ex_r {
+  border: solid 1rpx orange;
+} */
+
+.ex_info .ex_r .remark {
+  padding: 15rpx;
+  margin-bottom: 15rpx;
+  /* border-radius: 16rpx; */
+  background-color: #FFEFD5;
+  color: #FFA500;
+  font-size: 20rpx;
+  font-weight: lighter;
+}
+
+.ex_info .ex_r .lc {
+  width: 200rpx;
+  height: 200rpx;
+  background-color: #eee;
+}
+
+.ex_info .ex_r .lc image {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 50rpx;
+}
+
+.ex_info .ex_r .lcwx {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.ex_info .ex_r .lcwx image{
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.ex_info .ex_r .epl {
+  margin: 15rpx 0;
+  color: black;
+  font-weight: bolder;
+}
+
+.fixed {
+  position: fixed;
+  bottom: 50rpx;
+  left: 80rpx;
+  right: 80rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border: solid 2rpx #25B6ED;
+  background-color: white;
+  color: #25B6ED;
+  font-size: 26rpx;
+  background-color: white;
+}

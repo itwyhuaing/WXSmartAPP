@@ -1,0 +1,30 @@
+<scroll-view class="plib_container">
+
+  <view class="checkBoxPart">
+    <block wx:for="{{libs}}" wx:key="this">
+      <view class="checkBoxCell">
+        <!-- name + 选择按钮 -->
+        <view class="pname">
+          <view>{{item.name}}</view>
+          <view bindtap="choseproduct" data-value="{{item.value}}">
+            <image src="{{item.status == 1 ? '/images/chose_selected.png' : '/images/chose_nomal.png'}}"></image>
+          </view> 
+        </view>
+        <!-- 产品描述 -->
+        <view class="pdes">
+          <view class="left"><image src="{{item.pimage}}"></image></view>
+          <view class="right">
+            <view class="price"><view class="unit">¥</view><input placeholder="请输入价格"></input><view class="unit">18.9L/桶</view></view>
+            <view class="actcnt" wx:if="{{item.acts.length > 0}}">{{item.acts[0]}}</view>
+            <view class="addact" bindtap="tapForAddActEvent" wx:else>添加活动</view>
+          </view>
+        </view>
+      </view>  
+    </block>
+  </view>
+
+  <view class="fixed" bindtap="tapnextoperate">
+    <text>确认添加</text>
+  </view>
+
+</scroll-view>
