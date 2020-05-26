@@ -5,7 +5,7 @@
   </view>
 </template>
 
-<view class="about_container">
+<view class="container">
   <block wx:for="{{wxinfo}}" wx:key="this">
     <template is="x" data="{{...item}}"></template>
   </block>

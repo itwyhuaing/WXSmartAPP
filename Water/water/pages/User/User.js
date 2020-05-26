@@ -7,7 +7,8 @@ Page({
   data: {
     // 我的店铺 -  推荐 - 反馈 - 联系 - 关于
     ds:[
-        {icon:"/images/my_shop.png",txt:"我的店铺",arrow:"/images/arrow_left.png"},
+        {icon:"/images/my_shop.png",txt:"饮水店铺",arrow:"/images/arrow_left.png"},
+        {icon:"/images/my_order.png",txt:"我的订单",arrow:"/images/arrow_left.png"},
         {icon:"/images/my_gift.png",txt:"推荐有礼",arrow:"/images/arrow_left.png"},
         {icon:"/images/my_fankui.png",txt:"意见反馈",arrow:"/images/arrow_left.png"},
         {icon:"/images/my_kefu.png",txt:"联系我们",arrow:"/images/arrow_left.png"},
@@ -74,9 +75,11 @@ Page({
     console.log(e.currentTarget.dataset.model)
     var f = e.currentTarget.dataset.model
     var url = ""
-    if (f.txt == "我的店铺") {
-      url = "/pages/Vertify/Vertify"
+    if (f.txt == "饮水店铺") {
       url = "/pages/ShopInfo/ShopInfo"
+    }
+    else if (f.txt == "我的订单"){
+      url = "/pages/OrderList/OrderList"
     }
     else if (f.txt == "推荐有礼") {
       url = "/pages/Recommand/Recommand"

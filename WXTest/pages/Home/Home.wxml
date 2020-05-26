@@ -1,0 +1,7 @@
+<view>
+
+  <button bindtap="clickButtonEvent" data-value="DataTest"> 页面间通信 </button>
+
+  <view class="com"><component-tag-name innerText="自定义组件"></component-tag-name></view>
+
+</view>

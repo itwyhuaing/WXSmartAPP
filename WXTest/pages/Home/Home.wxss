@@ -1,0 +1,4 @@
+/* pages/Home/Home.wxss */
+.com {
+  width: 50%;
+}

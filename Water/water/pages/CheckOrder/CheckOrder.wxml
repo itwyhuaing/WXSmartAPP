@@ -8,7 +8,7 @@
   </view>
 </template>
 <!--pages/CheckOrder/CheckOrder.wxml-->
-<scroll-view class="checkorder_container">
+<scroll-view class="container">
   
   <view class="content">
     <view class="card shop_product">

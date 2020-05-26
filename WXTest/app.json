@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/Home/Home",
+    "pages/Person/Person",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/Detail/Detail"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/Home/Home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/Person/Person",
+        "text": "个人"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

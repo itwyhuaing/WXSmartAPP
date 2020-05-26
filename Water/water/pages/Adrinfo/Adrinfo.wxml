@@ -24,7 +24,7 @@
 
 
 <!-- page -->
-<scroll-view class="adrinfo_scroll_view">
+<scroll-view class="container">
   <template is="x" data="{{...usr}}"></template>
   <template is="x" data="{{...tel}}"></template>
   <template is="y" data="{{...adr1}}"></template>

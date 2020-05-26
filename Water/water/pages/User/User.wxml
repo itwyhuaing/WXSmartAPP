@@ -10,7 +10,7 @@
 </template>
 
 <!-- Page -->
-<scroll-view>
+<scroll-view class="container">
   <block wx:for="{{ds}}" wx:key="this">
     <view bindtap="taptonext" data-model="{{item}}">
       <template is="x" data="{{...item}}" />

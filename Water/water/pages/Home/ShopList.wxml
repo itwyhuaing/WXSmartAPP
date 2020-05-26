@@ -1,5 +1,5 @@
 <!--pages/Home/ShopList.wxml-->
-<scroll-view class="home_container">
+<scroll-view class="container">
   <view class="cl_menulist">
     <block wx:for="{{shops}}" wx:key="this">
       <view class="cl_menuitem" data-model="{{item}}" bindtap="tapItem" >

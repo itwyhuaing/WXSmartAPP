@@ -1,0 +1,4 @@
+<scroll-view class="container" style="padding-bottom:34rpx">
+  <view class="them fixed">Q：{{question.qdetail}}</view>
+  <view class="detailcnt" style="margin-top:{{extop}}px">{{question.qanswer}}</view>
+</scroll-view>

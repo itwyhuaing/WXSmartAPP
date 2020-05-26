@@ -35,7 +35,7 @@
 </template>
 
 
-<scroll-view class="orderlist_scroll">
+<scroll-view class="container">
   <!-- 悬浮按钮 -->
   
   <view class="top_fixed">

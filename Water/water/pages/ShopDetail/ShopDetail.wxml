@@ -1,5 +1,5 @@
 <!--pages/ShopDetail/ShopDetail.wxml-->
-<scroll-view class="shop-detail-scroll-view">
+<scroll-view class="container">
   <!-- 店铺图片集 -->
   <block wx:if="{{imgUrls.length == 1}}">
     <image src="{{imgUrls[0]}}"  style="width:{{imgSize.width}}px;height:{{imgSize.height}}px;"></image>
@@ -96,6 +96,16 @@
           </block>
         </block>
       </view>
+
+    <!-- 悬浮模块-购物篮 -->
+    <view class="fixed_bucket">
+      <view class="ordered_count">{{total_ordercount}}</view>
+      <view class="bucket" bindtap="gotocheckorder"><image src="/images/shopping_bucket.png"></image></view>
+      <view class="total_price_time">
+        <view><text class="unit">¥</text><text>{{totalprice}}</text></view>
+        <view><text>{{expectedTime}}</text></view>
+      </view>
+    </view>
 
     </view>
   </view>

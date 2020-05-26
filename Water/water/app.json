@@ -1,9 +1,8 @@
 {
   "pages": [
-    "pages/ShopInfo/ShopInfo",
+    "pages/Home/ShopList",
     "pages/OrderList/OrderList",
     "pages/User/User",
-    "pages/index/index",
     "pages/ShopDetail/ShopDetail",
     "pages/ProductDetail/ProductDetail",
     "pages/CheckOrder/CheckOrder",
@@ -13,24 +12,23 @@
     "pages/Recommand/Recommand",
     "pages/About/About",
     "pages/Feedback/Feedback",
-    "pages/Vertify/Vertify",
-    "pages/ProductLib/ProductLib",
-    "pages/ActLib/ActLib",
-    "pages/Home/ShopList"
+    "pages/ShopInfo/ShopInfo",
+    "pages/Classroom/Classroom",
+    "pages/QAnswer/QAnswer"
   ],
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/ShopInfo/ShopInfo",
+        "pagePath": "pages/Home/ShopList",
         "text": "首页",
         "iconPath": "images/tab_home_normal.png",
         "selectedIconPath": "images/tab_home_selected.png"
       },
       {
-        "pagePath": "pages/Home/ShopList",
-        "text": "订单",
-        "iconPath": "images/tab_order_normal.png",
-        "selectedIconPath": "images/tab_order_selected.png"
+        "pagePath": "pages/Classroom/Classroom",
+        "text": "水课堂",
+        "iconPath": "images/tab_classroom_normal.png",
+        "selectedIconPath": "images/tab_classroom_selected.png"
       },
       {
         "pagePath": "pages/User/User",

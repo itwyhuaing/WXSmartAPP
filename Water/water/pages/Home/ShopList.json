@@ -2,5 +2,8 @@
   "navigationBarTitleText": "店铺列表",
   "usingComponents": {
     
+  },
+  "window": {
+    "enablePullDownRefresh": true
   }
 }

@@ -6,23 +6,30 @@
   </view>
 </template>
 
+<template name="texttapcell">
+  <view class="cell" bindtap="tapshopcell" data-value="{{des}}" data-type="{{type}}">
+    <view class="them">{{them}}</view>
+    <view class="des taptext">{{des}}</view>
+  </view>
+</template>
 
 
-<scroll-view class="cnt">
+<scroll-view class="container">
   <!-- 顶部按钮区域 -->
   <view class="btnpart">
     <view class="btn shopbtn {{currentType == 's' ? 'active' : ''}}" bindtap="tapshop" data-value="s">商铺</view>
     <view class="btn productbtn {{currentType == 'p' ? 'active' : ''}}" bindtap="tapproduct" data-value="p">产品</view>
-    <view class="btn orderbtn {{currentType == 'o' ? 'active' : ''}}" bindtap="taporder" data-value="o">订单</view>
   </view>
 
   <!-- 商铺 -->
   <view class="info shoppart {{currentType == 's' ? 'listactive' : ''}}">
     <template is="textcell" data="{{...shopname}}"></template>
-    <template is="textcell" data="{{...shopadr}}"></template>
-    <template is="textcell" data="{{...shoptel}}"></template>
     <template is="textcell" data="{{...shoptime}}"></template>
     <template is="textcell" data="{{...shopapttime}}"></template>
+    <template is="textcell" data="{{...shopadr}}"></template>
+    <template is="texttapcell" data="{{...shopadr}}"></template>
+    <template is="texttapcell" data="{{...shoptel}}"></template>
+
     <view class="iconcell">
       <view class="them ctf">商家资质</view>
       <view class="iconpart">
@@ -55,7 +62,7 @@
                 <image src="/images/remove_shopping_buschet.png"></image>
               </view>
               <view class="buschet_indictor">
-                {{item.p_ordercount}}
+                {{item.p_orderedcount}}
               </view>
               <view class="buscheter add" bindtap="addProduct" data-model="{{item}}" data-index="{{index}}">
                 <image src="/images/add_shopping_buschet.png"></image>
@@ -76,11 +83,6 @@
       </view>
     </view>
 
-  </view>
-
-  <!-- 订单 -->
-  <view class="info orderpart {{currentType == 'o' ? 'listactive' : ''}}">
-    订单
   </view>
 
 </scroll-view>

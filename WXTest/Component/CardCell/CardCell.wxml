@@ -1,0 +1,4 @@
+<view class="inner" bindtap="testevent" data-value="{{innerText}}">
+  {{innerText}}
+</view>
+<slot></slot>

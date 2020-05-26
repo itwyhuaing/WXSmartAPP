@@ -1,0 +1,27 @@
+.container {
+  padding: 0;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: red;
+  border: solid 0.8rpx red;
+
+  /* max-height: 300rpx; */
+  display: -webkit-box;
+  overflow: hidden;  /*超出隐藏*/
+  text-overflow: ellipsis;  /*超出显示为省略号*/
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.text {
+  /* padding-top: 300rpx; */
+  background-color: orange;
+  border: solid 0.8rpx cyan;
+}

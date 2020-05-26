@@ -1,4 +1,4 @@
-.recommand_container {
+.container {
   padding-top: 20rpx;
 }
 

@@ -1,4 +1,4 @@
-.cnt {
+.container {
   background-color: white;
 }
 
@@ -79,6 +79,10 @@
 
 .des {
   font-size: 24rpx;
+}
+
+.taptext {
+  color: #25B6ED;
 }
 
 .iconcell {

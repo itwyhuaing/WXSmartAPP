@@ -1,0 +1,4 @@
+.inner {
+  color: purple;
+  border: solid 0.8rpx red;
+}

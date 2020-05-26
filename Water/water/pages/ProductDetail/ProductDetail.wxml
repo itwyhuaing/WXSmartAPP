@@ -1,4 +1,4 @@
-<scroll-view class="product-detail-scroll-view">
+<scroll-view class="container">
   <view class="cl_product_image">
     <image src="{{product_info.p_image}}" style="width:{{imgSize.width}}px;height:{{imgSize.height}}px;"></image>
   </view>

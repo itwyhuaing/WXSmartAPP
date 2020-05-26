@@ -90,7 +90,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    console.log(" onPullDownRefresh ");
+    
   },
 
   /**
@@ -116,7 +117,8 @@ Page({
     console.log(e.currentTarget.dataset.model)
 
     wx.navigateTo({
-      url: '/pages/ShopDetail/ShopDetail',
+      url: '/pages/ShopInfo/ShopInfo',
+      // url:'/pages/ShopDetail/ShopDetail',
       // events:{
       //   aptDataFromOpenedPage:function(data){
       //     console.log("aptDataFromOpenedPage")

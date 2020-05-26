@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "component-tag-name":"/Component/CardCell/CardCell"
+  },
+  "window": {
+    "enablePullDownRefresh": true
+  }
+}
