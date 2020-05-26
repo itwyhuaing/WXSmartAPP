@@ -1,18 +1,15 @@
-.container {
-  padding-top: 20rpx;
-}
-
 .inputarea {
-  margin: 0 20rpx;
-  border: solid 0.8rpx #ddd;
+  margin: 20rpx;
+  width: 660rpx;
+  border: solid 1rpx #ddd;
   font-size: 26rpx;
 }
 
-.fixedBtn {
-  position: fixed;
+.confirmBtn {
   margin-top: 130rpx;
-  left: 60rpx;
-  right: 60rpx;
+  margin-left: auto;
+  margin-right: auto; 
+  width: 630rpx;
   height: 66rpx;
   line-height: 66rpx;
   text-align: center;
@@ -20,7 +17,7 @@
   background-color: #25B6ED;
 }
 
-.fixedBtn text {
+.confirmBtn text {
   font-size: 28rpx;
   color: white;
 }

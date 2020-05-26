@@ -50,11 +50,7 @@ Page({
     const eventChannel = this.getOpenerEventChannel()
     var that = this
     eventChannel.on('aptDataFromShopListPage', function(data) {
-      console.log("eventChannel.on")
-      console.log(data)
-
-
-
+      console.log("eventChannelon:",data.data)
 
       let telInfo = [
                       {text:data.data.shop_mobile,value:data.data.shop_mobile},

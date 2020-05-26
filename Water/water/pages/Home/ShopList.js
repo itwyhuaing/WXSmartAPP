@@ -118,13 +118,6 @@ Page({
 
     wx.navigateTo({
       url: '/pages/ShopInfo/ShopInfo',
-      // url:'/pages/ShopDetail/ShopDetail',
-      // events:{
-      //   aptDataFromOpenedPage:function(data){
-      //     console.log("aptDataFromOpenedPage")
-      //     console.log(data)
-      //   },
-      // },
       success:function(res){
         res.eventChannel.emit("aptDataFromShopListPage",{data:e.currentTarget.dataset.model})
       }

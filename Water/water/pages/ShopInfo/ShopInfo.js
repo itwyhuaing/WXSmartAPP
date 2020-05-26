@@ -27,6 +27,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 页面传参
+    const eventChannel = this.getOpenerEventChannel()
+    var that = this
+    eventChannel.on('aptDataFromShopListPage', function(info) {
+      console.log("eventChannelon:",info.data)
+      that.setData({
+        shop_info:info.data
+      })
+    })
+
     // 店铺产品
     let product = {
       p_type:"pa",

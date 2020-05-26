@@ -29,5 +29,5 @@
   <template is="x" data="{{...tel}}"></template>
   <template is="y" data="{{...adr1}}"></template>
   <template is="x" data="{{...adr2}}"></template>
-  <view class="fixedbtn" bindtap="saveorderinfo"><text>保存并使用</text></view>
+  <view class="confirmBtn" bindtap="saveorderinfo"><text>保存并使用</text></view>
 </scroll-view>

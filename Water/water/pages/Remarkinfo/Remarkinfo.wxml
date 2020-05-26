@@ -2,5 +2,5 @@
   <view class="inputarea">
     <textarea auto-focus="true" placeholder="请输入备注信息" bindblur="inputover"></textarea>
   </view>
-  <view class="fixedBtn" bindtap="submitremark"><text>确定</text></view>
+  <view class="confirmBtn" bindtap="submitremark"><text>确定</text></view>
 </view>

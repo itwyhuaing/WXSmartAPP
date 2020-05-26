@@ -50,11 +50,11 @@
 }
 
 
-.fixedbtn {
-  position: fixed;
+.confirmBtn {
   margin-top: 130rpx;
-  left: 60rpx;
-  right: 60rpx;
+  margin-left: auto;
+  margin-right: auto;
+  width: 630rpx;
   height: 66rpx;
   line-height: 66rpx;
   text-align: center;
@@ -63,7 +63,7 @@
   /* border: solid 0.8rpx cyan; */
 }
 
-.fixedbtn text{
+.confirmBtn text{
   font-size: 28rpx;
   color: white;
   /* border: solid 0.8rpx purple; */

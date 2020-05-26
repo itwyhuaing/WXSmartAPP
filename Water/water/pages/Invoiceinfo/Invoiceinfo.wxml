@@ -11,5 +11,5 @@
   <block wx:for="{{inputs}}" wx:key="this">
     <template is="x" data="{{...item}}"></template>
   </block>
-  <view class="fixedBtn" bindtap="saveinvoiceinfo"><text>保存并使用</text></view>
+  <view class="confirmBtn" bindtap="saveinvoiceinfo"><text>保存并使用</text></view>
 </scroll-view>
