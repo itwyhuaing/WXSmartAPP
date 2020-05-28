@@ -4,4 +4,6 @@
 
   <view class="com"><component-tag-name innerText="自定义组件"></component-tag-name></view>
 
+  <button bindtap="callpicker" data-value="DataTest"> Picker </button>
+
 </view>

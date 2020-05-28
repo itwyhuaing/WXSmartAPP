@@ -1,4 +1,7 @@
 // pages/ProductLib/ProductLib.js
+
+var appInstance = getApp()
+
 Page({
 
   /**
@@ -105,9 +108,13 @@ Page({
       }
     }
     console.log("tapnextoperate:",rlt);
+    appInstance.globalData.loginstatus = "1"
+    appInstance.globalData.vtfstatus = "1"
+
+
     // 2. 跳转到我的
     wx.switchTab({
-      url: '/pages/User/User',
+      url: '/pages/Home/OrderList',
     })
     
   },

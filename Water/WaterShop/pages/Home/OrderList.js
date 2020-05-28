@@ -142,10 +142,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // 1. 进入登录或入驻选择页
-    // wx.navigateTo({
-    //   url: '/pages/Entry/Entry',
-    // })
+    var appInstance = getApp()
+    if (appInstance.globalData.loginstatus != "1"){
+      // 1. 未认证或未登录，进入入口页面
+      wx.navigateTo({
+        url: '/pages/Entry/Entry',
+      })
+    }else  {
+      if (appInstance.globalData.vtfstatus != "1"){
+        wx.navigateTo({
+          url: '/pages/Vertify/Vertify',
+        })
+      }
+    }
+
   },
 
   /**

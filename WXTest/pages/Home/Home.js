@@ -79,6 +79,12 @@ Page({
       }
 
     })
+  },
+
+  callpicker:function (e){
+    wx.navigateTo({
+      url: '/pages/Picker/Picker',
+    })
   }
 
 })

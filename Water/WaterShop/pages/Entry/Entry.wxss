@@ -99,7 +99,7 @@
 .loginbtn {
   margin: 88rpx auto;
   font-size: 26rpx;
-  width: 360rpx;
+  width: 630rpx;
   height: 66rpx;
   line-height: 66rpx;
   text-align: center;

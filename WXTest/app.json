@@ -4,7 +4,8 @@
     "pages/Person/Person",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/Detail/Detail"
+    "pages/Detail/Detail",
+    "pages/Picker/Picker"
   ],
   "tabBar": {
     "list": [

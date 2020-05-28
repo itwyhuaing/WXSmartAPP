@@ -1,4 +1,7 @@
 // pages/Entry/Entry.js
+
+var appInstance = getApp()
+
 Page({
 
   /**
@@ -133,6 +136,28 @@ Page({
     }else {
       console.log("账号密码登录:",this.data.acountpwd)
     }
+
+    //  模拟登录操作
+    wx.showLoading({
+      title:'正在登录...'
+    })
+    setTimeout(function(){
+      wx.hideLoading({
+        complete: (res) => {
+          appInstance.globalData.loginstatus = "1"
+
+          console.log("修改登录态:",appInstance.globalData.loginstatus);
+          
+          wx.navigateBack()
+           wx.showToast({
+             title:'成功',
+             duration:2000
+           })
+        },
+      })
+    },3000)
+    
+
   },
 
   // 开店入口
