@@ -1,0 +1,5 @@
+<view class="wrapper">
+  <slot name="before">111</slot>
+  <view>组件内部细节</view>
+  <slot name="after">222</slot>
+</view>

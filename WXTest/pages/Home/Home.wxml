@@ -2,7 +2,14 @@
 
   <button bindtap="clickButtonEvent" data-value="DataTest"> 页面间通信 </button>
 
-  <view class="com"><component-tag-name innerText="自定义组件"></component-tag-name></view>
+  <view class="com"><component-tag-cell innerText="自定义组件" bindclickevent="clickevent"></component-tag-cell></view>
+
+  <view class="com">
+    <component-tag-slotcell>
+      <view slot="before"></view>
+      <view slot="after">after</view>
+    </component-tag-slotcell>
+  </view>
 
   <button bindtap="callpicker" data-value="DataTest"> Picker </button>
 

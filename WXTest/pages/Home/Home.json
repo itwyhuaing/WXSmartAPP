@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "component-tag-name":"/Component/CardCell/CardCell"
+    "component-tag-cell":"/Component/CardCell/CardCell",
+    "component-tag-slotcell":"/Component/SlotCell/SlotCell"
   },
   "window": {
     "enablePullDownRefresh": true

@@ -1,0 +1,22 @@
+<view>
+  
+  <view class="cell"> 数据测试 </view>
+  
+  <view class="cell">
+    <!-- <mp-dialog title="test" show="{{true}}" bindbuttontap="tapDialogButton" buttons="{{[{text: '取消'}, {text: '确认'}]}}">
+      <view>test content</view>
+    </mp-dialog> -->
+  </view> 
+
+  <view class="cell fixed">
+    <mp-searchbar ext-class="searchbar" bindselectresult="selectResult" placeholder="请输入关键词" search="{{search}}"></mp-searchbar>
+  </view> 
+
+  <view class="cnt">
+    内容测试1
+  </view> 
+  <view class="cnt">
+    内容测试2
+  </view> 
+
+</view>

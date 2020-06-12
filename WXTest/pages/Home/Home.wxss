@@ -1,4 +1,6 @@
 /* pages/Home/Home.wxss */
 .com {
   width: 50%;
+  margin: 30rpx;
+  border: solid 0.8rpx black;
 }

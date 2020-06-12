@@ -1,19 +1,22 @@
-// pages/Home/Home.js
+// pages/Cpm/Cpm.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    inputShowed: false,
+    inputVal: "",
+    focus:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
-    
+    this.setData({
+      search:this.search.bind(this)
+    })
   },
 
   /**
@@ -27,10 +30,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // const etc = this.getOpenerEventChannel()
-    // etc.on("abcdef",function(info){
-    //   console.log("信息流:",info,";参数:",info.data);
-    // })
 
   },
 
@@ -52,8 +51,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log(" onPullDownRefresh ");
-    
+
   },
 
   /**
@@ -70,27 +68,26 @@ Page({
 
   },
 
-  clickButtonEvent:function (e){
-    console.log(e.currentTarget.dataset.value)
-    wx.navigateTo({
-      url: '/pages/Detail/Detail?info=8866',
-      success:function(res){
-        res.eventChannel.emit("aptdata",{data:e.currentTarget.dataset.value}) 
-      }
-
-    })
-  },
-
-  callpicker:function (e){
-    wx.navigateTo({
-      url: '/pages/Picker/Picker',
-    })
-  },
-
-  clickevent: function(e){
-    // 自定义组件触发事件时提供的detail对象
-    console.log("onClickevent :",e)
+  search:function (e){
+    console.log(" search :",e);
     
-  }
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+          resolve([{text: '搜索结果', value: 1}, {text: '搜索结果2', value: 2}, 
+                   {text: '搜索结果3', value: 3}, {text: '搜索结果4', value: 4}, 
+                   {text: '搜索结果5', value: 5}, {text: '搜索结果6', value: 6}])
+          //resolve([])
+      }, 200)
+  })
+    
+  },
+
+  selectResult:function (e){
+    console.log("selectResult :",e);
+    
+    wx.navigateTo({
+      url: '/pages/index/index',
+    })
+  },
 
 })

@@ -1,0 +1,21 @@
+.cell {
+  border: solid 0.8rpx red;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+}
+
+.cnt {
+  height: 800rpx;
+  border: solid 0.8rpx black;
+  background-color: orange;
+}
+
+.searchbar {
+  background-color: purple;
+}
