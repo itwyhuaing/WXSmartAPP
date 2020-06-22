@@ -20,7 +20,7 @@
     <view class="them">去登陆</view>
     <view class="switch">
       <view class="btn {{curType == 'left' ? 'b_active' : ''}}    " bindtap="switchTapEvent" data-status="left">手机号登录</view>
-      <view class="btn {{curType == 'right' ? 'b_active' : ''}}" bindtap="switchTapEvent" data-status="right">账号密码登录</view>
+      <!-- <view class="btn {{curType == 'right' ? 'b_active' : ''}}" bindtap="switchTapEvent" data-status="right">账号密码登录</view> -->
     </view>
     <view class="part {{curType == 'left' ? 'p_active' : ''}}">
       <template is="x" data="{{...tel_login}}"></template>

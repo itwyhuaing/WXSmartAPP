@@ -22,6 +22,12 @@
         "selectedIconPath": "images/tab_order_selected.png"
       },
       {
+        "pagePath":"pages/ShopInfo/ShopInfo",
+        "text": "店铺",
+        "iconPath": "images/tab_order_normal.png",
+        "selectedIconPath": "images/tab_order_selected.png"
+      },
+      {
         "pagePath": "pages/User/User",
         "text": "我的",
         "iconPath": "images/tab_user_normal.png",
