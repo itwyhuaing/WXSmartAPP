@@ -1,11 +1,10 @@
-.p_container {
+.container {
   padding: 20rpx;
 }
 
-.usrentry .them {
+.usrentry .themText {
   height: 50rpx;
   line-height: 50rpx;
-  font-size: 26rpx;
   border-bottom: dashed 1rpx #ddd;
   /* border: solid 0.8rpx red; */
 }

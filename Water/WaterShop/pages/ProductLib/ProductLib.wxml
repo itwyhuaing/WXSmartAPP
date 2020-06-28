@@ -1,6 +1,7 @@
-<scroll-view class="plib_container">
+<scroll-view class="container">
 
-  <view class="checkBoxPart">
+  <view class="content_box">
+    <view class="operationmsg">请勾选产品，确认添加到我的店铺</view>
     <block wx:for="{{libs}}" wx:key="this">
       <view class="checkBoxCell">
         <!-- name + 选择按钮 -->

@@ -14,10 +14,10 @@
 </template>
 
 
-<view class="p_container">
+<view class="container">
   <view class="usrentry">
     <!-- 我已开店，登录 -->
-    <view class="them">去登陆</view>
+    <view class="themText">去登陆</view>
     <view class="switch">
       <view class="btn {{curType == 'left' ? 'b_active' : ''}}    " bindtap="switchTapEvent" data-status="left">手机号登录</view>
       <!-- <view class="btn {{curType == 'right' ? 'b_active' : ''}}" bindtap="switchTapEvent" data-status="right">账号密码登录</view> -->
@@ -31,7 +31,7 @@
     <view class="loginbtn" bindtap="tapLoginBtn">登   录</view>
 
     <!-- 我去开店 -->
-    <view class="them register" bindtap="tapcreateshop">
+    <view class="themText register" bindtap="tapcreateshop">
       <view>去开店</view>
       <view><image src="/images/arrow_left.png"></image></view>
     </view>

@@ -11,7 +11,8 @@
   justify-content: space-between;
   align-items: center;
   margin: 30rpx 0;
-  height: 56rpx;
+  height: 80rpx;
+  line-height: 80rpx;
   /* border: solid 1rpx red; */
 }
 
@@ -25,10 +26,15 @@
 }
 
 .cell .leftpart .mark {
-  height: 56rpx;
-  line-height: 56rpx;
+  height: 80rpx;
+  line-height: 80rpx;
   margin-bottom: 10rpx;
   /* border: solid 1rpx orange; */
+}
+
+.cell .leftpart .uninput {
+  height: 80rpx;
+  line-height: 80rpx;
 }
 
 .cell .leftpart .mark image {
@@ -54,11 +60,13 @@
 
 .cell .leftpart .uninput {
   padding-bottom: 8rpx;
+  /* border: solid 0.8rpx black; */
 }
 
 .cell .rightpart image{
   width: 30rpx;
   height: 30rpx;
+  /* border: solid 0.8rpx blue; */
 }
 
 

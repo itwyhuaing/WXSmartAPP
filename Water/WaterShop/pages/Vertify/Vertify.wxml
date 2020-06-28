@@ -13,7 +13,7 @@
 <template name="y">
   <view class="cell" bindtap="chooseAdr">
     <view class="leftpart">
-      <view class="mark"><image src="/image/mark_star.png"></image></view>
+      <view class="mark"><image src="/images/mark_star.png"></image></view>
       <view class="them">{{title}}</view>
       <view class="uninput"><text>{{holderTxt}}</text></view>
     </view>
@@ -26,7 +26,7 @@
 <template name="z">
   <view class="ex_info">
     <view class="ex_l">
-      <view><image src="/image/mark_star.png"></image></view>
+      <view><image src="/images/mark_star.png"></image></view>
       <view>{{title}}</view>
     </view>
 
@@ -55,9 +55,9 @@
     <template is="x" data="{{...tel1}}"></template>
     <template is="x" data="{{...tel2}}"></template>
     <!-- 门脸照 -->
-    <template is="z" data="{{...shopdoor}}"></template>
+    <!-- <template is="z" data="{{...shopdoor}}"></template> -->
     <!-- 店铺内景 -->
-    <template is="z" data="{{...shopinner}}"></template>
+    <!-- <template is="z" data="{{...shopinner}}"></template> -->
     <!-- 身份证正面 -->
     <!-- <template is="z" data="{{...shopperfront}}"></template> -->
     <!-- 身份证反面 -->

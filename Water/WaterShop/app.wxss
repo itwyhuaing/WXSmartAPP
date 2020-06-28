@@ -5,6 +5,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 200rpx 0;
+  /* padding: 200rpx 0; */
   box-sizing: border-box;
+  border: solid 0.8rpx red;
 } 
+
+.content_box {
+  margin-bottom: 30rpx;
+  border: solid 0.8rpx blue;
+}
+
+.themText {
+  font-size: 30rpx;
+}
+
+.desText {
+  font-size: 26rpx;
+}
+
+.unitText {
+  font-size: 22rpx;
+}

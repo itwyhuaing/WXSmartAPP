@@ -1,6 +1,16 @@
-/* .checkBoxPart {
-  border: solid 0.8rpx red;
-} */
+
+.operationmsg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 36rp;
+  line-height: 36rp;
+  background-color: #FFEFD5;
+  color: #FFA500;
+  font-size: 26rpx;
+  text-align: center;
+}
 
 .checkBoxCell {
   margin: 50rpx 20rpx;
@@ -85,7 +95,7 @@
 
 .fixed {
   position: fixed;
-  bottom: 10rpx;
+  bottom: 34rpx;
   left: 80rpx;
   right: 80rpx;
   height: 60rpx;
