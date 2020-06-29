@@ -7,12 +7,28 @@ Page({
   data: {
     // 店铺 - 产品 
     currentType:"p",
-    // 店铺信息
+
+    // 店铺信息:必须（商家名称、地址、电话、资质-营业执照与许可证），可完善（营业时间、可预约配送时间、经营者身份证）
     shopname:{them:"商家名称",des:"海那边科技"},
     shopadr:{them:"商家地址",des:"深圳市南山区粤海街道大冲国际中心3201"},
     shoptel:{them:"商家电话",des:"13691658693"},
-    shoptime:{them:"营业时间",des:"08:30-21:00"},
-    shopapttime:{them:"可预约时间",des:"08:30-20:00"},
+    shoptel:{them:"订购电话",des:"13691658693"},
+    //shoptime:{them:"营业时间",des:"08:30-21:00"},
+    //shopapttime:{them:"可预约时间",des:"08:30-20:00"},
+    
+    shopbrieftextinfo:[
+      {them:"商家名称",des:"海那边科技"},
+      {them:"商家地址",des:"深圳市南山区粤海街道大冲国际中心3201"},
+      {them:"商家电话",des:"13691658693"},
+      {them:"订购电话",des:"13691658693"},
+      //{them:"营业时间",des:"08:30-21:00"},
+      //{them:"可预约时间",des:"08:30-20:00"},
+    ],
+    shopbriefidfinfo:[
+      {them:"商家资质",img:["/images/58_58.png","/images/58_58.png"]}
+      //{them:"店家身份验证",img:["/images/58_58.png","/images/58_58.png"]}
+    ],
+
     // 产品信息
     products:[],
   },
@@ -128,6 +144,7 @@ Page({
 
   },
 
+  // 切换- switch 产品/店铺
   tapshop:function (e) {
     let v = e.currentTarget.dataset.value
     this.setData({
@@ -142,6 +159,19 @@ Page({
     })
   },
 
+  // 完善店铺信息
+  completeshopinfo:function (e) {
+    wx.navigateTo({
+      url: '/pages/CompleteShop/CompleteShop',
+      events:{
+        aptdatafrombackedpage:function(e){
+
+        }
+      }
+    })
+  },
+
+  // 产品删除
   deleteproduct:function (e) {
     let value = e.currentTarget.dataset.value
     
@@ -159,6 +189,7 @@ Page({
     })
   },
 
+  // 新增产品
   addProduct:function (e){
     wx.navigateTo({
       url: '/pages/ProductLib/ProductLib',

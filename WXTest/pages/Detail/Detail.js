@@ -18,9 +18,6 @@ Page({
       console.log("测试详情页面:",info,";参数:",info.data);
       
     })
-
-    etc.emit("abcdef",{data:"i love you"})
-
   },
 
   /**

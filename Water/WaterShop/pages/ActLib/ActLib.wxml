@@ -1,21 +1,34 @@
-<scroll-view>
-  <view class="actpart">
-    <block wx:for="{{acts}}" wx:key="this">
-      <view class="actcell">
-        <!-- 活动/优惠名称 -->
-        <view class="aname">
-          <view>{{item.name}}</view>
-          <view bindtap="choseact" data-value="{{item.value}}">
-            <image src="{{item.status == 1 ? '/images/chose_selected.png' : '/images/chose_nomal.png'}}"></image>
-          </view>
-        </view>
-        <!-- 活动/优惠详情 -->
-        <view class="actdetail">{{item.detail}}</view>
+<template name="act_format">
+  <view class="actcell">
+    <!-- 活动/优惠名称 -->
+    <view class="aname">
+      <view>{{name}}</view>
+      <view bindtap="choseact" data-actid="{{actid}}">
+        <image src="{{status == 1 ? '/images/chose_selected.png' : '/images/chose_nomal.png'}}"></image>
       </view>
+    </view>
+    <!-- 活动/优惠详情 -->
+    <view class="actdetail">{{detail}}</view>
+  </view>
+</template>
+
+<scroll-view class="container">
+  <view class="content_box">
+    <block wx:for="{{acts}}" wx:key="this">
+      <template is="act_format" data="{{...item}}"></template>
     </block>
   </view>
 
-  <view class="fixed" bindtap="tapnextoperate">
+  <!-- 自定义活动 -->
+  <view class="addActFormat">
+    <view class="addActThem">新增自定义桶装水活动</view>
+    <view class="addActDetail">
+      <view class="addActInput"><input bindblur="addActContentConfirm" value="{{customactcontent}}" placeholder="请输入活动内容"></input></view>
+      <view class="addActConfirm" bindtap="addActConfirm">确  定</view>
+    </view>
+  </view>
+
+  <view class="bottom_fixed" bindtap="tapnextoperate">
     <text>确认添加</text>
   </view>
 

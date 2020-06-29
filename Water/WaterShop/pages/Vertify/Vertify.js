@@ -10,7 +10,8 @@ Page({
     adr1:{title:"选择地址：",holderTxt:"点击选择",type:"adr1"},
     adr2:{title:"门牌号：",holderTxt:"请输入",type:"adr2"},
     tel1:{title:"订购电话：",holderTxt:"请输入",type:"tel1"},
-    tel2:{title:"联系电话：",holderTxt:"请输入",type:"tel2"},
+    tel2:{title:"商家电话：",holderTxt:"请输入",type:"tel2"},
+    
     // 有图片
     shopdoor:{title:"店铺门面照片",remark:"照片需包含完整的牌匾与门槛",eximg:"",epl:"查看样例",type:"shopdoor"},
     shopinner:{title:"店铺内部照片",remark:"照片需真实反应店铺内部环境",eximg:"",epl:"查看样例",type:"shopinner"},

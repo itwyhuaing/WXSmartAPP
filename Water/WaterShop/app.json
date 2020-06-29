@@ -11,7 +11,8 @@
     "pages/ProductLib/ProductLib",
     "pages/ActLib/ActLib",
     "pages/VtfExample/VtfExample",
-    "pages/OrderDetail/OrderDetail"
+    "pages/OrderDetail/OrderDetail",
+    "pages/CompleteShop/CompleteShop"
   ],
   "tabBar": {
     "list": [
@@ -22,7 +23,7 @@
         "selectedIconPath": "images/tab_order_selected.png"
       },
       {
-        "pagePath":"pages/ShopInfo/ShopInfo",
+        "pagePath": "pages/ShopInfo/ShopInfo",
         "text": "店铺",
         "iconPath": "images/tab_order_normal.png",
         "selectedIconPath": "images/tab_order_selected.png"

@@ -7,7 +7,7 @@ Page({
   data: {
     // 我的店铺 -  推荐 - 反馈 - 联系 - 关于
     ds:[
-        {icon:"/images/my_shop.png",txt:"我的店铺",arrow:"/images/arrow_left.png"},
+        // {icon:"/images/my_shop.png",txt:"我的店铺",arrow:"/images/arrow_left.png"},
         {icon:"/images/my_gift.png",txt:"推荐有礼",arrow:"/images/arrow_left.png"},
         {icon:"/images/my_fankui.png",txt:"意见反馈",arrow:"/images/arrow_left.png"},
         {icon:"/images/my_kefu.png",txt:"联系我们",arrow:"/images/arrow_left.png"},

@@ -1,15 +1,3 @@
-
-<!-- them:输入框 -->
-<template name="x">
-  <view class="cell">
-    <view class="leftpart">
-      <view class="mark"><image src="/images/mark_star.png"></image></view>
-      <view class="them">{{title}}</view>
-      <view class="input"><input placeholder="{{holderTxt}}" bindblur="valueforinput" data-type="{{type}}"></input></view>
-    </view>
-  </view>
-</template>
-
 <template name="y">
   <view class="cell" bindtap="chooseAdr">
     <view class="leftpart">
@@ -46,31 +34,25 @@
 
 <view class="container">
   <view class="content_box">
-    <!-- 店铺名称 -->
-    <template is="x" data="{{...name}}"></template>
-    <!-- 店铺位置 -->
-    <template is="y" data="{{...adr1}}"></template>
-    <template is="x" data="{{...adr2}}"></template> 
-    <!-- 电话 -->
-    <template is="x" data="{{...tel1}}"></template>
-    <template is="x" data="{{...tel2}}"></template>
+    <!-- 店铺营业时间 -->
+    <template is="y" data="{{...btime}}"></template>
+    <!-- 店铺预约时间 -->
+    <template is="y" data="{{...atime}}"></template> 
+    
     <!-- 门脸照 -->
-    <!-- <template is="z" data="{{...shopdoor}}"></template> -->
+    <template is="z" data="{{...shopdoor}}"></template>
     <!-- 店铺内景 -->
-    <!-- <template is="z" data="{{...shopinner}}"></template> -->
+    <template is="z" data="{{...shopinner}}"></template>
     <!-- 身份证正面 -->
-    <!-- <template is="z" data="{{...shopperfront}}"></template> -->
+    <template is="z" data="{{...shopperfront}}"></template>
     <!-- 身份证反面 -->
-    <!-- <template is="z" data="{{...shopperback}}"></template> -->
+    <template is="z" data="{{...shopperback}}"></template>
     <!-- 手持身份证 -->
-    <!-- <template is="z" data="{{...shopperidf}}"></template> -->
-    <!-- 营业执照 -->
-    <template is="z" data="{{...shoplicense}}"></template>
-    <!-- 许可证 -->
-    <template is="z" data="{{...shoppermit}}"></template>
+    <template is="z" data="{{...shopperidf}}"></template>
+
 
     <view class="bottom_fixed" bindtap="tapnextoperate">
-      <text>提交审核</text>
+      <text>确 认</text>
     </view>
 
   </view>

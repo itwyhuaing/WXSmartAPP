@@ -26,11 +26,9 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    // const etc = this.getOpenerEventChannel()
-    // etc.on("abcdef",function(info){
-    //   console.log("信息流:",info,";参数:",info.data);
-    // })
+  onShow: function (res) {
+    
+    
 
   },
 
@@ -38,7 +36,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    
   },
 
   /**
@@ -75,10 +73,11 @@ Page({
     wx.navigateTo({
       url: '/pages/Detail/Detail?info=8866',
       success:function(res){
+        console.log("res",res)
         res.eventChannel.emit("aptdata",{data:e.currentTarget.dataset.value}) 
       }
-
     })
+
   },
 
   callpicker:function (e){

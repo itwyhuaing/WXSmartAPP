@@ -10,7 +10,7 @@ Page({
   data: {
     libs:[
           {value:"p_y",status:1,name:"怡宝桶装水",pimage:"/images/58_58.png",price:"",acts:["月底前一次性购满100送一同"]},
-          {value:"p_b",status:1,name:"怡宝桶装水",pimage:"/images/58_58.png",price:"",acts:[]},
+          {value:"p_b",status:1,name:"怡宝桶装水t",pimage:"/images/58_58.png",price:"",acts:[]},
           {value:"p_n",status:0,name:"怡宝桶装水",pimage:"/images/58_58.png",price:"",acts:[]},
           {value:"p_w",status:0,name:"怡宝桶装水",pimage:"/images/58_58.png",price:"",acts:[]},
           {value:"p_h",status:0,name:"怡宝桶装水",pimage:"/images/58_58.png",price:"",acts:[]},
@@ -18,6 +18,9 @@ Page({
           ],
     
     chosedrlt:[],
+
+    // 输入的内容
+    customproname:""
   },
 
   /**
@@ -38,7 +41,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
@@ -92,10 +95,61 @@ Page({
   },
 
   tapForAddActEvent:function (e){
-    console.log(" tapForAddActEvent ");
+    
+    let that = this
+    let location = e.currentTarget.dataset.idx
+    var arr  = this.data.libs
+    var info = arr[location]
+    
     wx.navigateTo({
       url: '/pages/ActLib/ActLib',
+      
+      events:{
+        addActs:function(data){
+          
+          console.log("arr - 0 :",arr)
+          arr.splice(location,1)
+          console.log("arr - 1 :",arr)
+          if (data.para.length > 0) {
+            var tmp_acts = []
+            for(var cou = 0;cou < data.para.length;cou ++){
+              var f = data.para[cou]
+              tmp_acts.push(f.detail)
+            }
+            info["acts"] = tmp_acts
+          }
+          arr.splice(location,0,info)
+          console.log("arr - 1 :",arr,"data.para :",info.detail)
+          that.setData({
+            libs:arr
+          })
+        }
+      }
+
     })
+
+  },
+
+  // 新增产品名称
+  addProductNameConfirm:function(e){
+    let name = e.detail.value
+    this.setData({
+      customproname:name
+    })
+  },
+
+  addProductConfirm:function (e){
+    let name = this.data.customproname
+    if(name.length > 0){
+      var f = {value:"p_k",status:0,pimage:"/images/58_58.png",price:"",acts:[]}
+      f["name"] = name
+      var n_libs = this.data.libs
+      n_libs.push(f)
+      this.setData({
+        libs:n_libs,
+        customproname:""
+      })
+    }
   },
 
   tapnextoperate:function (e) {
