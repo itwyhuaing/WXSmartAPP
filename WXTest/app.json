@@ -5,7 +5,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/Detail/Detail",
-    "pages/Picker/Picker"
+    "pages/Picker/Picker",
+    "pages/Alert/Alert"
   ],
   "tabBar": {
     "list": [

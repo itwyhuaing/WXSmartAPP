@@ -71,5 +71,116 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  // 设置时间
+  changeTimeValue:function(e) {
+    console.log("changeTimeValue:",e)
+    let tp = e.currentTarget.dataset.tp
+    let vtime = e.detail.value
+    var tmp = {}
+    if (tp == "businesstime") {
+      tmp = this.data.btime
+      tmp["holderTxt"] = vtime
+      this.setData({
+        btime:tmp
+      })
+    } else if (tp = "apttime"){
+      tmp = this.data.atime
+      tmp["holderTxt"] = vtime
+      this.setData({
+        atime:tmp
+      })
+    }
+  },
+
+
+  chooseImage:function(e) {
+    var tmp = ""
+    wx.chooseImage({
+
+      success(res){
+        tmp = res.tempFilePaths[0]
+      },
+
+      complete: (res) => {
+        if (tmp.length > 0){
+          let t = e.currentTarget.dataset.tp
+        var info = {}
+        if (t == "shopdoor") {
+          info = this.data.shopdoor
+          info["eximg"] = tmp;
+          this.setData({
+            shopdoor:info
+          })
+        }else if (t == "shopinner"){
+          info = this.data.shopinner
+          info["eximg"] = tmp;
+          this.setData({
+            shopinner:info
+          })
+        }else if (t == "shopperfront"){
+          info = this.data.shopperfront
+          info["eximg"] = tmp;
+          this.setData({
+            shopperfront:info
+          })
+        }else if (t == "shopperback"){
+          info = this.data.shopperback
+          info["eximg"] = tmp;
+          this.setData({
+            shopperback:info
+          })
+        }else if (t == "shopperidf"){
+          info = this.data.shopperidf
+          info["eximg"] = tmp;
+          this.setData({
+            shopperidf:info
+          })
+        }
+        
+        console.log("chooseImage:",t,"   info:",info,"测试结果：",tmp.indexOf('wxfile')>=0)
+        }
+      },
+    })
+
+  },
+
+  lookexample:function(e) {
+    let t = e.currentTarget.dataset.tp
+    if (t == "shopdoor") {
+      
+    }else if (t == "shopinner"){
+
+    }else if (t == "shopperfront"){
+
+    }else if (t == "shopperback"){
+
+    }else if (t == "shopperidf"){
+
+    }
+    console.log("lookexample:",t)
+    wx.navigateTo({
+      url: '/pages/VtfExample/VtfExample',
+    })
+  },
+
+  // 信息确认，提交网络
+  confirmToSubmitInfo:function(e){
+
+    wx.showLoading({
+      title: '正在提交...',
+      mask:true
+    })
+    setTimeout(function(){
+      wx.hideLoading({
+        success: (res) => {
+          wx.navigateBack({
+            delta: 0,
+          })
+        },
+      })
+    },2000)
+  },
+
 })

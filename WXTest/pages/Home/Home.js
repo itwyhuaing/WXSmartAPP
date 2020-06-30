@@ -90,6 +90,13 @@ Page({
     // 自定义组件触发事件时提供的detail对象
     console.log("onClickevent :",e)
     
-  }
+  },
+
+  // Alert
+  callAlert:function(e){
+    wx.navigateTo({
+      url: '/pages/Alert/Alert',
+    })
+  },
 
 })

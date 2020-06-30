@@ -1,9 +1,13 @@
 <template name="y">
-  <view class="cell" bindtap="chooseAdr">
+  <view class="cell">
     <view class="leftpart">
-      <view class="mark"><image src="/images/mark_star.png"></image></view>
+      <!-- <view class="mark"><image src="/images/mark_star.png"></image></view> -->
       <view class="them">{{title}}</view>
-      <view class="uninput"><text>{{holderTxt}}</text></view>
+      <view class="uninput">
+        <picker mode="time" value="{{c_time}}" start="00:00" end="24:00" bindchange="changeTimeValue" data-tp="{{type}}">
+          <text>{{holderTxt}}</text>
+        </picker>
+      </view>
     </view>
     <view class="rightpart">
       <image src="/images/arrow_left.png"></image>
@@ -14,7 +18,7 @@
 <template name="z">
   <view class="ex_info">
     <view class="ex_l">
-      <view><image src="/images/mark_star.png"></image></view>
+      <!-- <view><image src="/images/mark_star.png"></image></view> -->
       <view>{{title}}</view>
     </view>
 
@@ -51,7 +55,7 @@
     <template is="z" data="{{...shopperidf}}"></template>
 
 
-    <view class="bottom_fixed" bindtap="tapnextoperate">
+    <view class="bottom_fixed" bindtap="confirmToSubmitInfo">
       <text>确 认</text>
     </view>
 

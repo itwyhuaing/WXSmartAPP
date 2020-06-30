@@ -1,1 +1,5 @@
-/* pages/Picker/Picker.wxss */
+.section {
+  margin: 66rpx 0;
+  text-align: center;
+  border: solid 1rpx red;
+}

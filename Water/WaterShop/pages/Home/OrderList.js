@@ -6,7 +6,7 @@ Page({
    */
   data: {
     orderdata:[],
-    filtermsg:"全部",
+
   },
 
   /**
@@ -146,12 +146,12 @@ Page({
     if (appInstance.globalData.loginstatus != "1"){
       // 1. 未认证或未登录，进入入口页面
       wx.navigateTo({
-        url: '/pages/Entry/Entry',
+        //url: '/pages/Entry/Entry',
       })
     }else  {
       if (appInstance.globalData.vtfstatus != "1"){
         wx.navigateTo({
-          url: '/pages/Vertify/Vertify',
+          //url: '/pages/Vertify/Vertify',
         })
       }
     }
@@ -193,21 +193,12 @@ Page({
 
   },
 
-  taporder:function(e){
-    let v = e.currentTarget.dataset.value
-    console.log("订单选择:",v,",进入该订单详情页");
+  // 查看订单详情
+  lookOrderDetail:function(e) {
+    console.log("进入该订单详情页:",e)
     wx.navigateTo({
       url: '/pages/OrderDetail/OrderDetail',
     })
   },
-
-  chosedaterlt:function(e){
-    console.log("测试date选择结果:",e);
-    let rlt = e.detail.value
-    this.setData({
-      date:rlt
-    })
-  },
-
 
 })

@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="content">
+    <view class="cell">
+      <button bindtap="callToast"> Toast </button>
+    </view>
+
+    <view class="cell">
+      <button bindtap="callModal"> Modal </button>
+    </view>
+
+    <view class="cell">
+      <button bindtap="callLoading"> Loading </button>
+    </view>
+
+    <view class="cell">
+      <button bindtap="callActionSheet"> ActionSheet </button>
+    </view>
+
+  </view>
+</view>

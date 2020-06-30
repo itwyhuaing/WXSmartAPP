@@ -7,7 +7,7 @@
   justify-content: space-between;
   /* padding: 200rpx 0; */
   box-sizing: border-box;
-  border: solid 0.8rpx red;
+  /* border: solid 0.8rpx red; */
 } 
 
 /* 底部 fixed button */
@@ -28,7 +28,7 @@
 
 .content_box {
   margin-bottom: 30rpx;
-  border: solid 0.8rpx blue;
+  /* border: solid 0.8rpx blue; */
 }
 
 .themText {

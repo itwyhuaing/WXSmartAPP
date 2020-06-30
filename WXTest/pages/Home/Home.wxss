@@ -1,4 +1,9 @@
 /* pages/Home/Home.wxss */
+
+.cell {
+  margin: 100rpx 0;
+}
+
 .com {
   width: 50%;
   margin: 30rpx;
