@@ -124,11 +124,11 @@ Page({
     var data = [order1,order2,order3,
                 order4,order5,order6
                ]
-    this.setData({
+    this.setData({ 
       orderdata:data
     })
 
-
+    
   },
 
   /**
@@ -146,12 +146,12 @@ Page({
     if (appInstance.globalData.loginstatus != "1"){
       // 1. 未认证或未登录，进入入口页面
       wx.navigateTo({
-        //url: '/pages/Entry/Entry',
+        url: '/pages/Entry/Entry',
       })
     }else  {
       if (appInstance.globalData.vtfstatus != "1"){
         wx.navigateTo({
-          //url: '/pages/Vertify/Vertify',
+          url: '/pages/Vertify/Vertify',
         })
       }
     }
