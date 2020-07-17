@@ -25,4 +25,8 @@
     <button bindtap="callAlert" data-value="DataTest"> Alert </button>
   </view>
 
+  <view class="cell">
+    <button bindtap="callAddress" data-value="DataTest"> 收货地址 </button>
+  </view>
+
 </view>

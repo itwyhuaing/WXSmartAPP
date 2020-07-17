@@ -99,4 +99,11 @@ Page({
     })
   },
 
+  // callAddress
+  callAddress:function(e){
+    wx.navigateTo({
+      url: '/pages/Adr/Adr',
+    })
+  },
+
 })
