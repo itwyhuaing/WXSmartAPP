@@ -1,4 +1,6 @@
 // pages/Vertify/Vertify.js
+
+var recordedinfo = {};
 Page({
 
   /**
@@ -7,10 +9,10 @@ Page({
   data: {
     // 无图片
     name:{title:"店铺名称：",holderTxt:"请输入",type:"name"},
-    adr1:{title:"选择地址：",holderTxt:"点击选择",type:"adr1"},
-    adr2:{title:"门牌号：",holderTxt:"请输入",type:"adr2"},
-    tel1:{title:"订购电话：",holderTxt:"请输入",type:"tel1"},
-    tel2:{title:"商家电话：",holderTxt:"请输入",type:"tel2"},
+    address:{title:"选择地址：",holderTxt:"点击选择",type:"address"},
+    detail_address:{title:"门牌号：",holderTxt:"请输入",type:"detail_address"},
+    mobies:{title:"订购电话：",holderTxt:"请输入",type:"mobies"},
+    tels:{title:"商家电话：",holderTxt:"请输入",type:"tels"},
     
     // 有图片
     shopdoor:{title:"店铺门面照片",remark:"照片需包含完整的牌匾与门槛",eximg:"",epl:"查看样例",type:"shopdoor"},
@@ -27,7 +29,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      
   },
 
   /**
@@ -83,17 +85,33 @@ Page({
   valueforinput:function (e){
     let t = e.currentTarget.dataset.type
     let v = e.detail.value
+    if(t == "name") {
+      recordedinfo["name"] = v
+    }else if (t == "detail_address"){
+      recordedinfo["detail_address"] = v
+    }else if (t == "mobies"){
+      recordedinfo["mobies"] = v
+    }else if (t == "tels"){
+      recordedinfo["tels"] = v
+    }
+
     console.log(t+","+v)
+
+    console.log(recordedinfo)
   },
 
   chooseAdr:function (e){
     wx.chooseLocation({
       complete: (res) => {
-        var tmp = this.data.adr1
+        var tmp = this.data.address
         tmp["holderTxt"] = res.address
+        // 记录结果
+        recordedinfo["address"] = res.address
+        // 更新显示
         this.setData({
-          adr1:tmp,
+          address:tmp,
         })
+
       },
     })
 
@@ -113,63 +131,80 @@ Page({
 
   },
 
-  chooseImage:function(e) {
+  chooseTheImage:function(e) {
     var tmp = ""
     wx.chooseImage({
 
       success(res){
         tmp = res.tempFilePaths[0]
+        // 网络图片上传
+        wx.uploadFile({
+          filePath: tmp,
+          name: 'shopimage',
+          url: 'http://www.movead.xyz/upload/image',
+          success(res){
+            console.log("图片上传-success：",res)
+          },
+          fail(res){
+            console.log("图片上传-fail：",res)
+          },
+          complete(res) {
+            console.log("图片上传-complete：",res)
+          }
+        })
+
       },
 
       complete: (res) => {
         if (tmp.length > 0){
           let t = e.currentTarget.dataset.tp
-        var info = {}
-        if (t == "shopdoor") {
-          info = this.data.shopdoor
-          info["eximg"] = tmp;
-          this.setData({
-            shopdoor:info
-          })
-        }else if (t == "shopinner"){
-          info = this.data.shopinner
-          info["eximg"] = tmp;
-          this.setData({
-            shopinner:info
-          })
-        }else if (t == "shopperfront"){
-          info = this.data.shopperfront
-          info["eximg"] = tmp;
-          this.setData({
-            shopperfront:info
-          })
-        }else if (t == "shopperback"){
-          info = this.data.shopperback
-          info["eximg"] = tmp;
-          this.setData({
-            shopperback:info
-          })
-        }else if (t == "shopperidf"){
-          info = this.data.shopperidf
-          info["eximg"] = tmp;
-          this.setData({
-            shopperidf:info
-          })
-        }else if (t == "shoplicense"){
-          info = this.data.shoplicense
-          info["eximg"] = tmp;
-          this.setData({
-            shoplicense:info
-          })
-        }else if (t == "shoppermit"){
-          info = this.data.shoppermit
-          info["eximg"] = tmp;
-          this.setData({
-            shoppermit:info
+          var info = {}
+          if (t == "shopdoor") {
+            info = this.data.shopdoor
+            info["eximg"] = tmp;
+            this.setData({
+              shopdoor:info
+            })
+          }else if (t == "shopinner"){
+            info = this.data.shopinner
+            info["eximg"] = tmp;
+            this.setData({
+              shopinner:info
+            })
+          }else if (t == "shopperfront"){
+            info = this.data.shopperfront
+            info["eximg"] = tmp;
+            this.setData({
+              shopperfront:info
+            })
+          }else if (t == "shopperback"){
+            info = this.data.shopperback
+            info["eximg"] = tmp;
+            this.setData({
+              shopperback:info
+            })
+          }else if (t == "shopperidf"){
+            info = this.data.shopperidf
+            info["eximg"] = tmp;
+            this.setData({
+              shopperidf:info
+            })
+          }else if (t == "shoplicense"){
+            info = this.data.shoplicense
+            info["eximg"] = tmp;
+            this.setData({
+              shoplicense:info
+            })
+          }else if (t == "shoppermit"){
+            info = this.data.shoppermit
+            info["eximg"] = tmp;
+            this.setData({
+              shoppermit:info
           })
         }
         
         console.log("chooseImage:",t,"   info:",info,"测试结果：",tmp.indexOf('wxfile')>=0)
+
         }
       },
     })
@@ -200,6 +235,24 @@ Page({
   },
 
   tapnextoperate:function (e){
+
+    // 网络请求
+    console.log(" 发起网络请求 :",recordedinfo)
+    wx.request({
+      method:"POST",
+      url: 'http://www.movead.xyz/shops',
+      data:recordedinfo,
+      fail(res){
+        console.log(" fail :",res)
+      },
+      success(res){
+        console.log(" success :",res)
+      },
+      complete(res){
+        console.log(" complete :",res)
+      }
+    })
+
     wx.navigateTo({
       url: '/pages/ProductLib/ProductLib',
     })

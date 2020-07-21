@@ -33,10 +33,10 @@
     <view class="ex_r">
       <view class="remark">{{remark}}</view>
       <block wx:if="{{eximg.length>0}}">
-        <view class="lcwx" bindtap="chooseImage" data-tp="{{type}}"><image src="{{eximg}}"></image></view>
+        <view class="lcwx" bindtap="chooseTheImage" data-tp="{{type}}"><image src="{{eximg}}"></image></view>
       </block>
       <block wx:else>
-        <view class="lc" bindtap="chooseImage" data-tp="{{type}}"><image src="/images/photo_camera.png"></image></view>
+        <view class="lc" bindtap="chooseTheImage" data-tp="{{type}}"><image src="/images/photo_camera.png"></image></view>
       </block>
       <view class="epl" bindtap="lookexample" data-tp="{{type}}">{{epl}}</view>
     </view>
@@ -49,11 +49,11 @@
     <!-- 店铺名称 -->
     <template is="x" data="{{...name}}"></template>
     <!-- 店铺位置 -->
-    <template is="y" data="{{...adr1}}"></template>
-    <template is="x" data="{{...adr2}}"></template> 
+    <template is="y" data="{{...address}}"></template>
+    <template is="x" data="{{...detail_address}}"></template> 
     <!-- 电话 -->
-    <template is="x" data="{{...tel1}}"></template>
-    <template is="x" data="{{...tel2}}"></template>
+    <template is="x" data="{{...mobies}}"></template>
+    <template is="x" data="{{...tels}}"></template>
     <!-- 门脸照 -->
     <!-- <template is="z" data="{{...shopdoor}}"></template> -->
     <!-- 店铺内景 -->
