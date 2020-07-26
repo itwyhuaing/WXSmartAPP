@@ -1,4 +1,5 @@
-// pages/Entry/Entry.js
+var api   = require('../../Common_js/api')
+var toast = require('../../Common_js/toast')
 
 var appInstance = getApp()
 
@@ -84,6 +85,29 @@ Page({
   // 获取验证码
   tapCodeBtn:function (e) {
     console.log("获取验证码")
+    toast.showLoading()
+    let tmp = "13691658693"
+    console.log("手机号：",tmp)
+    wx.request({
+      url: api.URL.vtfcode,
+      method:"POST",
+      data:{
+        mobile:tmp
+      },
+      success (res) {
+        console.log("获取到验证码:",res)
+        var rlt = this.data.telcode
+        //rlt['code'] = 
+        this.setData({
+          telcode:rlt
+        })
+      },fail(res){
+
+      },complete(res) {
+        toast.hideLoading()
+      }
+    })
+
   },
 
   // 捕获输入内容
@@ -132,40 +156,48 @@ Page({
   // 点击登录
   tapLoginBtn:function (e) {
     if (this.data.curType == 'left') {
-      console.log("手机号登录:",this.data.telcode)
-    }else {
-      console.log("账号密码登录:",this.data.acountpwd)
-    }
-
-    //  模拟登录操作
-    wx.showLoading({
-      title:'正在登录...'
-    })
-    setTimeout(function(){
-      wx.hideLoading({
-        complete: (res) => {
-          appInstance.globalData.loginstatus = "1"
-
-          console.log("修改登录态:",appInstance.globalData.loginstatus);
-          
-          wx.navigateBack()
-           wx.showToast({
-             title:'成功',
-             duration:2000
-           })
+      toast.showLoading()
+      wx.request({
+        url: api.URL.vtflogin,
+        data:{
+          "mobile":this.data.telcode.tel,
+          "vcode":this.data.telcode.code
         },
-      })
-    },3000)
-    
+        success(res) {
+          // 登录成功之后，先验证是否已认证开店
+          // 1、未开店则进入开店页
+          wx.navigateTo({
+            url: '/pages/Vertify/Vertify',
+          })
 
+          // 2、 已开店铺进入订单首页
+          //wx.navigateBack()
+
+          
+        },fail (res){
+
+          // 1、未开店则进入开店页
+          // wx.navigateTo({
+          //   url: '/pages/Vertify/Vertify',
+          // })
+
+          // 2、 已开店铺进入订单首页
+          //wx.navigateBack()
+
+        },complete(res){
+          toast.hideLoading()
+        }
+      })
+    }
+  
   },
 
   // 开店入口
-  tapcreateshop:function (e){
-    console.log("tapcreateshop")
-    wx.navigateTo({
-      url: '/pages/Vertify/Vertify',
-    })
-  },
+  // tapcreateshop:function (e){
+  //   console.log("tapcreateshop")
+  //   wx.navigateTo({
+  //     url: '/pages/Vertify/Vertify',
+  //   })
+  // },
 
 })

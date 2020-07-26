@@ -31,9 +31,9 @@
     <view class="loginbtn" bindtap="tapLoginBtn">登   录</view>
 
     <!-- 我去开店 -->
-    <view class="themText register" bindtap="tapcreateshop">
+    <!-- <view class="themText register" bindtap="tapcreateshop">
       <view>去开店</view>
       <view><image src="/images/arrow_left.png"></image></view>
-    </view>
+    </view> -->
   </view>
 </view>

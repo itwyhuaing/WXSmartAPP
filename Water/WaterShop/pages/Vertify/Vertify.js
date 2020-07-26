@@ -1,6 +1,8 @@
-// pages/Vertify/Vertify.js
+var api   = require('../../Common_js/api')
+var toast = require('../../Common_js/toast')
 
-var recordedinfo = {};
+// 上传店铺信息参数组装
+var recordedinfo_para = {};
 Page({
 
   /**
@@ -86,18 +88,18 @@ Page({
     let t = e.currentTarget.dataset.type
     let v = e.detail.value
     if(t == "name") {
-      recordedinfo["name"] = v
+      recordedinfo_para["name"] = v
     }else if (t == "detail_address"){
-      recordedinfo["detail_address"] = v
+      recordedinfo_para["detail_address"] = v
     }else if (t == "mobies"){
-      recordedinfo["mobies"] = v
+      recordedinfo_para["mobies"] = v
     }else if (t == "tels"){
-      recordedinfo["tels"] = v
+      recordedinfo_para["tels"] = v
     }
 
     console.log(t+","+v)
 
-    console.log(recordedinfo)
+    console.log(recordedinfo_para)
   },
 
   chooseAdr:function (e){
@@ -106,7 +108,7 @@ Page({
         var tmp = this.data.address
         tmp["holderTxt"] = res.address
         // 记录结果
-        recordedinfo["address"] = res.address
+        recordedinfo_para["address"] = res.address
         // 更新显示
         this.setData({
           address:tmp,
@@ -141,7 +143,7 @@ Page({
         wx.uploadFile({
           filePath: tmp,
           name: 'shopimage',
-          url: 'http://www.movead.xyz/upload/image',
+          url: api.URL.uploadiage,
           success(res){
             console.log("图片上传-success：",res)
           },
@@ -237,11 +239,12 @@ Page({
   tapnextoperate:function (e){
 
     // 网络请求
-    console.log(" 发起网络请求 :",recordedinfo)
+    console.log(" 发起网络请求 :",recordedinfo_para)
+    toast.showLoading()
     wx.request({
       method:"POST",
-      url: 'http://www.movead.xyz/shops',
-      data:recordedinfo,
+      url: api.URL.addshop,
+      data:recordedinfo_para,
       fail(res){
         console.log(" fail :",res)
       },
@@ -249,6 +252,9 @@ Page({
         console.log(" success :",res)
       },
       complete(res){
+        toast.hideLoading()
+        var appInstance = getApp()
+        appInstance.userInfo = res.data
         console.log(" complete :",res)
       }
     })
