@@ -1,11 +1,13 @@
-// pages/Home/Home.js
+var totalTimeCount = 60
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    timerCnt:"定时器"
   },
 
   /**
@@ -105,5 +107,27 @@ Page({
       url: '/pages/Adr/Adr',
     })
   },
+
+  // startCount
+  startCount:function (e) {
+
+    var countNum = 60;
+    var self = this;
+    var coun = setInterval(function(){
+      countNum--;
+      if (countNum > 0){
+        self.setData({
+          timerCnt:countNum + "计数"
+        })
+      }else {
+        clearInterval(coun);
+        self.setData({
+          timerCnt:"点击计算"
+        })
+      }
+      
+    },1000)
+
+  }
 
 })

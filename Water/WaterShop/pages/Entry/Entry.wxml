@@ -2,12 +2,12 @@
   <view class="box">
     
     <view class="row telinput">
-      <view><input placeholder="{{acountHolder}}" bindblur="blurAcountInput" data-type="{{type}}"></input></view>
+      <view><input placeholder="{{acountHolder}}" bindblur="blurAcountInput"></input></view>
     </view>
 
     <view class="row codeinput">
-      <view><input placeholder="{{codeHolder}}" bindblur="blurCodeInput" data-type="{{type}}"></input></view>
-      <view class="code {{type == 'left' ? 'codebtn' : ''}}" bindtap="tapCodeBtn">获取验证码</view>
+      <view><input placeholder="{{codeHolder}}" bindblur="blurCodeInput"></input></view>
+      <view class="code {{currentType == '0' ? 'unactive' : 'active'}}" bindtap="tapCodeBtn">{{codeThem}}</view>
     </view>
 
   </view>
@@ -16,24 +16,7 @@
 
 <view class="container">
   <view class="usrentry">
-    <!-- 我已开店，登录 -->
-    <view class="themText">去登陆</view>
-    <view class="switch">
-      <view class="btn {{curType == 'left' ? 'b_active' : ''}}    " bindtap="switchTapEvent" data-status="left">手机号登录</view>
-      <!-- <view class="btn {{curType == 'right' ? 'b_active' : ''}}" bindtap="switchTapEvent" data-status="right">账号密码登录</view> -->
-    </view>
-    <view class="part {{curType == 'left' ? 'p_active' : ''}}">
-      <template is="x" data="{{...tel_login}}"></template>
-    </view>
-    <view class="part {{curType == 'right' ? 'p_active' : ''}}">
-      <template is="x" data="{{...acount_login}}"></template>
-    </view>
-    <view class="loginbtn" bindtap="tapLoginBtn">登   录</view>
-
-    <!-- 我去开店 -->
-    <!-- <view class="themText register" bindtap="tapcreateshop">
-      <view>去开店</view>
-      <view><image src="/images/arrow_left.png"></image></view>
-    </view> -->
+    <template is="x" data="{{...tel_login}}"></template>
+    <view class="loginbtn" bindtap="tapLoginBtn">登 录/注 册</view>
   </view>
 </view>

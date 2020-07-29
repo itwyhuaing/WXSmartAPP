@@ -1,4 +1,5 @@
-// pages/Home/OrderList.js
+var appInstance = getApp()
+
 Page({
 
   /**
@@ -13,6 +14,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 判断是否已登陆
+    if (appInstance.globalData.loginstatus == "0"){
+      wx.navigateTo({
+        url: '/pages/Entry/Entry',
+      })
+    }
+
     let order1 = {
       order_id:"300000",
       order_adr:"深圳市宝安区西乡街道1", 
@@ -121,20 +129,21 @@ Page({
       order_pids:[{}] // 此次交易所设计产品
     }
 
-    var data = [order1,order2,order3,
+    var sourData = [order1,order2,order3,
                 order4,order5,order6
                ]
+               
     this.setData({ 
-      orderdata:data
-    })
+      orderdata:sourData
+    })               
 
-    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    console.log("onReady")
 
   },
 
@@ -142,14 +151,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
-    var appInstance = getApp()
-    if (appInstance.globalData.loginstatus != "1"){
-      // 1. 未登录，进入入口页面
-      wx.navigateTo({
-        url: '/pages/Entry/Entry',
-      })
-    }
+    console.log("onShow - 1")
 
   },
 

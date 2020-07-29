@@ -2,6 +2,8 @@ var api   = require('../../Common_js/api')
 var toast = require('../../Common_js/toast')
 
 var appInstance = getApp()
+var telCode = {} // 记录输入的手机号与验证码
+var totalTimeCount = 0 // 倒计时
 
 Page({
 
@@ -9,195 +11,112 @@ Page({
    * 页面的初始数据
    */
   data: {
-    curType:"left",
-    tel_login:{acountHolder:"请输入手机号",codeHolder:"请输入验证码",type:"left"},
-    acount_login:{acountHolder:"请输入账号",codeHolder:"请输入密码",type:"right"},
-    acountpwd:{acount:"",pwd:""},
-    telcode:{tel:"",code:""},
+    tel_login:{
+      acountHolder:"请输入手机号",
+        codeHolder:"请输入验证码",
+        codeThem:"获取验证码",
+        currentType:"1"
+      },
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
+  
+    /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  // 捕获输入内容
+  blurAcountInput:function (e){
+    //console.log(e)
+    let v = e.detail.value
+    telCode["tel"] = v
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  blurCodeInput:function (e) {
+    let v = e.detail.value
+    telCode["code"] = v
+    console.log("验证码:",v)
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-
-  // 登录方式切换 ：手机号登录、账号登录
-  switchTapEvent:function (e){
-    console.log("switchTapEvent:"+e.currentTarget.dataset.status)
-    this.setData({
-      curType:e.currentTarget.dataset.status
-    })
-
-    console.log(this.data.curType)
-  },
 
   // 获取验证码
   tapCodeBtn:function (e) {
-    console.log("获取验证码")
+    if(totalTimeCount > 0 && totalTimeCount <= 60){
+      return;
+    }
+    var self = this
+    // 发起请求
     toast.showLoading()
-    let tmp = "13691658693"
-    console.log("手机号：",tmp)
+    console.log("请求验证码手机号：",telCode.tel)
     wx.request({
       url: api.URL.vtfcode,
       method:"POST",
       data:{
-        mobile:tmp
+        mobile:telCode.tel
       },
       success (res) {
         console.log("获取到验证码:",res)
-        var rlt = this.data.telcode
-        //rlt['code'] = 
-        this.setData({
-          telcode:rlt
-        })
+        toast.showSuccess("验证码已发送")
+        totalTimeCount = 60
+        var info = self.data.tel_login
+        let timr = setInterval(function(){
+          totalTimeCount --
+          info.codeThem = totalTimeCount + "秒之后重试"
+          info.currentType = "0"
+          if(totalTimeCount > 0){
+            self.setData({
+              tel_login:info
+            })
+          }else {
+            clearInterval(timr)
+            info.codeThem = "获取验证码"
+            info.currentType = "1"
+            self.setData({
+              tel_login:info
+            })
+          }
+        },1000)
       },fail(res){
-
+        toast.showToast("验证码获取失败")
       },complete(res) {
-        toast.hideLoading()
       }
     })
 
   },
 
-  // 捕获输入内容
-  blurAcountInput:function (e){
-    // console.log(e)
-    let v = e.detail.value
-    let t = e.currentTarget.dataset.type
-    
-    if (t == 'left'){
-      var rlt = this.data.telcode
-      rlt['tel'] = v
-      this.setData({
-        telcode:rlt
-      })
-    }else{
-      var rlt = this.data.acountpwd
-      rlt['acount'] = v
-      this.setData({
-        acountpwd:rlt
-      })
-    }
-    // console.log('blurAcountInput:',rlt,this.data.telcode)
-  },
-
-  blurCodeInput:function (e) {
-    // console.log(e)
-    let v = e.detail.value
-    let t = e.currentTarget.dataset.type
-    var rlt = {}
-    if (t == 'left'){
-      var rlt = this.data.telcode
-      rlt['code'] = v
-      this.setData({
-        telcode:rlt
-      })
-    }else{
-      var rlt = this.data.acountpwd
-      rlt['pwd'] = v
-      this.setData({
-        acountpwd:rlt
-      })
-    }
-    // console.log('blurCodeInput:',rlt)
-  },
 
   // 点击登录
   tapLoginBtn:function (e) {
-    if (this.data.curType == 'left') {
-      toast.showLoading()
+    console.log("点击登录:",telCode)
+
+    toast.showLoading()
       wx.request({
         url: api.URL.vtflogin,
         data:{
-          "mobile":this.data.telcode.tel,
-          "vcode":this.data.telcode.code
+          "mobile":telCode.tel,
+          "vcode":telCode.code
         },
         success(res) {
+          console.log("点击登录success:",res)
+          appInstance.globalData.loginstatus = "1"
+          appInstance.globalData.vtfstatus = "0"
           // 登录成功之后，先验证是否已认证开店
-          // 1、未开店则进入开店页
-          wx.navigateTo({
-            url: '/pages/Vertify/Vertify',
-          })
-
-          // 2、 已开店铺进入订单首页
-          //wx.navigateBack()
-
-          
+          if (appInstance.globalData.vtfstatus == "0"){
+            // 1、未开店则进入开店页
+            wx.navigateTo({
+              url: '/pages/Vertify/Vertify',
+            })
+          }else{
+            // 2、 已开店铺进入订单首页
+          wx.navigateBack()
+          }          
         },fail (res){
-
-          // 1、未开店则进入开店页
-          // wx.navigateTo({
-          //   url: '/pages/Vertify/Vertify',
-          // })
-
-          // 2、 已开店铺进入订单首页
-          //wx.navigateBack()
-
+          console.log("点击登录fail:",res)
         },complete(res){
           toast.hideLoading()
         }
       })
-    }
   
   },
-
-  // 开店入口
-  // tapcreateshop:function (e){
-  //   console.log("tapcreateshop")
-  //   wx.navigateTo({
-  //     url: '/pages/Vertify/Vertify',
-  //   })
-  // },
 
 })

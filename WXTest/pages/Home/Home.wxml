@@ -29,4 +29,8 @@
     <button bindtap="callAddress" data-value="DataTest"> 收货地址 </button>
   </view>
 
+  <view class="cell">
+    <button bindtap="startCount" data-value="DataTest"> {{timerCnt}} </button>
+  </view>
+
 </view>
