@@ -54,16 +54,6 @@
     <!-- 电话 -->
     <template is="x" data="{{...mobies}}"></template>
     <template is="x" data="{{...tels}}"></template>
-    <!-- 门脸照 -->
-    <!-- <template is="z" data="{{...shopdoor}}"></template> -->
-    <!-- 店铺内景 -->
-    <!-- <template is="z" data="{{...shopinner}}"></template> -->
-    <!-- 身份证正面 -->
-    <!-- <template is="z" data="{{...shopperfront}}"></template> -->
-    <!-- 身份证反面 -->
-    <!-- <template is="z" data="{{...shopperback}}"></template> -->
-    <!-- 手持身份证 -->
-    <!-- <template is="z" data="{{...shopperidf}}"></template> -->
     <!-- 营业执照 -->
     <template is="z" data="{{...shoplicense}}"></template>
     <!-- 许可证 -->
