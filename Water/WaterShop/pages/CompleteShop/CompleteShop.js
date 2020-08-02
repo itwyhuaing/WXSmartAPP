@@ -1,6 +1,9 @@
 // pages/CompleteShop/CompleteShop.js
-Page({
 
+// 完善店铺信息参数组装
+var recordedinfo_para = {};
+
+Page({
   /**
    * 页面的初始数据
    */
@@ -10,67 +13,11 @@ Page({
     atime:{title:"预约时间：",holderTxt:"点击选择",type:"apttime"},
     
     // 有图片
-    shopdoor:{title:"店铺门面照片",remark:"照片需包含完整的牌匾与门槛",eximg:"",epl:"查看样例",type:"shopdoor"},
-    shopinner:{title:"店铺内部照片",remark:"照片需真实反应店铺内部环境",eximg:"",epl:"查看样例",type:"shopinner"},
-    shopperfront:{title:"身份证正面照",remark:"照片需真实反应店铺内部环境",eximg:"",epl:"查看样例",type:"shopperfront"},
-    shopperback:{title:"身份证反面照",remark:"照片需真实反应店铺内部环境",eximg:"",epl:"查看样例",type:"shopperback"},
-    shopperidf:{title:"手持身份证照片",remark:"照片需真实反应店铺内部环境",eximg:"",epl:"查看样例",type:"shopperidf"},
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    shopdoor:{title:"店铺门面照片",remark:"照片需包含完整的牌匾与门槛。",eximg:"",epl:"查看样例",type:"shopdoor"},
+    shopinner:{title:"店铺内部照片",remark:"照片需真实反应店铺内部环境。",eximg:"",epl:"查看样例",type:"shopinner"},
+    shopperfront:{title:"身份证正面照",remark:"照片信息需清晰完整。",eximg:"",epl:"查看样例",type:"shopperfront"},
+    shopperback:{title:"身份证反面照",remark:"照片信息需清晰完整。",eximg:"",epl:"查看样例",type:"shopperback"},
+    shopperidf:{title:"手持身份证照片",remark:"本人手持身份证拍摄，正面五官及身份证信息清晰完整。",eximg:"",epl:"查看样例",type:"shopperidf"},
   },
 
   // 设置时间
@@ -85,12 +32,14 @@ Page({
       this.setData({
         btime:tmp
       })
+      recordedinfo_para["businesstime"] = vtime
     } else if (tp = "apttime"){
       tmp = this.data.atime
       tmp["holderTxt"] = vtime
       this.setData({
         atime:tmp
       })
+      recordedinfo_para["apttime"] = vtime
     }
   },
 

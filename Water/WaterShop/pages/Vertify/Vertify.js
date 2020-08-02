@@ -17,8 +17,8 @@ Page({
     tels:{title:"商家电话：",holderTxt:"请输入",type:"tels"},
     
     // 有图片
-    shoplicense:{title:"营业执照",remark:"照片信息需清晰完整",eximg:"",epl:"查看样例",type:"shoplicense"},
-    shoppermit:{title:"许可证",remark:"照片信息需清晰完整",eximg:"",epl:"查看样例",type:"shoppermit"},
+    shoplicense:{title:"营业执照",remark:"照片信息需清晰完整。",eximg:"",epl:"查看样例",type:"shoplicense"},
+    shoppermit:{title:"许可证",remark:"照片信息需清晰完整。",eximg:"",epl:"查看样例",type:"shoppermit"},
 
   },
 
@@ -40,10 +40,14 @@ Page({
   chooseAdr:function (e){
     wx.chooseLocation({
       complete: (res) => {
+        console.log("地址选择:",res)
         var tmp = this.data.address
         tmp["holderTxt"] = res.address
         // 记录结果
         recordedinfo_para["address"] = res.address
+        recordedinfo_para["latitude"] = res.latitude
+        recordedinfo_para["longitude"] = res.longitude
+
         // 更新显示
         this.setData({
           address:tmp,

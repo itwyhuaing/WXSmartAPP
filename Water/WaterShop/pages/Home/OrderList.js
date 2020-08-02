@@ -15,15 +15,15 @@ Page({
    */
   onLoad: function (options) {
     // wx.navigateTo({
-    //   url: '/pages/ProductLib/ProductLib',
+    //   url: '/pages/Vertify/Vertify',
     // })
     // return;
     
     // 判断是否已登陆
     if (appInstance.globalData.loginstatus == "0"){
-      // wx.navigateTo({
-      //   url: '/pages/Entry/Entry',
-      // })
+      wx.navigateTo({
+        url: '/pages/Entry/Entry',
+      })
     }
 
     let order1 = {
