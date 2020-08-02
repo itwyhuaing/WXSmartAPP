@@ -1,4 +1,5 @@
-// pages/ProductLib/ProductLib.js
+var api = require("../../Common_js/api")
+var choosedpdts = []
 
 Page({
 
@@ -7,119 +8,78 @@ Page({
    */
   data: {
     libs:[
-          {value:"p_y",status:1,name:"怡宝桶装水",pimage:"/images/58_58.png",price:"",acts:["月底前一次性购满100送一同"]},
-          {value:"p_b",status:1,name:"怡宝桶装水t",pimage:"/images/58_58.png",price:"",acts:[]},
-          {value:"p_n",status:0,name:"怡宝桶装水",pimage:"/images/58_58.png",price:"",acts:[]},
-          {value:"p_w",status:0,name:"怡宝桶装水",pimage:"/images/58_58.png",price:"",acts:[]},
-          {value:"p_h",status:0,name:"怡宝桶装水",pimage:"/images/58_58.png",price:"",acts:[]},
-          {value:"p_k",status:0,name:"怡宝桶装水",pimage:"/images/58_58.png",price:"",acts:[]},
+          {value:"p_y",status:0,name:"怡宝桶装水1",pimage:"/images/58_58.png",price:"",acts:["月底前一次性购满100送一同"]},
+          {value:"p_b",status:0,name:"怡宝桶装水2",pimage:"/images/58_58.png",price:"",acts:[]},
+          {value:"p_n",status:0,name:"怡宝桶装水3",pimage:"/images/58_58.png",price:"",acts:[]},
+          {value:"p_w",status:0,name:"怡宝桶装水4",pimage:"/images/58_58.png",price:"",acts:[]},
+          {value:"p_h",status:0,name:"怡宝桶装水5",pimage:"/images/58_58.png",price:"",acts:[]},
+          {value:"p_k",status:0,name:"怡宝桶装水6",pimage:"/images/58_58.png",price:"",acts:[]},
           ],
-    
-    chosedrlt:[],
 
     // 输入的内容
-    customproname:""
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+    inputproname:""
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-
+  // 交互事件
   choseproduct:function (e) {
+
+    // 解析数据
     let v = e.currentTarget.dataset.value
     var info = this.data.libs
     for(var cou = 0;cou < info.length;cou ++) {
-      var dic = info[cou];
-      if (dic["value"] == v) {
-        var tmp = dic["status"] == 0 ? 1 : 0
-        dic["status"] = tmp
+      var product = info[cou];
+      if (product["value"] == v) {
+        var tmp = product["status"] == 0 ? 1 : 0
+        if (tmp == 0){ // 取消操作
+          console.log("取消操作")
+          let idx = choosedpdts.indexOf(product)
+          choosedpdts.splice(idx,1)
+        }else { // 添加操作
+          console.log("添加操作")
+          choosedpdts.push(product)
+          //console.log("元素位置：",choosedpdts.indexOf(product))
+        }
+        product["status"] = tmp
       }
     }
+    // 更新显示
     this.setData ({
       libs:info
     })
+
+    // 整合选中结果
+    console.log("已选中产品个数：",choosedpdts.length,"已选中产品：",choosedpdts)
+
   },
 
   tapForAddActEvent:function (e){
     
     let that = this
     let location = e.currentTarget.dataset.idx
-    var arr  = this.data.libs
-    var info = arr[location]
+    var productlibs  = that.data.libs
+    var product = productlibs[location]
     
     wx.navigateTo({
       url: '/pages/ActLib/ActLib',
       
       events:{
         addActs:function(data){
-          
-          console.log("arr - 0 :",arr)
-          arr.splice(location,1)
-          console.log("arr - 1 :",arr)
+          console.log("productlibs - 0 :",productlibs)
+          productlibs.splice(location,1)
+          console.log("productlibs - 1 :",productlibs)
           if (data.para.length > 0) {
             var tmp_acts = []
             for(var cou = 0;cou < data.para.length;cou ++){
               var f = data.para[cou]
               tmp_acts.push(f.detail)
             }
-            info["acts"] = tmp_acts
+            product.acts = tmp_acts
           }
-          arr.splice(location,0,info)
-          console.log("arr - 1 :",arr,"data.para :",info.detail)
+          productlibs.splice(location,0,product)
+          console.log("productlibs - 1 :",productlibs,"data.para :",product.detail)
           that.setData({
-            libs:arr
+            libs:productlibs
           })
         }
       }
@@ -129,37 +89,55 @@ Page({
   },
 
   // 新增产品名称
-  addProductNameConfirm:function(e){
+  inputProductNameConfirm:function(e){
     let name = e.detail.value
     this.setData({
-      customproname:name
+      inputproname:name
     })
   },
 
   addProductConfirm:function (e){
-    let name = this.data.customproname
+    let name = this.data.inputproname
+    //console.log("输入测试：",name,"数据源：",this.data.inputproname)
     if(name.length > 0){
-      var f = {value:"p_k",status:0,pimage:"/images/58_58.png",price:"",acts:[]}
+      var f = {value:"p_k",status:1,pimage:"/images/58_58.png",price:"",acts:[]}
       f["name"] = name
       var n_libs = this.data.libs
       n_libs.push(f)
       this.setData({
         libs:n_libs,
-        customproname:""
+        inputproname:""
       })
+
+      // 新增进选中结果
+      choosedpdts.push(f)
+
     }
   },
 
   tapnextoperate:function (e) {
+    console.log("tapnextoperate - 选中产品个数:",choosedpdts.length,"具体产品:",choosedpdts);
     // 1. 整理出选中的产品信息
-    var rlt = []
-    for (var cou = 0; cou < this.data.libs.length; cou ++){
-      var dic = this.data.libs[cou]
-      if (dic["status"] == 1) {
-        rlt.push(dic)
+    // var rlt = []
+    // for (var cou = 0; cou < this.data.libs.length; cou ++){
+    //   var dic = this.data.libs[cou]
+    //   if (dic["status"] == 1) {
+    //     rlt.push(dic)
+    //   }
+    // }
+    wx.request({
+      url: api.URL.addproduct,
+      method:"POST",
+      data:choosedpdts,
+      success(res){
+
+      },fail(res){
+
+      },complete(res){
+
       }
-    }
-    console.log("tapnextoperate:",rlt);
+    })
+
 
     // 2. 跳转到我的
     wx.switchTab({

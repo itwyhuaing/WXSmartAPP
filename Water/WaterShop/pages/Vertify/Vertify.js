@@ -17,8 +17,8 @@ Page({
     tels:{title:"商家电话：",holderTxt:"请输入",type:"tels"},
     
     // 有图片
-    shoplicense:{title:"营业执照",remark:"照片需真实反应店铺内部环境",eximg:"",epl:"查看样例",type:"shoplicense"},
-    shoppermit:{title:"许可证",remark:"照片需真实反应店铺内部环境",eximg:"",epl:"查看样例",type:"shoppermit"},
+    shoplicense:{title:"营业执照",remark:"照片信息需清晰完整",eximg:"",epl:"查看样例",type:"shoplicense"},
+    shoppermit:{title:"许可证",remark:"照片信息需清晰完整",eximg:"",epl:"查看样例",type:"shoppermit"},
 
   },
 
@@ -34,10 +34,7 @@ Page({
     }else if (t == "tels"){
       recordedinfo_para["tels"] = v
     }
-
-    console.log(t+","+v)
-
-    console.log(recordedinfo_para)
+    console.log(t+","+v,"recordedinfo_para :",recordedinfo_para)
   },
 
   chooseAdr:function (e){
@@ -71,8 +68,10 @@ Page({
           success(res){
             if (t == "shoplicense"){
               console.log("营业执照图片上传：",res)
+              recordedinfo_para["shoplicense"] = "https://www.ifreewater.com/shoplicense"
             }else if (t == "shoppermit"){
               console.log("许可证图片上传：",res)
+              recordedinfo_para["shoppermit"] = "https://www.ifreewater.com/shoppermit"
             }
           },fail(res){
             console.log("图片上传-fail：",res)
@@ -137,14 +136,14 @@ Page({
       complete(res){
         toast.hideLoading()
         var appInstance = getApp()
-        appInstance.userInfo = res.data
-        console.log(" complete :",res)
+        appInstance.globalData.userInfo = api.Parser.personalinfo(res.data.data)
+        wx.navigateTo({
+          url: '/pages/ProductLib/ProductLib',
+        })
+        console.log(" complete - res:",res,"appInstance.userInfo :",appInstance.globalData.userInfo)
       }
     })
 
-    wx.navigateTo({
-      url: '/pages/ProductLib/ProductLib',
-    })
   },
 
 })

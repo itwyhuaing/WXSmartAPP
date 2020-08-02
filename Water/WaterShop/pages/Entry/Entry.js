@@ -41,6 +41,7 @@ Page({
 
   // 获取验证码
   tapCodeBtn:function (e) {
+
     if(totalTimeCount > 0 && totalTimeCount <= 60){
       return;
     }

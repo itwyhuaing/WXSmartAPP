@@ -39,7 +39,7 @@
     <view class="addProductFormat">
       <view class="addProThem">新增桶装水品牌</view>
       <view class="addProDetail">
-        <view class="addProInput"><input bindblur="addProductNameConfirm" value="{{clearcustomproname}}" placeholder="请输入桶装水品牌名" ></input></view>
+        <view class="addProInput"><input bindblur="inputProductNameConfirm" value="{{clearcustomproname}}" placeholder="请输入桶装水品牌名" ></input></view>
         <view class="addProConfirm" bindtap="addProductConfirm">确  定</view>
       </view>
     </view>
