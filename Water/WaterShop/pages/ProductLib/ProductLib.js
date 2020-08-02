@@ -8,12 +8,27 @@ Page({
    */
   data: {
     libs:[
-          {value:"p_y",status:0,name:"怡宝桶装水1",pimage:"/images/58_58.png",price:"",acts:["月底前一次性购满100送一同"]},
-          {value:"p_b",status:0,name:"怡宝桶装水2",pimage:"/images/58_58.png",price:"",acts:[]},
-          {value:"p_n",status:0,name:"怡宝桶装水3",pimage:"/images/58_58.png",price:"",acts:[]},
-          {value:"p_w",status:0,name:"怡宝桶装水4",pimage:"/images/58_58.png",price:"",acts:[]},
-          {value:"p_h",status:0,name:"怡宝桶装水5",pimage:"/images/58_58.png",price:"",acts:[]},
-          {value:"p_k",status:0,name:"怡宝桶装水6",pimage:"/images/58_58.png",price:"",acts:[]},
+          {
+            value:"p_y",status:0,name:"怡宝桶装水1",pimage:"/images/58_58.png",price:"",acts:[
+              {actid:"100001",name:"购买优惠1",detail:"单次购满22桶可免租金使用饮水机一台66",status:0},
+              {actid:"100002",name:"购买优惠2",detail:"单次订购多于桶可免租金使用饮水机一台",status:0},
+            ]
+          },
+          {
+            value:"p_b",status:0,name:"怡宝桶装水2",pimage:"/images/58_58.png",price:"",acts:[]
+          },
+          {
+            value:"p_n",status:0,name:"怡宝桶装水3",pimage:"/images/58_58.png",price:"",acts:[]
+          },
+          {
+            value:"p_w",status:0,name:"怡宝桶装水4",pimage:"/images/58_58.png",price:"",acts:[]
+          },
+          {
+            value:"p_h",status:0,name:"怡宝桶装水5",pimage:"/images/58_58.png",price:"",acts:[]
+          },
+          {
+            value:"p_k",status:0,name:"怡宝桶装水6",pimage:"/images/58_58.png",price:"",acts:[]
+          },
           ],
 
     // 输入的内容
@@ -21,9 +36,34 @@ Page({
 
   },
 
+  handleDatasource:function(f) {
+    /**
+     * xml 文件布局产品，其中使用到模版的方式；点击“添加活动”事件中需绑定产品 item 在产品库 libs 中的位置
+    */
+   var tmp_libs = this.data.libs
+   if(f){
+    tmp_libs.push(f)
+   }
+   tmp_libs.map(function(f){
+     let idx = tmp_libs.indexOf(f)
+     f["location"] = idx
+   })
+
+   // 需要更新 UI 层显示的数据
+   this.setData({
+    libs:tmp_libs,
+   })
+
+   console.log("处理之后的产品库数据:",tmp_libs)
+  },
+
+  // 页面展示
+  onShow: function () {
+    this.handleDatasource()
+  },
+
   // 交互事件
   choseproduct:function (e) {
-
     // 解析数据
     let v = e.currentTarget.dataset.value
     var info = this.data.libs
@@ -53,21 +93,43 @@ Page({
 
   },
 
+  printmethod:function(e){
+    console.log("点击测试")
+  },
+
   tapForAddActEvent:function (e){
     
     let that = this
     let location = e.currentTarget.dataset.idx
     var productlibs  = that.data.libs
     var product = productlibs[location]
-    
+    console.log("addActs - a :",product)
+
     wx.navigateTo({
       url: '/pages/ActLib/ActLib',
       
       events:{
         addActs:function(data){
-          console.log("productlibs - 0 :",productlibs)
+          
+          console.log("addActs - x :",data.para)
+          console.log("addActs - y :",product.acts)
+          if(data.para.length > 0){
+            var all_acts = data.para
+            if(product.acts.length > 0){
+              product.map(function(f){
+                all_acts.push(f)
+              })
+            }
+            product.acts = all_acts
+            console.log("最新数据：",productlibs)
+            that.setData({
+              libs:productlibs
+            })
+          }
+          return;
+// ====================                                 
           productlibs.splice(location,1)
-          console.log("productlibs - 1 :",productlibs)
+          console.log("addActs - 1 :",productlibs)
           if (data.para.length > 0) {
             var tmp_acts = []
             for(var cou = 0;cou < data.para.length;cou ++){
@@ -81,6 +143,8 @@ Page({
           that.setData({
             libs:productlibs
           })
+// ====================
+
         }
       }
 
@@ -103,7 +167,7 @@ Page({
       var f = {value:"p_k",status:1,pimage:"/images/58_58.png",price:"",acts:[]}
       f["name"] = name
       var n_libs = this.data.libs
-      n_libs.push(f)
+      this.handleDatasource(f)
       this.setData({
         libs:n_libs,
         inputproname:""
@@ -117,14 +181,6 @@ Page({
 
   tapnextoperate:function (e) {
     console.log("tapnextoperate - 选中产品个数:",choosedpdts.length,"具体产品:",choosedpdts);
-    // 1. 整理出选中的产品信息
-    // var rlt = []
-    // for (var cou = 0; cou < this.data.libs.length; cou ++){
-    //   var dic = this.data.libs[cou]
-    //   if (dic["status"] == 1) {
-    //     rlt.push(dic)
-    //   }
-    // }
     wx.request({
       url: api.URL.addproduct,
       method:"POST",
