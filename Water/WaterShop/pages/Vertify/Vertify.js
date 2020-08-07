@@ -69,7 +69,7 @@ Page({
           filePath: localPath,
           method:"POST",
           name: 'name',
-          url: api.URL.uploadiage,
+          url: api.URL.api_uploadiage,
           success(res){
             if (t == "shoplicense"){
               console.log("营业执照图片上传：",res)
@@ -130,7 +130,7 @@ Page({
     toast.showLoading()
     wx.request({
       method:"POST",
-      url: api.URL.addshop,
+      url: api.URL.api_operateshop,
       data:recordedinfo_para,
       fail(res){
         console.log(" fail :",res)

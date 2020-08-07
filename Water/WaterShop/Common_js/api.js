@@ -1,10 +1,10 @@
 var URL = {}
-URL.vtfcode           = "https://www.ifreewater.com/users/vcode"
-URL.vtflogin          = "https://www.movead.xyz/user/login"
-URL.uploadiage        = "https://www.ifreewater.com/uploads/image"
-URL.addshop           = "https://www.ifreewater.com/shops"
-// URL.completeshop      = "https://www.ifreewater.com/shops"
-URL.addproduct        = "https://www.ifreewater.com/products"
+URL.api_vtfcode                     = "https://www.ifreewater.com/users/vcode"
+URL.api_vtflogin                    = "https://www.movead.xyz/user/login"
+URL.api_uploadiage                  = "https://www.ifreewater.com/uploads/image"
+URL.api_operateshop                     = "https://www.ifreewater.com/shops"
+// URL.completeshop             = "https://www.ifreewater.com/shops"
+URL.api_operateproduct                  = "https://www.ifreewater.com/products"
 
 /* ---------------------------------------------------- */
 var Parser = {}
@@ -14,7 +14,7 @@ Parser.personalinfo = function(info) {
   rlt["id"]                     = info["id"]
   rlt["name"]                   = info["name"]
   rlt["tels"]                   = info["tels"]
-  rlt["mobies"]                = info["mobies"]
+  rlt["mobies"]                 = info["mobies"]
   rlt["cover"]                  = info["cover"]
   rlt["images"]                 = info["images"]
   rlt["business_images"]        = info["business_images"]

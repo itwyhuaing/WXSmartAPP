@@ -112,7 +112,7 @@ Page({
           filePath: localPath,
           method:"POST",
           name: 'name',
-          url: api.URL.uploadiage,
+          url: api.URL.api_uploadiage,
           success(res){
             if (t == "shopdoor"){
               console.log("店铺门脸图片上传：",res)
@@ -204,7 +204,7 @@ Page({
   confirmToSubmitInfo:function(e){
     console.log(" 发起网络请求 - 0 ")
     var appInstance = getApp()
-    let turl = api.URL.addshop + "/" + appInstance.globalData.userInfo["id"]
+    let turl = api.URL.api_operateshop + "/" + appInstance.globalData.userInfo["id"]
     console.log(" 发起网络请求 :",recordedinfo_para,"网络请求:",turl)
     toast.showLoading()
     wx.request({

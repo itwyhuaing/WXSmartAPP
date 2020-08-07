@@ -50,7 +50,7 @@ Page({
     toast.showLoading()
     console.log("请求验证码手机号：",telCode.tel)
     wx.request({
-      url: api.URL.vtfcode,
+      url: api.URL.api_vtfcode ,
       method:"POST",
       data:{
         mobile:telCode.tel
@@ -92,7 +92,7 @@ Page({
 
     toast.showLoading()
       wx.request({
-        url: api.URL.vtflogin,
+        url: api.URL.api_vtflogin,
         data:{
           "mobile":telCode.tel,
           "vcode":telCode.code

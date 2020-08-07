@@ -182,7 +182,7 @@ Page({
   tapnextoperate:function (e) {
     console.log("tapnextoperate - 选中产品个数:",choosedpdts.length,"具体产品:",choosedpdts);
     wx.request({
-      url: api.URL.addproduct,
+      url: api.URL.api_operateproduct,
       method:"POST",
       data:choosedpdts,
       success(res){
