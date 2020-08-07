@@ -35,6 +35,7 @@ App({
   },
   globalData: {
     userInfo: {},
+    test:{},
     vtfstatus:"0", //   0-未完成认证、1-已完成认证
     loginstatus:"0", // 0-未完成登录、1-已完成登录
   }

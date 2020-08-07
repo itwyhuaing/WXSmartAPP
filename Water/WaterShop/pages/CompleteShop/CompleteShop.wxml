@@ -38,10 +38,14 @@
 
 <view class="container">
   <view class="content_box">
-    <!-- 店铺营业时间 -->
+    <!-- 店铺营业开始时间 -->
     <template is="y" data="{{...btime}}"></template>
-    <!-- 店铺预约时间 -->
+    <!-- 店铺营业结束时间 -->
+    <template is="y" data="{{...btime_end}}"></template>
+    <!-- 店铺预约开始时间 -->
     <template is="y" data="{{...atime}}"></template> 
+    <!-- 店铺预约结束时间 -->
+    <template is="y" data="{{...atime_end}}"></template> 
     
     <!-- 门脸照 -->
     <template is="z" data="{{...shopdoor}}"></template>

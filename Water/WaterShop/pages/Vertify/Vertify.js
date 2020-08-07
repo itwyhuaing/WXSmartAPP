@@ -67,6 +67,7 @@ Page({
         // 网络图片上传
         wx.uploadFile({
           filePath: localPath,
+          method:"POST",
           name: 'name',
           url: api.URL.uploadiage,
           success(res){
@@ -141,10 +142,10 @@ Page({
         toast.hideLoading()
         var appInstance = getApp()
         appInstance.globalData.userInfo = api.Parser.personalinfo(res.data.data)
+        console.log(" complete - res:",res,"appInstance.userInfo :",appInstance.globalData.userInfo)
         wx.navigateTo({
           url: '/pages/ProductLib/ProductLib',
         })
-        console.log(" complete - res:",res,"appInstance.userInfo :",appInstance.globalData.userInfo)
       }
     })
 

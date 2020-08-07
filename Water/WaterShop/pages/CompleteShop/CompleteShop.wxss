@@ -47,7 +47,7 @@
 }
 
 .cell .leftpart .them {
-  width: 150rpx;
+  width: 200rpx;
   margin-right: 10rpx;
   text-align: right;
   /* border: solid 0.8rpx cyan; */
