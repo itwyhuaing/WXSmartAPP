@@ -14,6 +14,33 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+
+// 适配系统宽高比
+function scaleAccordingScreen (size,exw){
+  var rlt = {
+    width:0.0,
+    height:0.0
+  };
+
+  wx.getSystemInfo({
+    complete: (res) => {
+      var sw = res.screenWidth;
+      var sh = res.screenHeight;
+      console.log("screen:",sw,"exw:",exw)
+      var realW = sw;
+      if (exw && exw > 0){
+        realW = Math.min(exw,sw);
+      }
+
+      rlt.width = realW;
+      var scale = realW / size.width;
+      rlt.height = size.height * scale;
+    },
+  })
+  return rlt;
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  scaleAccordingScreen:scaleAccordingScreen,
 }

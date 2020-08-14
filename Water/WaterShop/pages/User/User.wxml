@@ -11,9 +11,15 @@
 
 <!-- Page -->
 <scroll-view>
+  <!-- cell -->
   <block wx:for="{{ds}}" wx:key="this">
     <view bindtap="taptonext" data-model="{{item}}">
       <template is="x" data="{{...item}}" />
     </view>
   </block>
+
+  <!-- 推荐有礼物 -->
+  <view class="giftentry" bindtap="giftentry">
+    <image src="/images/58_58.png" style="width:{{imgSize.width}}rpx;height:{{imgSize.height}}rpx;"></image>
+  </view>
 </scroll-view>

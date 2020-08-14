@@ -21,9 +21,9 @@ Page({
     
     // 判断是否已登陆
     if (appInstance.globalData.loginstatus == "0"){
-      wx.navigateTo({
-        url: '/pages/Entry/Entry',
-      })
+      // wx.navigateTo({
+      //   url: '/pages/Entry/Entry',
+      // })
     }
 
     let order1 = {

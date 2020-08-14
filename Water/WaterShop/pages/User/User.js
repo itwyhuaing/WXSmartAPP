@@ -1,4 +1,6 @@
-// pages/User/User.js
+var util = require("../../Common_js/util")
+
+
 Page({
 
   /**
@@ -12,6 +14,10 @@ Page({
         {icon:"/images/my_fankui.png",txt:"意见反馈",arrow:"/images/arrow_left.png"},
         {icon:"/images/my_kefu.png",txt:"联系我们",arrow:"/images/arrow_left.png"},
         ],
+    imgSize:util.scaleAccordingScreen({
+      width:58,
+      height:58
+    },355),    
   },
 
   /**
@@ -87,6 +93,12 @@ Page({
 
     wx.navigateTo({
       url: url,
+    })
+  },
+
+  giftentry:function(e){
+    wx.navigateTo({
+      url: "/pages/Recommand/Recommand",
     })
   },
 
