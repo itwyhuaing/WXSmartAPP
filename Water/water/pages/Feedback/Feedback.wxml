@@ -1,6 +1,0 @@
-<view class="container">
-  <view class="inputarea">
-    <textarea auto-focus="true" placeholder="请输入" bindblur="inputover"></textarea>
-  </view>
-  <view class="confirmBtn" bindtap="submitremark"><text>提交</text></view>
-</view>

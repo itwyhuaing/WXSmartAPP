@@ -1,8 +1,0 @@
-<scroll-view class="container">
-  <block wx:for="{{questions}}" wx:key="this">
-    <view class="question">
-      <view class="detail">Q：{{item.qdetail}}</view>
-      <view class="next" bindtap="lookdetailanswer" data-value="{{item}}"><text>查看解答</text><image src="/images/arrow_left.png"></image></view>
-    </view>
-  </block>
-</scroll-view>
